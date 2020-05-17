@@ -1,0 +1,244 @@
+body {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+    --player_color: var(--blue_color);
+    --blue_color: rgb(0,139,139);
+    --blue_color_hint: rgba(0,139,139, 0.3);
+    --red_color: rgb(220,20,60);
+    --red_color_hint: rgba(220,20,60, 0.3);
+    --black_color: rgb(0,0,0);
+    --square-height: 44px;
+}
+
+.hints {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 10px;
+}
+
+button {
+    margin-right: 10px;
+    border-radius: 5px;
+    font-family: inherit
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    line-height: 1;
+}
+h2 {
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+.board {
+    min-width: 230px;
+}
+.title {
+
+}
+.tutorial-board {
+    max-width: 230px;
+
+}.controls {
+     font-weight: normal;
+     font-size: 14px;
+     display: flex;
+     flex-direction: row;
+ }
+
+.score {
+    font-weight: normal;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+.red-score {
+    color: var(--red_color);
+    font-weight: bold;
+}
+.blue-score {
+    color: var(--blue_color);
+    font-weight: bold;
+    padding-right: 50px;
+}
+
+.token-area {
+    display: flex;
+    flex-direction: row;
+    color: var(--player_color);
+    justify-content: center;
+}
+
+.token {
+    text-align: center;
+    padding: 10px;
+}
+
+
+.board-row:after {
+clear: both;
+content: "";
+display: table;
+}
+
+.square {
+background: #fff;
+border: 1px solid #999;
+float: left;
+line-height: 34px;
+height: var(--square-height);
+margin-right: -1px;
+margin-top: -1px;
+padding: 0;
+text-align: center;
+width: var(--square-height);
+font-size: 24px;
+font-weight: bold;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.square.blue {
+background: var(--blue_color);
+}
+.square.red {
+    background: var(--red_color);
+}
+.square.black {
+    background: var(--black_color);
+}
+.square.blue.hint {
+    background: var(--blue_color_hint);
+}
+.square.red.hint {
+    background: var(--red_color_hint);
+}
+
+#modal-root {
+    position: relative;
+    z-index: 999;
+}
+
+.tutorialStep {
+    overflow: hidden;
+    font-size: 24px;
+}
+
+.modal {
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    height: 50%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation {
+    color: lightgray;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.tutorialStep {
+    color: lightgray;
+    margin: 10px;
+}
+
+.square.tutorial1animation3 {
+    animation: tutorial1animation3 6s infinite;
+    animation-timing-function: step-end;
+
+}
+
+@keyframes tutorial1animation3 {
+    0% {
+        color: transparent;
+    }
+    20%,100% {
+        background-color: var(--blue_color);
+        color: black;
+    }
+}
+
+.square.tutorial1animation4 {
+    animation: tutorial1animation4 6s infinite;
+    animation-timing-function: step-end;
+
+}
+
+@keyframes tutorial1animation4 {
+    0% {
+        color: transparent;
+
+    }
+    40%,100% {
+        background-color: var(--red_color);
+        color: black;
+    }
+}
+
+.square.tutorial1animation5 {
+    animation: tutorial1animation5 6s infinite;
+    animation-timing-function: step-end;
+
+}
+
+@keyframes tutorial1animation5 {
+    0% {
+        color: transparent;
+    }
+    60%,100% {
+        background-color: var(--blue_color);
+        color: black;
+    }
+}
+
+.square.tray {
+    border-color: transparent;
+    background: transparent;
+}
+.square.tutorial1animationX {
+    animation: tutorial1animationX 6s infinite;
+    position: relative;
+    animation-timing-function: linear;
+}
+
+@keyframes tutorial1animationX {
+    0% {
+        transform: translatex(0px) translatey(0px)
+    }
+    19% {
+        transform: translatex(calc(-1*var(--square-height))) translatey(calc(-3*var(--square-height)))
+    }
+    20% {
+        transform: translatex(0px) translatey(0px);
+        color: transparent;
+    }
+}
+
+
+
+
+
+
+
