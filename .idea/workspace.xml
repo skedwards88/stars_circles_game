@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a32a6e6e-202e-43e2-85e8-ef242b64d061" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Python/PythonNotes.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Python/PythonNotes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +31,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1bYNuzUKjXNh0NTvQNLQffvSplU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -82,6 +83,7 @@
       <updated>1588805293723</updated>
       <workItem from="1588805295150" duration="44691000" />
       <workItem from="1589516709631" duration="15139000" />
+      <workItem from="1589754131266" duration="920000" />
     </task>
     <servers />
   </component>
@@ -192,19 +194,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/index.js</url>
           <line>318</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/index.js</url>
           <line>352</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/index.js</url>
           <line>408</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
