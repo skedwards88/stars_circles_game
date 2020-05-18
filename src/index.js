@@ -290,7 +290,7 @@ class Game extends React.Component {
         this.handlePrevious = this.handlePrevious.bind(this);
         this.handleNext = this.handleNext.bind(this);
         this.handleHintsChange = this.handleHintsChange.bind(this);
-        this.handleUndo = this.handleUndo.bind(this);
+        // this.handleUndo = this.handleUndo.bind(this);
         this.handleNewGame = this.handleNewGame.bind(this);
 
     }
@@ -374,24 +374,19 @@ class Game extends React.Component {
     }
 
     handleMouseDown = (e, shape) => {
-        console.log('DOWN');
         let color = (this.state.blueIsNext ? "blue" : "red");
 
         this.setState({
             hintColor: color,
             hintShape: shape,
         });
-        console.log(this.state.hintColor);
     }
 
     handleMouseUp = (e) => {
-        console.log('UP');
         this.setState({
             hintColor: null,
             hintShape: null,
         });
-        console.log(this.state.hintColor);
-
     }
 
     handleHintsChange = (event) => {
@@ -405,12 +400,18 @@ class Game extends React.Component {
 
     handleUndo = (event) => {
         let history = this.state.history;
-        const squaresHistory = history.squares.length >1 ? history.squares.slice(0,-1) : history.squares.slice();
+        const squaresHistory = history.squares.length > 1 ? history.squares.slice(0,-1) : history.squares.slice();
         const legalMovesHistory = history.legalMoves.length >1 ? history.legalMoves.slice(0,-1) : history.legalMoves.slice();
         history.squares = squaresHistory;
         history.legalMoves = legalMovesHistory
+        const blueIsNext = history.squares.length > 1 ? !(this.state.blueIsNext) : true;
+        // todo duplicated so put in function?
+        let body = document.getElementsByTagName("body")[0];
+        body.style.setProperty("--player_color", (blueIsNext ? "var(--blue_color)" : "var(--red_color)"));
+
         this.setState({
-                history: history
+                history: history,
+                blueIsNext: blueIsNext,
             }
         )
     }
