@@ -1,3 +1,8 @@
+html {
+    display: table;
+    margin: auto;
+}
+
 body {
     font-size: 24px;
     font-weight: bold;
@@ -10,6 +15,8 @@ body {
     --red_color_hint: rgba(220,20,60, 0.3);
     --black_color: rgb(0,0,0);
     --square-height: 44px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .hints {
