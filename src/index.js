@@ -4,14 +4,11 @@ import './index.css';
 import Modal from './modal';
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 
-//remove react cruft
-// make controls work on mobile
+// remove react cruft
 // rough clean of rules
-// styling
+// tutorial in separate file?
 // tutorial
-// quick instructions
-// mobile
-// accessibility
+// accessibility, mobile, style checks
 // const vs let -- can make const squares, then do squares[i] = x, so not const?? can't do squares =x though
 // add tests for react components and interactivity
 // allow grid size to be set
@@ -25,7 +22,6 @@ class Token {
         this.shape = shape;
     }
 }
-
 
 class Step1 extends React.Component {
     render() {
@@ -138,7 +134,6 @@ function NextButton(props) {
     }
     return null;
 }
-
 
 function Tutorial(props) {
     const totalSteps = 4;
@@ -548,8 +543,6 @@ ReactDOM.render(
     document.getElementById('root') || document.createElement('div') // for testing purposes
 );
 
-
-
 export function calculateHorizontalScore(grid) {
     let scores = {
         'red' : 0,
@@ -690,7 +683,6 @@ export function calculateScore(squares) {
     return scores;
 }
 
-
 export function isEndgame(legalMoves) {
     let anyLegal = {
         'red': false,
@@ -729,7 +721,6 @@ export function completeEndgame(squares, legalMoves) {
     }
     return completed_squares
 }
-
 
 export function updateBlackout(squares, legalMoves) {
     for (let rowIndex in squares) {
