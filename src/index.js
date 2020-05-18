@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Modal from './modal';
+import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 
-
+//remove react cruft
+// make controls work on mobile
+// rough clean of rules
 // styling
 // tutorial
 // quick instructions
@@ -205,11 +208,13 @@ class Board extends React.Component {
         const squares = this.props.squares;
         const square = squares[row][column];
         return (
+            <DropTarget
+                targetKey="token"
+                dropData={{'row':row,'column':column}}
+            >
             <Square
                 shape={square ? square.shape : null}
                 color={square ? square.color : null}
-                onDragOver={(e) => this.props.onDragOver(e, row, column)}
-                onDrop={(e) => this.props.onDrop(e, row, column)}
                 key={row + ',' + column}
                 row={row}
                 column={column}
@@ -218,6 +223,7 @@ class Board extends React.Component {
                 hintColor = {this.props.hintColor}
                 hints={this.props.hints}
             />
+            </DropTarget>
         );
     }
 
@@ -315,12 +321,13 @@ class Game extends React.Component {
         e.preventDefault();
     }
 
-    handleDrop(e, row, column) {
-        console.log("drop");
+    handleDrop(e) {
+        const row = e.dropData.row;
+        const column = e.dropData.column;
+        let shape = e.dragData.shape;
         let history = this.state.history;
         const squaresHistory = history.squares.slice();
         let squares = squaresHistory[squaresHistory.length - 1].map(a => {return a.slice()})
-        let shape = e.dataTransfer.getData("shape");
         let color = (this.state.blueIsNext ? "blue" : "red");
         let converseShape = (shape === "star" ? "circle" : "star");
         let converseColor = (this.state.blueIsNext ? "red" : "blue");
@@ -355,8 +362,6 @@ class Game extends React.Component {
         // update next player color
         let body = document.getElementsByTagName("body")[0];
         body.style.setProperty("--player_color", (this.state.blueIsNext ? "var(--red_color)" : "var(--blue_color)"));
-        console.log("pre drop set state");
-        console.log(squaresHistory);
         history.squares = squaresHistory.concat([squares])
         history.legalMoves = legalMovesHistory.concat([legalMoves])
         this.setState({
@@ -366,29 +371,27 @@ class Game extends React.Component {
             hintColor: null,
             hintShape: null,
         });
-        console.log("post drop set state");
-        console.log(squaresHistory);
-
-    }
-
-    handleDragStart = (e, shape) => {
-        e.dataTransfer.setData("shape", shape);
     }
 
     handleMouseDown = (e, shape) => {
+        console.log('DOWN');
         let color = (this.state.blueIsNext ? "blue" : "red");
 
         this.setState({
             hintColor: color,
             hintShape: shape,
-        })
+        });
+        console.log(this.state.hintColor);
     }
 
     handleMouseUp = (e) => {
+        console.log('UP');
         this.setState({
             hintColor: null,
             hintShape: null,
-        })
+        });
+        console.log(this.state.hintColor);
+
     }
 
     handleHintsChange = (event) => {
@@ -429,11 +432,9 @@ class Game extends React.Component {
 
 
     render() {
-        console.log("render");
         const history = this.state.history;
 
         const squaresHistory = history.squares.slice();
-        console.log(squaresHistory);
         let squares = squaresHistory[squaresHistory.length - 1].slice();
         // const legalMoves = this.state.legalMoves.slice();
         const legalMovesHistory = history.legalMoves.slice();
@@ -469,8 +470,6 @@ class Game extends React.Component {
                     <Board
                         squares={squares}
                         gridSize={this.state.gridSize}
-                        onDragOver={(e, row, column) => this.handleDragOver(e, row, column)}
-                        onDrop={(e, row, column) => this.handleDrop(e, row, column)}
                         legalMoves={legalMoves}
                         hintShape={this.state.hintShape}
                         hintColor={this.state.hintColor}
@@ -478,20 +477,31 @@ class Game extends React.Component {
                     />
                 </div>
                 <div className="token-area">
+                    <DragDropContainer
+                        targetKey="token"
+                        dragData={{shape:'star'}}
+                        onDrop={(e) => this.handleDrop(e)}
+                        onDragStart={(e) => this.handleMouseDown(e, "star")}
+                        >
                     <div className="token"
-                         onDragStart={(e) => this.handleDragStart(e, "star")}
                          onMouseDown={(e) => this.handleMouseDown(e, "star")}
                          onMouseUp={(e) => this.handleMouseUp(e)}
-                         draggable
                     >X
                     </div>
-                    <div className="token"
-                         onDragStart={(e) => this.handleDragStart(e, "circle")}
-                         onMouseDown={(e) => this.handleMouseDown(e, "circle")}
-                         onMouseUp={(e) => this.handleMouseUp(e)}
-                         draggable
-                    >O
-                    </div>
+                    </DragDropContainer>
+                    <DragDropContainer
+                        targetKey="token"
+                        dragData={{shape:'circle'}}
+                        onDrop={(e) => this.handleDrop(e)}
+                        onDragStart={(e) => this.handleMouseDown(e, "circle")}
+                    >
+                        <div className="token"
+                             onMouseDown={(e) => this.handleMouseDown(e, "circle")}
+                             onMouseUp={(e) => this.handleMouseUp(e)}
+                        >O
+                        </div>
+                    </DragDropContainer>
+
                 </div>
                 <div className="score">
                     Score:
@@ -563,7 +573,6 @@ export function calculateHorizontalScore(grid) {
 
 export function calculateVerticalScore(grid) {
     // transpose the grid
-    console.log("calc: ", grid);
     let vertical = grid[0].map(function(col, i){
         return grid.map(function(row){
             return row[i];
