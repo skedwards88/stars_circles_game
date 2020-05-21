@@ -282,7 +282,7 @@ class Game extends React.Component {
             hints: true,
             hintColor: null,
             hintShape: null,
-            showRules: true,
+            showRules: false,
             currentRule: 1,
         };
         // todo understand when need to bind
