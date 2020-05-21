@@ -60,13 +60,15 @@ h2 {
 
 .tutorial-board {
     max-width: 230px;
+    margin: auto;
+}
 
-}.controls {
+.controls {
      font-weight: normal;
      font-size: 14px;
      display: flex;
      flex-direction: row;
- }
+}
 
 .score {
     font-weight: normal;
@@ -144,21 +146,42 @@ background: var(--blue_color);
     background: var(--red_color_hint);
 }
 
+.navigation {
+    color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
 #modal-root {
     position: relative;
     z-index: 999;
 }
 
+.tutorial {
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .tutorialStep {
     overflow: hidden;
-    font-size: 24px;
+    color: lightgray;
+    max-width: 250px;
+}
+
+.tutorial-text {
+    margin: 10px;
 }
 
 .modal {
+    font-size: 16px;
+    font-weight: normal;
     background-color: rgba(0,0,0,0.8);
     position: fixed;
-    height: 50%;
-    width: 50%;
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     display: flex;
@@ -167,16 +190,9 @@ background: var(--blue_color);
     justify-content: center;
 }
 
-.navigation {
-    color: lightgray;
-    display: flex;
-    flex-direction: row;
-
-}
-
-.tutorialStep {
-    color: lightgray;
-    margin: 10px;
+.square.tray {
+    border-color: transparent;
+    background: transparent;
 }
 
 .square.tutorial1animation3 {
@@ -228,10 +244,6 @@ background: var(--blue_color);
     }
 }
 
-.square.tray {
-    border-color: transparent;
-    background: transparent;
-}
 
 .square.tutorial1animationX {
     animation: tutorial1animationX 6s infinite;

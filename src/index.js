@@ -25,52 +25,56 @@ class Token {
 
 class Step1 extends React.Component {
     render() {
-        if (this.props.currentStep !== 1) { // Prop: The current step
+        if (this.props.currentRule !== 1) {
             return null
         }
         return(
             <div className="tutorialStep">
+                <div className="tutorial-text">
                 Take turns dragging an X or O of your color onto the grid.
+                </div>
                 <div className={"tutorial-board"}>
-                <div className={"board-row"}>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square tutorial1animation4"}>X</div>
-                    <div className={"square"}/>
-                </div>
-                <div className={"board-row"}>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                </div>
-                <div className={"board-row"}>
-                    <div className={"square"}/>
-                    <div className={"square tutorial1animation3"}>X</div>
-                    <div className={"square"}/>
-                </div>
-                <div className={"board-row"}>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square tutorial1animation5"}>O</div>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                </div>
-                <div className={"board-row"}>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                    <div className={"square"}/>
-                </div>
                     <div className={"board-row"}>
                         <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square tutorial1animation4"}>O</div>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square tutorial1animation3"}>X</div>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square tutorial1animation5"}>O</div>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square tray"}/>
                         <div className={"square tray tutorial1animationX"}>X</div>
-                        <div className={"square"}/>
-                        <div className={"square tray"}>O</div>
-                        <div className={"square"}/>
+                        <div className={"square tray"}/>
+                        <div className={"square tray tray"}>O</div>
+                        <div className={"square tray"}/>
                     </div>
                 </div>
             </div>
@@ -80,7 +84,7 @@ class Step1 extends React.Component {
 
 class Step2 extends React.Component {
     render() {
-        if (this.props.currentStep !== 2) {
+        if (this.props.currentRule !== 2) {
             return null
         }
         return(
@@ -93,7 +97,7 @@ class Step2 extends React.Component {
 
 class Step3 extends React.Component {
     render() {
-        if (this.props.currentStep !== 3) {
+        if (this.props.currentRule !== 3) {
             return null
         }
         return(
@@ -106,7 +110,7 @@ class Step3 extends React.Component {
 
 class Step4 extends React.Component {
     render() {
-        if (this.props.currentStep !== 4) {
+        if (this.props.currentRule !== 4) {
             return null
         }
         return(
@@ -118,53 +122,55 @@ class Step4 extends React.Component {
 }
 
 function PreviousButton(props) {
-    if(props.currentStep !== 1) {
+    if(props.currentRule !== 1) {
         return (
             <button onClick={props.handlePrevious}>Previous</button>
         )
     }
-    return null;
+    return <div/>;
 }
 
 function NextButton(props) {
-    if(props.currentStep < props.totalSteps) {
+    if(props.currentRule < props.totalSteps) {
         return (
             <button onClick={props.handleNext}>Next</button>
         )
     }
-    return null;
+    return <div/>;
 }
 
 function Tutorial(props) {
     const totalSteps = 4;
-        if (props.showModal) {
+        if (props.showRules) {
             return (
                 <Modal>
                     <div className="modal">
+                        <div className="tutorial">
                         <Step1
-                            currentStep = {props.currentStep}
+                            currentRule = {props.currentRule}
                         />
                         <Step2
-                            currentStep = {props.currentStep}
+                            currentRule = {props.currentRule}
                         />
                         <Step3
-                            currentStep = {props.currentStep}
+                            currentRule = {props.currentRule}
                         />
                         <Step4
-                            currentStep = {props.currentStep}
+                            currentRule = {props.currentRule}
                         />
                         <div className="navigation">
                             <PreviousButton
-                                currentStep={props.currentStep}
+                                currentRule={props.currentRule}
                                 handlePrevious={props.handlePrevious}
                             />
-                            <div>{props.currentStep}/{totalSteps}</div>
+                            <div>{props.currentRule}/{totalSteps}</div>
                             <NextButton
-                                currentStep={props.currentStep}
+                                currentRule={props.currentRule}
                                 totalSteps={totalSteps}
                                 handleNext={props.handleNext}
                             />
                             <button onClick={props.handleHide}>Exit</button>
+                        </div>
                         </div>
                     </div>
                 </Modal>
@@ -276,8 +282,8 @@ class Game extends React.Component {
             hints: true,
             hintColor: null,
             hintShape: null,
-            showModal: false,
-            currentStep: 1,
+            showRules: true,
+            currentRule: 1,
         };
         // todo understand when need to bind
         this.handleShow = this.handleShow.bind(this);
@@ -285,7 +291,6 @@ class Game extends React.Component {
         this.handlePrevious = this.handlePrevious.bind(this);
         this.handleNext = this.handleNext.bind(this);
         this.handleHintsChange = this.handleHintsChange.bind(this);
-        // this.handleUndo = this.handleUndo.bind(this);
         this.handleNewGame = this.handleNewGame.bind(this);
 
     }
@@ -293,23 +298,23 @@ class Game extends React.Component {
 
 
     handleShow() {
-        this.setState({showModal: true});
+        this.setState({showRules: true});
     }
 
     handleHide() {
-        this.setState({showModal: false});
+        this.setState({showRules: false});
     }
 
     handlePrevious() {
-        let currentStep = this.state.currentStep
-        currentStep =  currentStep - 1;
-        this.setState({currentStep: currentStep});
+        let currentRule = this.state.currentRule
+        currentRule =  currentRule - 1;
+        this.setState({currentRule: currentRule});
     }
 
     handleNext() {
-        let currentStep = this.state.currentStep;
-        currentStep =  currentStep + 1;
-        this.setState({currentStep: currentStep});
+        let currentRule = this.state.currentRule;
+        currentRule =  currentRule + 1;
+        this.setState({currentRule: currentRule});
     }
 
     handleDragOver = (e, row, column) => {
@@ -478,12 +483,12 @@ class Game extends React.Component {
                         dragData={{shape:'star'}}
                         onDrop={(e) => this.handleDrop(e)}
                         onDragStart={(e) => this.handleMouseDown(e, "star")}
-                        >
-                    <div className="token"
-                         onMouseDown={(e) => this.handleMouseDown(e, "star")}
-                         onMouseUp={(e) => this.handleMouseUp(e)}
-                    >X
-                    </div>
+                    >
+                        <div className="token"
+                             onMouseDown={(e) => this.handleMouseDown(e, "star")}
+                             onMouseUp={(e) => this.handleMouseUp(e)}
+                        >X
+                        </div>
                     </DragDropContainer>
                     <DragDropContainer
                         targetKey="token"
@@ -519,17 +524,18 @@ class Game extends React.Component {
                     </label>
                     <button onClick={this.handleUndo}>Undo</button>
                     <button onClick={this.handleNewGame}>New</button>
-                    <div className="tutorial">
-                        <button onClick={this.handleShow}>Rules</button>
-                        <Tutorial
-                            showModal={this.state.showModal}
-                            currentStep={this.state.currentStep}
-                            handleHide={this.handleHide}
-                            handlePrevious={this.handlePrevious}
-                            handleNext={this.handleNext}
-                        />
-                    </div>
+                    <button onClick={this.handleShow}>Rules</button>
                 </div>
+                <div className="tutorial">
+                    <Tutorial
+                        showRules={this.state.showRules}
+                        currentRule={this.state.currentRule}
+                        handleHide={this.handleHide}
+                        handlePrevious={this.handlePrevious}
+                        handleNext={this.handleNext}
+                    />
+                </div>
+
             </div>
         );
     }
