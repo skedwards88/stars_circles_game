@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/stars_circles_game/precache-manifest.8c84f3a5dbf6231139e05467db5693fc.js"
+  "/stars_circles_game/precache-manifest.e337c706b15fdede19df7034e91026e2.js"
 );
 
 self.addEventListener('message', (event) => {
