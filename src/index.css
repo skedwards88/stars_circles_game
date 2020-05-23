@@ -124,6 +124,7 @@ font-weight: bold;
 display: flex;
 justify-content: center;
 align-items: center;
+    color: black;
 }
 
 .square.blue {
@@ -160,7 +161,7 @@ background: var(--blue_color);
 }
 
 .tutorial {
-    height: 370px;
+    height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -173,6 +174,10 @@ background: var(--blue_color);
 
 .tutorial-text {
     margin: 10px;
+}
+
+.tutorial2_O {
+    color: var(--red_color);
 }
 
 .modal {
@@ -354,4 +359,20 @@ background: var(--blue_color);
 
 
 
+}
+
+.square.tutorial2animationX {
+    animation: tutorial2animationX 2s infinite;
+    position: relative;
+    color: var(--red_color);
+}
+
+@keyframes tutorial2animationX {
+    0%, 4%, 100% {
+        transform: translatex(0px) translatey(0px);
+    }
+    60%, 99% {
+        transform: translatex(calc(1*var(--square-height))) translatey(calc(-3*var(--square-height)));
+        animation-timing-function: linear;
+    }
 }

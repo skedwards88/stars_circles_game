@@ -31,7 +31,7 @@ class Step1 extends React.Component {
         return(
             <div className="tutorialStep">
                 <div className="tutorial-text">
-                Take turns dragging an X or O of your color onto the grid.
+                Players take turns dragging an X or O of their color onto the grid.
                 </div>
                 <div className={"tutorial-board"}>
                     <div className={"board-row"}>
@@ -89,7 +89,53 @@ class Step2 extends React.Component {
         }
         return(
             <div className="tutorialStep">
-                The same symbol of opposite color cannot be placed next to each other. (Show hints appearing)
+                <div className="tutorial-text">
+                    Matching symbols of opposite color cannot be placed adjacent or diagonal to each other.
+                </div>
+                <div className={"tutorial-board"}>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square red"}>O</div>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square blue"}>X</div>
+                        <div className={"square blue"}>X</div>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square tray"}/>
+                        <div className={"square tray tutorial2animationX"}>X</div>
+                        <div className={"square tray"}/>
+                        <div className={"square tray tutorial2_O"}>O</div>
+                        <div className={"square tray"}/>
+                    </div>
+                </div>
             </div>
         )
     }
