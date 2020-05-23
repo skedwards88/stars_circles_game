@@ -552,6 +552,8 @@ class Game extends React.Component {
         const legalMovesHistory = history.legalMoves.slice(0,1);
         history.squares = squaresHistory;
         history.legalMoves = legalMovesHistory
+        let body = document.getElementsByTagName("body")[0];
+        body.style.setProperty("--player_color", "var(--blue_color)");
         this.setState({
                 history: history,
                 blueIsNext: true,
