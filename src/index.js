@@ -148,7 +148,52 @@ class Step3 extends React.Component {
         }
         return(
             <div className="tutorialStep">
-                When no symbol can be placed in a square, it is blacked out. (Show)
+                <div className="tutorial-text">
+                    When no symbol can be placed in a square, the square is blacked out.                </div>
+                <div className={"tutorial-board"}>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square red"}>X</div>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square blue"}>O</div>
+                        <div className={"square black"}/>
+                        <div className={"square red"}>O</div>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square blue"}>X</div>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square tray"}/>
+                        <div className={"square tray tutorial2_O"}>X</div>
+                        <div className={"square tray"}/>
+                        <div className={"square tray tutorial2_O"}>O</div>
+                        <div className={"square tray"}/>
+                    </div>
+                </div>
             </div>
         )
     }
