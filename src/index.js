@@ -31,7 +31,7 @@ class Step1 extends React.Component {
         return(
             <div className="tutorialStep">
                 <div className="tutorial-text">
-                Players take turns dragging an X or O of their color onto the grid.
+                Players take turns dragging a symbol (X or O) of their color onto the board.
                 </div>
                 <div className={"tutorial-board"}>
                     <div className={"board-row"}>
@@ -206,7 +206,46 @@ class Step4 extends React.Component {
         }
         return(
             <div className="tutorialStep">
-                Win by getting the most 3 on a rows of your color. Symbol doesn't matter. (Show board with lines drawn to indicate sets)
+                <div className="tutorial-text">
+                    Score a point by getting a 3-in-a-row of your color (symbol doesn't matter).
+                <div className={"tutorial-board"}>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square red step4_score3"}>O</div>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square red step4_score3"}>X</div>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square red step4_score3"}>O</div>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square blue step4_score1"}>O</div>
+                        <div className={"square blue step4_score12"}>X</div>
+                        <div className={"square blue step4_score12"}>X</div>
+                        <div className={"square blue step4_score2"}>X</div>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                </div>
+            </div>
             </div>
         )
     }

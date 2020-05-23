@@ -376,3 +376,67 @@ background: var(--blue_color);
         animation-timing-function: linear;
     }
 }
+
+.square.step4_score1 {
+    animation: step4_score1 3s infinite;
+    position: relative;
+    color: black;
+    animation-timing-function: step-end;
+}
+
+@keyframes step4_score1 {
+    5%, 20% {
+        color: yellow;
+    }
+    0%, 21%,100% {
+        color: black;
+    }
+}
+
+.square.step4_score2 {
+    animation: step4_score2 3s infinite;
+    position: relative;
+    animation-timing-function: step-end;
+
+}
+
+@keyframes step4_score2 {
+    25%, 45% {
+        color: yellow;
+    }
+    0%, 46%,100% {
+        color: black;
+    }
+}
+
+.square.step4_score3 {
+    animation: step4_score3 3s infinite;
+    position: relative;
+    animation-timing-function: step-end;
+}
+
+@keyframes step4_score3 {
+    50%, 75% {
+        color: yellow;
+    }
+    0%, 76%,100% {
+        color: black;
+    }
+}
+
+.square.step4_score12 {
+    animation: step4_score12 3s infinite;
+    position: relative;
+    animation-timing-function: step-end;
+
+}
+
+@keyframes step4_score12 {
+    5%, 20%, 25%, 45%  {
+        color: yellow;
+    }
+    0%, 21%, 46%, 100% {
+        color: black;
+    }
+
+}
