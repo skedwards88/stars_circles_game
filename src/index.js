@@ -432,7 +432,10 @@ class Game extends React.Component {
     }
 
     handleHide() {
-        this.setState({showRules: false});
+        this.setState({
+            showRules: false,
+            currentStep: 1
+        });
     }
 
     handlePrevious() {
