@@ -183,7 +183,7 @@ background: var(--blue_color);
 .modal {
     font-size: 16px;
     font-weight: normal;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0);
     position: fixed;
     height: 100%;
     width: 100%;
