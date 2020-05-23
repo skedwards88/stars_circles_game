@@ -28,7 +28,8 @@ body {
 button {
     margin-right: 10px;
     border-radius: 5px;
-    font-family: inherit
+    font-family: inherit;
+    background-color: lightgrey;
 }
 
 h1 {
