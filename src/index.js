@@ -49,8 +49,8 @@ class Step1 extends React.Component {
                         <div className={"square"}/>
                     </div>
                     <div className={"board-row"}>
-                        <div className={"square"}/>
                         <div className={"square tutorial1animation3"}>X</div>
+                        <div className={"square"}/>
                         <div className={"square"}/>
                         <div className={"square"}/>
                         <div className={"square"}/>
@@ -73,7 +73,7 @@ class Step1 extends React.Component {
                         <div className={"square tray"}/>
                         <div className={"square tray tutorial1animationX"}>X</div>
                         <div className={"square tray"}/>
-                        <div className={"square tray tray"}>O</div>
+                        <div className={"square tray tutorial1animationO"}>O</div>
                         <div className={"square tray"}/>
                     </div>
                 </div>
@@ -282,7 +282,7 @@ class Game extends React.Component {
             hints: true,
             hintColor: null,
             hintShape: null,
-            showRules: false,
+            showRules: true,
             currentRule: 1,
         };
         // todo understand when need to bind
