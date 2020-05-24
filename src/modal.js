@@ -1,43 +1,32 @@
-// Modal.js
 import React from 'react';
 import { createPortal } from 'react-dom';
-// We get hold of the div with the id modal that we have created in index.html
-const modalRoot = document.getElementById( 'modal' );
 
+// Get the element with the id 'modal' from index.html
+const modalRoot = document.getElementById( 'modal' );
 
 class Modal extends React.Component {
     constructor(props) {
         super(props);
-        // Create a div that we'll render the modal into. Because each
-        // Modal component has its own element, we can render multiple
-        // modal components into the modal container.
-        this.el = document.createElement('div');
-
-
+        // Create a div to render the modal into
+        this.element = document.createElement('div');
     }
 
-
-
-
     componentDidMount() {
-        // Append the element into the DOM on mount. We'll render
-        // into the modal container element (see the HTML tab).
-        modalRoot.appendChild(this.el);
+        // Append the element into the DOM on mount
+        modalRoot.appendChild(this.element);
     }
 
     componentWillUnmount() {
-        // Remove the element from the DOM when we unmount
-        modalRoot.removeChild(this.el);
+        // Remove the element from the DOM when on unmount
+        modalRoot.removeChild(this.element);
     }
-
 
     render() {
         // Use a portal to render the children into the element
+        // (Takes any valid React child (JSX, strings, arrays, etc.) and an element in the DOM
         return createPortal(
-            // Any valid React child: JSX, strings, arrays, etc.
             this.props.children,
-            // A DOM element
-            this.el,
+            this.element,
         );
     }
 }
