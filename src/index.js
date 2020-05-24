@@ -5,7 +5,6 @@ import './rules.css';
 import Tutorial from './rules.js';
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 
-// tutorial in separate file?
 // accessibility, mobile, style checks
 // const vs let -- can make const squares, then do squares[i] = x, so not const?? can't do squares =x though
 // add tests for react components and interactivity
@@ -51,7 +50,7 @@ class Board extends React.Component {
         return (
             <DropTarget
                 targetKey="token"
-                dropData={{'row':row,'column':column}}
+                dropData={{'row':row, 'column':column}}
                 key={row + ',' + column}
             >
             <Square
@@ -80,7 +79,6 @@ class Board extends React.Component {
         }
         return rows;
     }
-
 
     render() {
         return (
@@ -111,14 +109,13 @@ class Game extends React.Component {
                 });
             }
             legalMoves.push(row);
-        };
+        }
         this.state = {
             gridSize: gridSize,
             history: {
                 squares: [Array.from({length: gridSize}, e => Array(gridSize).fill(null))],
                 legalMoves: [legalMoves]
             },
-            // legalMoves: legalMoves,
             blueIsNext: true,
             hints: true,
             hintColor: null,
@@ -133,10 +130,7 @@ class Game extends React.Component {
         this.handleNext = this.handleNext.bind(this);
         this.handleHintsChange = this.handleHintsChange.bind(this);
         this.handleNewGame = this.handleNewGame.bind(this);
-
     }
-
-
 
     handleShow() {
         this.setState({showRules: true});
@@ -179,7 +173,6 @@ class Game extends React.Component {
         // If the selected symbol cannot be legally placed in the square, don't allow it
         const legalMovesHistory = history.legalMoves.slice();
         let legalMoves = JSON.parse(JSON.stringify(legalMovesHistory[legalMovesHistory.length - 1]))
-
         if (!(legalMoves[row][column][color][shape])){
             return;
         }
@@ -203,23 +196,22 @@ class Game extends React.Component {
         // Put a token in the square where the token was dropped
         squares[row][column] = new Token(color, shape);
 
-        // update next player color
+        // Update next player color
         let body = document.getElementsByTagName("body")[0];
         body.style.setProperty("--player_color", (this.state.blueIsNext ? "var(--red_color)" : "var(--blue_color)"));
+
         history.squares = squaresHistory.concat([squares])
         history.legalMoves = legalMovesHistory.concat([legalMoves])
         this.setState({
             history: history,
             blueIsNext: !this.state.blueIsNext,
-            // legalMoves: legalMoves,
             hintColor: null,
             hintShape: null,
         });
     }
 
     handleMouseDown = (e, shape) => {
-        let color = (this.state.blueIsNext ? "blue" : "red");
-
+        const color = (this.state.blueIsNext ? "blue" : "red");
         this.setState({
             hintColor: color,
             hintShape: shape,
@@ -236,7 +228,6 @@ class Game extends React.Component {
     handleHintsChange = (event) => {
         const target = event.target;
         const value = target.checked;
-
         this.setState({
             hints: value
         });
@@ -249,10 +240,8 @@ class Game extends React.Component {
         history.squares = squaresHistory;
         history.legalMoves = legalMovesHistory
         const blueIsNext = history.squares.length > 1 ? !(this.state.blueIsNext) : true;
-        // todo duplicated so put in function?
         let body = document.getElementsByTagName("body")[0];
         body.style.setProperty("--player_color", (blueIsNext ? "var(--blue_color)" : "var(--red_color)"));
-
         this.setState({
                 history: history,
                 blueIsNext: blueIsNext,
@@ -277,13 +266,10 @@ class Game extends React.Component {
         )
     }
 
-
     render() {
         const history = this.state.history;
-
         const squaresHistory = history.squares.slice();
         let squares = squaresHistory[squaresHistory.length - 1].slice();
-        // const legalMoves = this.state.legalMoves.slice();
         const legalMovesHistory = history.legalMoves.slice();
         let legalMoves = legalMovesHistory[legalMovesHistory.length - 1].slice();
 
@@ -300,7 +286,7 @@ class Game extends React.Component {
         const redScore = score.red;
         const blueScore = score.blue;
 
-        // If all squares are filled, game over
+        // If all squares are filled, game over todo
         // let status = null;
         // if (allSquaresFilled) {
         //     status = "r"
@@ -348,7 +334,6 @@ class Game extends React.Component {
                         >O
                         </div>
                     </DragDropContainer>
-
                 </div>
                 <div className="score">
                     Score:
@@ -381,7 +366,6 @@ class Game extends React.Component {
                         handleNext={this.handleNext}
                     />
                 </div>
-
             </div>
         );
     }
@@ -389,7 +373,7 @@ class Game extends React.Component {
 
 // ========================================
 
-// ReactDOM.render(<Game />, document.getElementById("root"));
+// ReactDOM.render(<Game />, document.getElementById("root")); todo
 ReactDOM.render(
     (<Game />),
     document.getElementById('root') || document.createElement('div') // for testing purposes
@@ -418,16 +402,20 @@ export function calculateHorizontalScore(grid) {
 }
 
 export function calculateVerticalScore(grid) {
-    // transpose the grid
-    let vertical = grid[0].map(function(col, i){
-        return grid.map(function(row){
-            return row[i];
-        });
-    });
+    // transpose the grid so that the rows become the columns
+    let vertical = transposeGrid(grid);
 
     // Calculate the transposed grid score
     return calculateHorizontalScore(vertical)
+}
 
+export function transposeGrid(grid) {
+    // transpose the grid so that the rows become the columns
+    return (grid[0].map(function(column, i){
+        return grid.map(function(row){
+            return row[i];
+        });
+    }))
 }
 
 export function transposeDiagonalFromLeft(grid) {
@@ -458,12 +446,7 @@ export function transposeDiagonalFromLeft(grid) {
     //     [ 1, 5, N ],
     //     [ 2, N, N ]
     //   ]
-    let diagonalFromLeft = leftShift[0].map(function(col, i){
-        return leftShift.map(function(row){
-            return row[i];
-        });
-    });
-    return diagonalFromLeft
+    return transposeGrid(leftShift)
 }
 
 export function transposeDiagonalFromRight(grid) {
@@ -494,12 +477,7 @@ export function transposeDiagonalFromRight(grid) {
     //     [ 1, 5, N ],
     //     [ 2, N, N ]
     //   ]
-    let diagonalFromRight = rightShift[0].map(function(col, i){
-        return rightShift.map(function(row){
-            return row[i];
-        });
-    });
-    return diagonalFromRight
+    return transposeGrid(rightShift)
 }
 
 export function calculateDiagonalFromLeftScore(grid) {
@@ -531,7 +509,8 @@ export function calculateScore(squares) {
             + diagonalFromLeftScores[key]
             + diagonalFromRightScores[key]
         )
-    };
+    }
+
     return scores;
 }
 
