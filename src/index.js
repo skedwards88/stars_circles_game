@@ -623,7 +623,7 @@ class Game extends React.Component {
                         <div className="token"
                              onMouseDown={(e) => this.handleMouseDown(e, "star")}
                              onMouseUp={(e) => this.handleMouseUp(e)}
-                        >X
+                        >&#8225
                         </div>
                     </DragDropContainer>
                     <DragDropContainer
