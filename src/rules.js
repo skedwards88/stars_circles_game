@@ -187,42 +187,42 @@ class Rule4 extends React.Component {
             <div className="tutorialStep">
                 <div className="tutorial-text">
                     Score a point by getting a 3-in-a-row of your color (symbol doesn't matter).
-                    <div className={"tutorial-board"}>
-                        <div className={"board-row"}>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square red step4_score3"}>O</div>
-                        </div>
-                        <div className={"board-row"}>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square red step4_score3"}>X</div>
-                            <div className={"square"}/>
-                        </div>
-                        <div className={"board-row"}>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square red step4_score3"}>O</div>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                        </div>
-                        <div className={"board-row"}>
-                            <div className={"square blue step4_score1"}>O</div>
-                            <div className={"square blue step4_score12"}>X</div>
-                            <div className={"square blue step4_score12"}>X</div>
-                            <div className={"square blue step4_score2"}>X</div>
-                            <div className={"square"}/>
-                        </div>
-                        <div className={"board-row"}>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                            <div className={"square"}/>
-                        </div>
+                </div>
+                <div className={"tutorial-board"}>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square red step4_score3"}>O</div>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square red step4_score3"}>X</div>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square red step4_score3"}>O</div>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square blue step4_score1"}>O</div>
+                        <div className={"square blue step4_score12"}>X</div>
+                        <div className={"square blue step4_score12"}>X</div>
+                        <div className={"square blue step4_score2"}>X</div>
+                        <div className={"square"}/>
+                    </div>
+                    <div className={"board-row"}>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
+                        <div className={"square"}/>
                     </div>
                 </div>
             </div>
