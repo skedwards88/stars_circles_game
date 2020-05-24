@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3b6c8e09d825856f3796c71ea2f53982",
+    "revision": "3ab9b19131a85096f8c0f673cab5f09f",
     "url": "/stars_circles_game/index.html"
   },
   {
-    "revision": "499bb37ec707c87ecdf2",
+    "revision": "1422499b75d2fe5f5820",
     "url": "/stars_circles_game/static/css/main.936ef687.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stars_circles_game/static/js/2.2c8d813d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "499bb37ec707c87ecdf2",
-    "url": "/stars_circles_game/static/js/main.2920405e.chunk.js"
+    "revision": "1422499b75d2fe5f5820",
+    "url": "/stars_circles_game/static/js/main.1cb56c36.chunk.js"
   },
   {
     "revision": "063368b8c0f2c8e13b6e",
