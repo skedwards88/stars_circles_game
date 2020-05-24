@@ -5,13 +5,6 @@ import './rules.css';
 import Tutorial from './rules.js';
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 
-// accessibility, mobile, style checks
-// const vs let -- can make const squares, then do squares[i] = x, so not const?? can't do squares =x though
-// add tests for react components and interactivity
-// allow grid size to be set
-// bomb
-// add islands
-// auto play?
 
 class Token {
     constructor(color, shape) {
