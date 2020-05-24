@@ -342,6 +342,7 @@ class Board extends React.Component {
             <DropTarget
                 targetKey="token"
                 dropData={{'row':row,'column':column}}
+                key={row + ',' + column}
             >
             <Square
                 shape={square ? square.shape : null}
