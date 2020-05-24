@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/stars_circles_game/static/css/main.68c1cbb0.chunk.css",
-    "main.js": "/stars_circles_game/static/js/main.9792c016.chunk.js",
-    "main.js.map": "/stars_circles_game/static/js/main.9792c016.chunk.js.map",
+    "main.css": "/stars_circles_game/static/css/main.936ef687.chunk.css",
+    "main.js": "/stars_circles_game/static/js/main.2920405e.chunk.js",
+    "main.js.map": "/stars_circles_game/static/js/main.2920405e.chunk.js.map",
     "runtime-main.js": "/stars_circles_game/static/js/runtime-main.b3632ab6.js",
     "runtime-main.js.map": "/stars_circles_game/static/js/runtime-main.b3632ab6.js.map",
-    "static/js/2.2df74d42.chunk.js": "/stars_circles_game/static/js/2.2df74d42.chunk.js",
-    "static/js/2.2df74d42.chunk.js.map": "/stars_circles_game/static/js/2.2df74d42.chunk.js.map",
+    "static/js/2.2c8d813d.chunk.js": "/stars_circles_game/static/js/2.2c8d813d.chunk.js",
+    "static/js/2.2c8d813d.chunk.js.map": "/stars_circles_game/static/js/2.2c8d813d.chunk.js.map",
     "index.html": "/stars_circles_game/index.html",
-    "precache-manifest.c460bfa65c39e1c3f79935d5f8916f55.js": "/stars_circles_game/precache-manifest.c460bfa65c39e1c3f79935d5f8916f55.js",
+    "precache-manifest.3ced394e84f1b59a6b15107785ad3c0d.js": "/stars_circles_game/precache-manifest.3ced394e84f1b59a6b15107785ad3c0d.js",
     "service-worker.js": "/stars_circles_game/service-worker.js",
-    "static/css/main.68c1cbb0.chunk.css.map": "/stars_circles_game/static/css/main.68c1cbb0.chunk.css.map",
-    "static/js/2.2df74d42.chunk.js.LICENSE.txt": "/stars_circles_game/static/js/2.2df74d42.chunk.js.LICENSE.txt"
+    "static/css/main.936ef687.chunk.css.map": "/stars_circles_game/static/css/main.936ef687.chunk.css.map",
+    "static/js/2.2c8d813d.chunk.js.LICENSE.txt": "/stars_circles_game/static/js/2.2c8d813d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b3632ab6.js",
-    "static/js/2.2df74d42.chunk.js",
-    "static/css/main.68c1cbb0.chunk.css",
-    "static/js/main.9792c016.chunk.js"
+    "static/js/2.2c8d813d.chunk.js",
+    "static/css/main.936ef687.chunk.css",
+    "static/js/main.2920405e.chunk.js"
   ]
 }
