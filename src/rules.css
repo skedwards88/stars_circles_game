@@ -18,10 +18,6 @@
     justify-content: center;
 }
 
-.tutorial-board {
-    max-width: 230px;
-    margin: auto;
-}
 
 .tutorial {
     height: 420px;
@@ -40,7 +36,12 @@
     margin: 10px;
 }
 
-.tutorial2_O {
+.tutorial-board {
+    max-width: 230px;
+    margin: auto;
+}
+
+.red_token {
     color: var(--red_color);
 }
 
@@ -52,59 +53,59 @@
     margin: 10px;
 }
 
-.square.tutorial1animation3 {
-    animation: tutorial1animation3 6s infinite;
+.square.step1_square1 {
+    animation: step1_square1 6s infinite;
     animation-timing-function: step-end;
 }
 
-@keyframes tutorial1animation3 {
+@keyframes step1_square1 {
     0% {
         color: transparent;
     }
-    20%,100% {
+    20%, 100% {
         background-color: var(--blue_color);
         color: black;
     }
 }
 
-.square.tutorial1animation4 {
-    animation: tutorial1animation4 6s infinite;
+.square.step1_square2 {
+    animation: step1_square2 6s infinite;
     animation-timing-function: step-end;
 }
 
-@keyframes tutorial1animation4 {
+@keyframes step1_square2 {
     0% {
         color: transparent;
     }
-    50%,100% {
+    50%, 100% {
         background-color: var(--red_color);
         color: black;
     }
 }
 
-.square.tutorial1animation5 {
-    animation: tutorial1animation5 6s infinite;
+.square.step1_square3 {
+    animation: step1_square3 6s infinite;
     animation-timing-function: step-end;
 }
 
-@keyframes tutorial1animation5 {
+@keyframes step1_square3 {
     0% {
         color: transparent;
     }
-    80%,100% {
+    80%, 100% {
         background-color: var(--blue_color);
         color: black;
     }
 }
 
-.square.tutorial1animationX {
-    animation: tutorial1animationX 6s infinite;
+.square.step1_X {
+    animation: step1_X 6s infinite;
     position: relative;
     color: var(--blue_color);
     animation-timing-function: linear;
 }
 
-@keyframes tutorial1animationX {
+@keyframes step1_X {
     0%, 3% {
         transform: translatex(0px) translatey(0px);
         color: var(--blue_color);
@@ -125,31 +126,31 @@
         color: transparent;
         animation-timing-function: step-end;
     }
-    30%,59% {
+    30%, 59% {
         transform: translatex(0px) translatey(0px);
         color: var(--red_color);
         animation-timing-function: step-start;
     }
-    60%,89% {
+    60%, 89% {
         transform: translatex(0px) translatey(0px);
         color: var(--blue_color);
         animation-timing-function: step-start;
     }
-    90%,100% {
+    90%, 100% {
         transform: translatex(0px) translatey(0px);
         color: var(--red_color);
         animation-timing-function: step-start;
     }
 }
 
-.square.tutorial1animationO {
-    animation: tutorial1animationO 6s infinite;
+.square.step1_O {
+    animation: step1_O 6s infinite;
     position: relative;
     animation-timing-function: linear;
     color: var(--blue_color);
 }
 
-@keyframes tutorial1animationO {
+@keyframes step1_O {
     0%, 29% {
         transform: translatex(0px) translatey(0px);
         color: var(--blue_color);
@@ -192,20 +193,20 @@
         color: transparent;
         animation-timing-function: step-end;
     }
-    90%,100% {
+    90%, 100% {
         transform: translatex(0px) translatey(0px);
         color: var(--red_color);
         animation-timing-function: step-start;
     }
 }
 
-.square.tutorial2animationX {
-    animation: tutorial2animationX 2s infinite;
+.square.step2_X {
+    animation: step2_X 2s infinite;
     position: relative;
     color: var(--red_color);
 }
 
-@keyframes tutorial2animationX {
+@keyframes step2_X {
     0%, 4%, 100% {
         transform: translatex(0px) translatey(0px);
     }
@@ -226,7 +227,7 @@
     5%, 20% {
         color: yellow;
     }
-    0%, 21%,100% {
+    0%, 21%, 100% {
         color: black;
     }
 }
@@ -242,7 +243,7 @@
     25%, 45% {
         color: yellow;
     }
-    0%, 46%,100% {
+    0%, 46%, 100% {
         color: black;
     }
 }
@@ -257,7 +258,7 @@
     50%, 75% {
         color: yellow;
     }
-    0%, 76%,100% {
+    0%, 76%, 100% {
         color: black;
     }
 }

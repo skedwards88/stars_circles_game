@@ -16,7 +16,7 @@ class Rule1 extends React.Component {
                         <div className={"square"}/>
                         <div className={"square"}/>
                         <div className={"square"}/>
-                        <div className={"square tutorial1animation4"}>O</div>
+                        <div className={"square step1_square2"}>O</div>
                         <div className={"square"}/>
                     </div>
                     <div className={"board-row"}>
@@ -27,7 +27,7 @@ class Rule1 extends React.Component {
                         <div className={"square"}/>
                     </div>
                     <div className={"board-row"}>
-                        <div className={"square tutorial1animation3"}>X</div>
+                        <div className={"square step1_square1"}>X</div>
                         <div className={"square"}/>
                         <div className={"square"}/>
                         <div className={"square"}/>
@@ -36,7 +36,7 @@ class Rule1 extends React.Component {
                     <div className={"board-row"}>
                         <div className={"square"}/>
                         <div className={"square"}/>
-                        <div className={"square tutorial1animation5"}>O</div>
+                        <div className={"square step1_square3"}>O</div>
                         <div className={"square"}/>
                         <div className={"square"}/>
                     </div>
@@ -49,9 +49,9 @@ class Rule1 extends React.Component {
                     </div>
                     <div className={"board-row"}>
                         <div className={"square tray"}/>
-                        <div className={"square tray tutorial1animationX"}>X</div>
+                        <div className={"square tray step1_X"}>X</div>
                         <div className={"square tray"}/>
-                        <div className={"square tray tutorial1animationO"}>O</div>
+                        <div className={"square tray step1_O"}>O</div>
                         <div className={"square tray"}/>
                     </div>
                 </div>
@@ -108,9 +108,9 @@ class Rule2 extends React.Component {
                     </div>
                     <div className={"board-row"}>
                         <div className={"square tray"}/>
-                        <div className={"square tray tutorial2animationX"}>X</div>
+                        <div className={"square tray step2_X"}>X</div>
                         <div className={"square tray"}/>
-                        <div className={"square tray tutorial2_O"}>O</div>
+                        <div className={"square tray red_token"}>O</div>
                         <div className={"square tray"}/>
                     </div>
                 </div>
@@ -167,9 +167,9 @@ class Rule3 extends React.Component {
                     </div>
                     <div className={"board-row"}>
                         <div className={"square tray"}/>
-                        <div className={"square tray tutorial2_O"}>X</div>
+                        <div className={"square tray red_token"}>X</div>
                         <div className={"square tray"}/>
-                        <div className={"square tray tutorial2_O"}>O</div>
+                        <div className={"square tray red_token"}>O</div>
                         <div className={"square tray"}/>
                     </div>
                 </div>
