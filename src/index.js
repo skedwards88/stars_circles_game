@@ -4,10 +4,7 @@ import './index.css';
 import Modal from './modal';
 import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 
-// remove react cruft
-// rough clean of rules
 // tutorial in separate file?
-// tutorial
 // accessibility, mobile, style checks
 // const vs let -- can make const squares, then do squares[i] = x, so not const?? can't do squares =x though
 // add tests for react components and interactivity
