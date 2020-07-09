@@ -1,9 +1,57 @@
 # Stars and Circles
-A spatial strategy web app game  
-2 Players  
-5 Minutes  
+
+### A spatial strategy web app game  
+Play on mobile or computer at https://skedwards88.github.io/stars_circles_game/ 
+- 2 Players  
+- 5 Minutes    
+
+### Future Additions
+- Modify colors for accessibility
+- Indicate in the rules that the hints can be turned on/off
+- Add the game over condition and win condition to the rules
+- Collect data on first player advantage. Will potentially block off the center square or make the grid 6x6 to reduce first player advantage.
+- Give each player a one-time use bomb that will clear the adjacent (but not diagonally-adjacent) squares
+
+
+### Feedback welcome! 
+This is my first web app, so please let me know how I can improve.
+
+### How to run
 Play on mobile or computer at https://skedwards88.github.io/stars_circles_game/  
+  
+or  
+    
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). In the project directory, you can run:
 
-Feedback welcome! This is my first web app, so please let me know how I can improve.
+#### `yarn start`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
+
+#### `yarn test`
+
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+#### `yarn build`
+
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+#### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
