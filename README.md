@@ -6,11 +6,9 @@ Play on mobile or computer at https://skedwards88.github.io/stars_circles_game/
 - 5 Minutes    
 
 ### Future Additions
-- Modify colors for accessibility
-- Indicate in the rules that the hints can be turned on/off
-- Add the game over condition and win condition to the rules
 - Collect data on first player advantage. Will potentially block off the center square or make the grid 6x6 to reduce first player advantage.
 - Give each player a one-time use bomb that will clear the adjacent (but not diagonally-adjacent) squares
+- Make size dynamic based on device
 
 
 ### Feedback welcome! 
