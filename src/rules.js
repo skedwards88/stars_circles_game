@@ -279,7 +279,7 @@ function PreviousButton(props) {
             <button onClick={props.handlePrevious}>Previous</button>
         )
     }
-    return <div/>;
+    return <button disabled>Previous</button>;
 }
 
 function NextButton(props) {
@@ -288,7 +288,7 @@ function NextButton(props) {
             <button onClick={props.handleNext}>Next</button>
         )
     }
-    return <div/>;
+    return <button disabled>Next</button>;
 }
 
 function Tutorial(props) {

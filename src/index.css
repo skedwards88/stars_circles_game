@@ -26,7 +26,7 @@ body {
 }
 
 button {
-    margin-right: 10px;
+    margin: 0 5px;
     border-radius: 5px;
     font-family: inherit;
     background-color: lightgrey;
