@@ -48,7 +48,7 @@ h2 {
 .game {
     display: flex;
     flex-direction: column;
-    max-width: 250px;
+    max-width: 225px;
 }
 
 .board {
