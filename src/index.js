@@ -132,7 +132,7 @@ class Game extends React.Component {
     handleHide() {
         this.setState({
             showRules: false,
-            currentStep: 1
+            currentRule: 1
         });
     }
 
