@@ -15,9 +15,6 @@ const rules = [
     </div>,
 
     <div className="tutorialStep">
-        <div className="tutorial-text">
-            Players take turns dragging a symbol (X or O) of their color onto the board.
-        </div>
         <div className={"tutorial-board"}>
             <div className={"board-row"}>
                 <div className={"square"}/>
@@ -62,13 +59,12 @@ const rules = [
                 <div className={"square tray"}/>
             </div>
         </div>
+        <div className="tutorial-text">
+            Players take turns dragging a symbol (X or O) of their color onto the board.
+        </div>
     </div>,
 
     <div className="tutorialStep">
-        <div className="tutorial-text">
-            <div>Matching symbols of opposite color cannot be placed adjacent or diagonal to each other.</div>
-            <div>(Turn hints on/off to show/hide legal moves.)</div>
-        </div>
         <div className={"tutorial-board"}>
             <div className={"board-row"}>
                 <div className={"square"}/>
@@ -113,12 +109,13 @@ const rules = [
                 <div className={"square tray"}/>
             </div>
         </div>
+        <div className="tutorial-text">
+            <div>Matching symbols of opposite color cannot be placed adjacent or diagonal to each other.</div>
+            <div>(Turn hints on/off to show/hide legal moves.)</div>
+        </div>
     </div>,
 
     <div className="tutorialStep">
-        <div className="tutorial-text">
-            When no symbol can be placed in a square, the square is blacked out.
-        </div>
         <div className={"tutorial-board"}>
             <div className={"board-row"}>
                 <div className={"square"}/>
@@ -163,12 +160,12 @@ const rules = [
                 <div className={"square tray"}/>
             </div>
         </div>
+        <div className="tutorial-text">
+            When no symbol can be placed in a square, the square is blacked out.
+        </div>
     </div>,
 
     <div className="tutorialStep">
-        <div className="tutorial-text">
-            Score a point by getting a 3-in-a-row of your color (symbol doesn't matter).
-        </div>
         <div className={"tutorial-board"}>
             <div className={"board-row"}>
                 <div className={"square"}/>
@@ -206,13 +203,12 @@ const rules = [
                 <div className={"square"}/>
             </div>
         </div>
+        <div className="tutorial-text">
+            Score a point by getting a 3-in-a-row of your color (symbol doesn't matter).
+        </div>
     </div>,
 
     <div className="tutorialStep">
-        <div className="tutorial-text">
-            <div>The game ends when one player cannot make any more moves.</div>
-            <div>Any remaining moves for the other player will complete automatically.</div>
-        </div>
     <div className={"tutorial-board"}>
         <div className={"board-row"}>
             <div className={"square red"}>X</div>
@@ -250,6 +246,11 @@ const rules = [
             <div className={"square blue"}>X</div>
         </div>
     </div>
+        <div className="tutorial-text">
+            <div>The game ends when one player cannot make any more moves.</div>
+            <div>Any remaining moves for the other player will complete automatically.</div>
+        </div>
+
     </div>,
 
     <div className="tutorialStep">
@@ -302,7 +303,6 @@ function Tutorial(props) {
             <Modal>
                 <div className="modal">
                     <div className="tutorial">
-                        {ruleDisplay}
                         <div className="tutorial-navigation">
                             <PreviousButton
                                 currentRule={props.currentRule}
@@ -316,6 +316,7 @@ function Tutorial(props) {
                             />
                             <button onClick={props.handleHide}>Exit</button>
                         </div>
+                        {ruleDisplay}
                     </div>
                 </div>
             </Modal>
