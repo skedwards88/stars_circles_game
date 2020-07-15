@@ -278,3 +278,15 @@
         color: black;
     }
 }
+
+.step_ends_auto {
+    animation: step_ends_auto 3s infinite;
+    position: relative;
+    animation-timing-function: step-end;
+}
+
+@keyframes step_ends_auto {
+    50%,100% {
+        background-color: var(--blue_color);
+    }
+}

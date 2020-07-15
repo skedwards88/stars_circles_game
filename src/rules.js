@@ -4,6 +4,18 @@ import Modal from "./modal";
 const rules = [
     <div className="tutorialStep">
         <div className="tutorial-text">
+            <div>A spatial strategy game</div>
+            <br/>
+            <div>2 Players</div>
+            <div>5 Minutes</div>
+            <br/>
+            <div>Game by Colin Thom</div>
+            <div>Built by Sarah Edwards</div>
+        </div>
+    </div>,
+
+    <div className="tutorialStep">
+        <div className="tutorial-text">
             Players take turns dragging a symbol (X or O) of their color onto the board.
         </div>
         <div className={"tutorial-board"}>
@@ -54,7 +66,8 @@ const rules = [
 
     <div className="tutorialStep">
         <div className="tutorial-text">
-            Matching symbols of opposite color cannot be placed adjacent or diagonal to each other.
+            <div>Matching symbols of opposite color cannot be placed adjacent or diagonal to each other.</div>
+            <div>(Turn hints on/off to show/hide legal moves.)</div>
         </div>
         <div className={"tutorial-board"}>
             <div className={"board-row"}>
@@ -193,7 +206,58 @@ const rules = [
                 <div className={"square"}/>
             </div>
         </div>
+    </div>,
+
+    <div className="tutorialStep">
+        <div className="tutorial-text">
+            <div>The game ends when one player cannot make any more moves.</div>
+            <div>Any remaining moves for the other player will complete automatically.</div>
+        </div>
+    <div className={"tutorial-board"}>
+        <div className={"board-row"}>
+            <div className={"square red"}>X</div>
+            <div className={"square step_ends_auto"}/>
+            <div className={"square blue"}>X</div>
+            <div className={"square step_ends_auto"}/>
+            <div className={"square red"}>X</div>
+        </div>
+        <div className={"board-row"}>
+            <div className={"square blue"}>O</div>
+            <div className={"square blue"}>O</div>
+            <div className={"square blue"}>X</div>
+            <div className={"square step_ends_auto"}/>
+            <div className={"square blue"}>O</div>
+        </div>
+        <div className={"board-row"}>
+            <div className={"square red"}>X</div>
+            <div className={"square black"}/>
+            <div className={"square blue"}>X</div>
+            <div className={"square black"}/>
+            <div className={"square red"}>X</div>
+        </div>
+        <div className={"board-row"}>
+            <div className={"square red"}>O</div>
+            <div className={"square red"}>O</div>
+            <div className={"square blue"}>X</div>
+            <div className={"square red"}>O</div>
+            <div className={"square red"}>O</div>
+        </div>
+        <div className={"board-row"}>
+            <div className={"square blue"}>X</div>
+            <div className={"square blue"}>X</div>
+            <div className={"square red"}>O</div>
+            <div className={"square red"}>O</div>
+            <div className={"square blue"}>X</div>
+        </div>
     </div>
+    </div>,
+
+    <div className="tutorialStep">
+        <div className="tutorial-text">
+            <div>The player with the most points wins!</div>
+        </div>
+    </div>,
+
 ];
 
 class Rule extends React.Component {

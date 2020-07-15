@@ -289,8 +289,6 @@ class Game extends React.Component {
             <div className="game">
                 <div className="title">
                     <h1>Stars and Circles</h1>
-                    <h2>Game by Colin Thom</h2>
-                    <h2>Built by Sarah Edwards</h2>
                 </div>
                 <div className="game-board">
                     <Board
