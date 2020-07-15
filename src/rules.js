@@ -209,43 +209,43 @@ const rules = [
     </div>,
 
     <div className="tutorialStep">
-    <div className={"tutorial-board"}>
-        <div className={"board-row"}>
-            <div className={"square red"}>X</div>
-            <div className={"square step_ends_auto"}/>
-            <div className={"square blue"}>X</div>
-            <div className={"square step_ends_auto"}/>
-            <div className={"square red"}>X</div>
+        <div className={"tutorial-board"}>
+            <div className={"board-row"}>
+                <div className={"square red"}>X</div>
+                <div className={"square step_ends_auto"}/>
+                <div className={"square blue"}>X</div>
+                <div className={"square step_ends_auto"}/>
+                <div className={"square red"}>X</div>
+            </div>
+            <div className={"board-row"}>
+                <div className={"square blue"}>O</div>
+                <div className={"square blue"}>O</div>
+                <div className={"square blue"}>X</div>
+                <div className={"square step_ends_auto"}/>
+                <div className={"square blue"}>O</div>
+            </div>
+            <div className={"board-row"}>
+                <div className={"square red"}>X</div>
+                <div className={"square black"}/>
+                <div className={"square blue"}>X</div>
+                <div className={"square black"}/>
+                <div className={"square red"}>X</div>
+            </div>
+            <div className={"board-row"}>
+                <div className={"square red"}>O</div>
+                <div className={"square red"}>O</div>
+                <div className={"square blue"}>X</div>
+                <div className={"square red"}>O</div>
+                <div className={"square red"}>O</div>
+            </div>
+            <div className={"board-row"}>
+                <div className={"square blue"}>X</div>
+                <div className={"square blue"}>X</div>
+                <div className={"square red"}>O</div>
+                <div className={"square red"}>O</div>
+                <div className={"square blue"}>X</div>
+            </div>
         </div>
-        <div className={"board-row"}>
-            <div className={"square blue"}>O</div>
-            <div className={"square blue"}>O</div>
-            <div className={"square blue"}>X</div>
-            <div className={"square step_ends_auto"}/>
-            <div className={"square blue"}>O</div>
-        </div>
-        <div className={"board-row"}>
-            <div className={"square red"}>X</div>
-            <div className={"square black"}/>
-            <div className={"square blue"}>X</div>
-            <div className={"square black"}/>
-            <div className={"square red"}>X</div>
-        </div>
-        <div className={"board-row"}>
-            <div className={"square red"}>O</div>
-            <div className={"square red"}>O</div>
-            <div className={"square blue"}>X</div>
-            <div className={"square red"}>O</div>
-            <div className={"square red"}>O</div>
-        </div>
-        <div className={"board-row"}>
-            <div className={"square blue"}>X</div>
-            <div className={"square blue"}>X</div>
-            <div className={"square red"}>O</div>
-            <div className={"square red"}>O</div>
-            <div className={"square blue"}>X</div>
-        </div>
-    </div>
         <div className="tutorial-text">
             <div>The game ends when one player cannot make any more moves.</div>
             <div>Any remaining moves for the other player will complete automatically.</div>

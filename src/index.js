@@ -28,8 +28,8 @@ function Square(props) {
     }
     return (
         <div className={tokenName}
-                onDragOver={props.onDragOver}
-                onDrop={props.onDrop}>
+             onDragOver={props.onDragOver}
+             onDrop={props.onDrop}>
             {symbol}
         </div>
     );
@@ -46,17 +46,17 @@ class Board extends React.Component {
                 dropData={{'row':row, 'column':column}}
                 key={row + ',' + column}
             >
-            <Square
-                shape={square ? square.shape : null}
-                color={square ? square.color : null}
-                key={row + ',' + column}
-                row={row}
-                column={column}
-                legalMove = {this.props.legalMoves[row][column]}
-                hintShape = {this.props.hintShape}
-                hintColor = {this.props.hintColor}
-                hints={this.props.hints}
-            />
+                <Square
+                    shape={square ? square.shape : null}
+                    color={square ? square.color : null}
+                    key={row + ',' + column}
+                    row={row}
+                    column={column}
+                    legalMove = {this.props.legalMoves[row][column]}
+                    hintShape = {this.props.hintShape}
+                    hintColor = {this.props.hintColor}
+                    hints={this.props.hints}
+                />
             </DropTarget>
         );
     }
@@ -137,7 +137,7 @@ class Game extends React.Component {
     }
 
     handlePrevious() {
-        let currentRule = this.state.currentRule
+        let currentRule = this.state.currentRule;
         currentRule =  currentRule - 1;
         this.setState({currentRule: currentRule});
     }
@@ -158,14 +158,14 @@ class Game extends React.Component {
         let shape = e.dragData.shape;
         let history = this.state.history;
         const squaresHistory = history.squares.slice();
-        let squares = squaresHistory[squaresHistory.length - 1].map(a => {return a.slice()})
+        let squares = squaresHistory[squaresHistory.length - 1].map(a => {return a.slice()});
         let color = (this.state.blueIsNext ? "blue" : "red");
         let converseShape = (shape === "star" ? "circle" : "star");
         let converseColor = (this.state.blueIsNext ? "red" : "blue");
 
         // If the selected symbol cannot be legally placed in the square, don't allow it
         const legalMovesHistory = history.legalMoves.slice();
-        let legalMoves = JSON.parse(JSON.stringify(legalMovesHistory[legalMovesHistory.length - 1]))
+        let legalMoves = JSON.parse(JSON.stringify(legalMovesHistory[legalMovesHistory.length - 1]));
         if (!(legalMoves[row][column][color][shape])){
             return;
         }
@@ -193,8 +193,8 @@ class Game extends React.Component {
         let body = document.getElementsByTagName("body")[0];
         body.style.setProperty("--player_color", (this.state.blueIsNext ? "var(--red_color)" : "var(--blue_color)"));
 
-        history.squares = squaresHistory.concat([squares])
-        history.legalMoves = legalMovesHistory.concat([legalMoves])
+        history.squares = squaresHistory.concat([squares]);
+        history.legalMoves = legalMovesHistory.concat([legalMoves]);
         this.setState({
             history: history,
             blueIsNext: !this.state.blueIsNext,
@@ -209,14 +209,14 @@ class Game extends React.Component {
             hintColor: color,
             hintShape: shape,
         });
-    }
+    };
 
     handleMouseUp = (e) => {
         this.setState({
             hintColor: null,
             hintShape: null,
         });
-    }
+    };
 
     handleHintsChange = (event) => {
         const target = event.target;
@@ -224,14 +224,14 @@ class Game extends React.Component {
         this.setState({
             hints: value
         });
-    }
+    };
 
     handleUndo = (event) => {
         let history = this.state.history;
         const squaresHistory = history.squares.length > 1 ? history.squares.slice(0,-1) : history.squares.slice();
         const legalMovesHistory = history.legalMoves.length >1 ? history.legalMoves.slice(0,-1) : history.legalMoves.slice();
         history.squares = squaresHistory;
-        history.legalMoves = legalMovesHistory
+        history.legalMoves = legalMovesHistory;
         const blueIsNext = history.squares.length > 1 ? !(this.state.blueIsNext) : true;
         let body = document.getElementsByTagName("body")[0];
         body.style.setProperty("--player_color", (blueIsNext ? "var(--blue_color)" : "var(--red_color)"));
@@ -240,14 +240,14 @@ class Game extends React.Component {
                 blueIsNext: blueIsNext,
             }
         )
-    }
+    };
 
     handleNewGame = (event) => {
         let history = this.state.history;
         const squaresHistory = history.squares.slice(0,1);
         const legalMovesHistory = history.legalMoves.slice(0,1);
         history.squares = squaresHistory;
-        history.legalMoves = legalMovesHistory
+        history.legalMoves = legalMovesHistory;
         let body = document.getElementsByTagName("body")[0];
         body.style.setProperty("--player_color", "var(--blue_color)");
         this.setState({
@@ -257,7 +257,7 @@ class Game extends React.Component {
                 hintShape: null,
             }
         )
-    }
+    };
 
     render() {
         const history = this.state.history;
