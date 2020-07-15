@@ -8,12 +8,12 @@ body {
     font-weight: bold;
     font-family: "Century Gothic", Futura, sans-serif;
     margin: 20px;
-    --player_color: var(--blue_color);
-    --blue_color: rgb(0,139,139);
-    --blue_color_hint: rgba(0,139,139, 0.3);
-    --red_color: rgb(220,20,60);
-    --red_color_hint: rgba(220,20,60, 0.3);
+    --blue_color: rgb(94, 172, 181);
+    --blue_color_hint: rgba(94, 172, 181, 0.3);
+    --red_color: rgb(173, 107, 71);
+    --red_color_hint: rgba(173, 107, 71, 0.3);
     --black_color: rgb(0,0,0);
+    --player_color: var(--blue_color);
     --square-height: 44px;
     display: table-cell;
     vertical-align: middle;
