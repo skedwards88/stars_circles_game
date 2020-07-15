@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/stars_circles_game/static/css/main.936ef687.chunk.css",
-    "main.js": "/stars_circles_game/static/js/main.14cc57ac.chunk.js",
-    "main.js.map": "/stars_circles_game/static/js/main.14cc57ac.chunk.js.map",
-    "runtime-main.js": "/stars_circles_game/static/js/runtime-main.b3632ab6.js",
-    "runtime-main.js.map": "/stars_circles_game/static/js/runtime-main.b3632ab6.js.map",
-    "static/js/2.2c8d813d.chunk.js": "/stars_circles_game/static/js/2.2c8d813d.chunk.js",
-    "static/js/2.2c8d813d.chunk.js.map": "/stars_circles_game/static/js/2.2c8d813d.chunk.js.map",
+    "main.css": "/stars_circles_game/static/css/main.79c80209.chunk.css",
+    "main.js": "/stars_circles_game/static/js/main.8d12cc74.chunk.js",
+    "main.js.map": "/stars_circles_game/static/js/main.8d12cc74.chunk.js.map",
+    "runtime-main.js": "/stars_circles_game/static/js/runtime-main.ffb112f9.js",
+    "runtime-main.js.map": "/stars_circles_game/static/js/runtime-main.ffb112f9.js.map",
+    "static/js/2.8db856c0.chunk.js": "/stars_circles_game/static/js/2.8db856c0.chunk.js",
+    "static/js/2.8db856c0.chunk.js.map": "/stars_circles_game/static/js/2.8db856c0.chunk.js.map",
     "index.html": "/stars_circles_game/index.html",
-    "precache-manifest.a256f1827f95e31264c0342f26868f08.js": "/stars_circles_game/precache-manifest.a256f1827f95e31264c0342f26868f08.js",
+    "precache-manifest.be6e68f72d0070127684681fb32a39b1.js": "/stars_circles_game/precache-manifest.be6e68f72d0070127684681fb32a39b1.js",
     "service-worker.js": "/stars_circles_game/service-worker.js",
-    "static/css/main.936ef687.chunk.css.map": "/stars_circles_game/static/css/main.936ef687.chunk.css.map",
-    "static/js/2.2c8d813d.chunk.js.LICENSE.txt": "/stars_circles_game/static/js/2.2c8d813d.chunk.js.LICENSE.txt"
+    "static/css/main.79c80209.chunk.css.map": "/stars_circles_game/static/css/main.79c80209.chunk.css.map",
+    "static/js/2.8db856c0.chunk.js.LICENSE.txt": "/stars_circles_game/static/js/2.8db856c0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b3632ab6.js",
-    "static/js/2.2c8d813d.chunk.js",
-    "static/css/main.936ef687.chunk.css",
-    "static/js/main.14cc57ac.chunk.js"
+    "static/js/runtime-main.ffb112f9.js",
+    "static/js/2.8db856c0.chunk.js",
+    "static/css/main.79c80209.chunk.css",
+    "static/js/main.8d12cc74.chunk.js"
   ]
 }
