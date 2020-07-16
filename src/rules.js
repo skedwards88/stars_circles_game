@@ -152,13 +152,6 @@ const rules = [
                 <div className={"square"}/>
                 <div className={"square"}/>
             </div>
-            <div className={"board-row"}>
-                <div className={"square tray"}/>
-                <div className={"square tray red_token"}>X</div>
-                <div className={"square tray"}/>
-                <div className={"square tray red_token"}>O</div>
-                <div className={"square tray"}/>
-            </div>
         </div>
         <div className="tutorial-text">
             When no symbol can be placed in a square, the square is blacked out.
