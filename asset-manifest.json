@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/stars_circles_game/static/css/main.d5914e49.chunk.css",
-    "main.js": "/stars_circles_game/static/js/main.b2575a8f.chunk.js",
-    "main.js.map": "/stars_circles_game/static/js/main.b2575a8f.chunk.js.map",
+    "main.js": "/stars_circles_game/static/js/main.aab8c588.chunk.js",
+    "main.js.map": "/stars_circles_game/static/js/main.aab8c588.chunk.js.map",
     "runtime-main.js": "/stars_circles_game/static/js/runtime-main.ffb112f9.js",
     "runtime-main.js.map": "/stars_circles_game/static/js/runtime-main.ffb112f9.js.map",
     "static/js/2.8db856c0.chunk.js": "/stars_circles_game/static/js/2.8db856c0.chunk.js",
     "static/js/2.8db856c0.chunk.js.map": "/stars_circles_game/static/js/2.8db856c0.chunk.js.map",
     "index.html": "/stars_circles_game/index.html",
-    "precache-manifest.b383de6731b780e7d56d1108620b2753.js": "/stars_circles_game/precache-manifest.b383de6731b780e7d56d1108620b2753.js",
+    "precache-manifest.43f274940a71bfe16fe5e29d3d1c5447.js": "/stars_circles_game/precache-manifest.43f274940a71bfe16fe5e29d3d1c5447.js",
     "service-worker.js": "/stars_circles_game/service-worker.js",
     "static/css/main.d5914e49.chunk.css.map": "/stars_circles_game/static/css/main.d5914e49.chunk.css.map",
     "static/js/2.8db856c0.chunk.js.LICENSE.txt": "/stars_circles_game/static/js/2.8db856c0.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ffb112f9.js",
     "static/js/2.8db856c0.chunk.js",
     "static/css/main.d5914e49.chunk.css",
-    "static/js/main.b2575a8f.chunk.js"
+    "static/js/main.aab8c588.chunk.js"
   ]
 }
