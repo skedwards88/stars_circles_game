@@ -9,8 +9,10 @@ const rules = [
             <div>2 Players</div>
             <div>5 Minutes</div>
             <br/>
-            <div>Game by Colin Thom</div>
+            <div>Designed by Colin Thom</div>
             <div>Built by Sarah Edwards</div>
+            <div>Want more games?\nVisit <a href="https://skedwards88.github.io/portfolio/">CnS Games</a></div>
+            <div>Version 2.0</div>
         </div>
     </div>,
 
