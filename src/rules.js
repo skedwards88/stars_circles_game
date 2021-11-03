@@ -29,25 +29,25 @@ const ruleData = [
   {
     text: "Matching symbols of opposite color cannot be placed adjacent or diagonal to each other. (Turn hints on/off to show/hide legal moves.)\n\nIn this example, a blue circle can only be placed in the highlighted squares, but a blue star could be placed anywhere.",
     squares: squares([
-      { index: 0, color: "blueHint", symbol: "" },
-      { index: 1, color: "blueHint", symbol: "" },
-      { index: 2, color: "blueHint", symbol: "" },
-      { index: 3, color: "blueHint", symbol: "" },
-      { index: 4, color: "blueHint", symbol: "" },
-      { index: 5, color: "blueHint", symbol: "" },
-      { index: 6, color: "blueHint", symbol: "" },
-      { index: 7, color: "blueHint", symbol: "" },
-      { index: 8, color: "blueHint", symbol: "" },
-      { index: 9, color: "blueHint", symbol: "" },
-      { index: 10, color: "blueHint", symbol: "" },
-      { index: 11, color: "blueHint", symbol: "" },
-      { index: 12, color: "blueHint", symbol: "" },
-      { index: 13, color: "blueHint", symbol: "" },
-      { index: 14, color: "blueHint", symbol: "" },
-      { index: 15, color: "blueHint", symbol: "" },
-      { index: 19, color: "blueHint", symbol: "" },
-      { index: 20, color: "blueHint", symbol: "" },
-      { index: 24, color: "blueHint", symbol: "" },
+      { index: 0, color: "blue-hint", symbol: "" },
+      { index: 1, color: "blue-hint", symbol: "" },
+      { index: 2, color: "blue-hint", symbol: "" },
+      { index: 3, color: "blue-hint", symbol: "" },
+      { index: 4, color: "blue-hint", symbol: "" },
+      { index: 5, color: "blue-hint", symbol: "" },
+      { index: 6, color: "blue-hint", symbol: "" },
+      { index: 7, color: "blue-hint", symbol: "" },
+      { index: 8, color: "blue-hint", symbol: "" },
+      { index: 9, color: "blue-hint", symbol: "" },
+      { index: 10, color: "blue-hint", symbol: "" },
+      { index: 11, color: "blue-hint", symbol: "" },
+      { index: 12, color: "blue-hint", symbol: "" },
+      { index: 13, color: "blue-hint", symbol: "" },
+      { index: 14, color: "blue-hint", symbol: "" },
+      { index: 15, color: "blue-hint", symbol: "" },
+      { index: 19, color: "blue-hint", symbol: "" },
+      { index: 20, color: "blue-hint", symbol: "" },
+      { index: 24, color: "blue-hint", symbol: "" },
       { index: 22, color: "red", symbol: "circle" },
     ]),
   },
@@ -81,7 +81,7 @@ const ruleData = [
 function renderBoard(squares) {
   if (squares) {
     const squareDivs = squares.map((square, index) => {
-      let classes = ["tutorialSquare"];
+      let classes = ["tutorial-square"];
 
       if (square.symbol) {
         classes.push(square.symbol);
@@ -95,7 +95,7 @@ function renderBoard(squares) {
       return <div key={index} className={className}></div>;
     });
 
-    return <div id="tutorialBoard">{squareDivs}</div>;
+    return <div id="tutorial-board">{squareDivs}</div>;
   } else {
     return null;
   }
@@ -103,14 +103,14 @@ function renderBoard(squares) {
 
 const rulesJSX = ruleData.map(rule => {
   return <>
-  <div id="rulesText">{rule.text}</div>
+  <div className="rules-text">{rule.text}</div>
    {renderBoard(rule.squares)}
 </>
 })
 
 
 const infoJSX = <>
-<div id="rulesText">{`Stars and Circles\nVersion 2.0\n\nA spatial strategy game\n\n2 Players\n5 Minutes\n\nDesigned by Colin\nBuilt by Sarah\n\nWant more games?\nVisit `}<a href="https://skedwards88.github.io/portfolio/">CnS Games</a></div>
+<div className="rules-text">{`Stars and Circles\nVersion 2.0\n\nA spatial strategy game\n\n2 Players\n5 Minutes\n\nDesigned by Colin\nBuilt by Sarah\n\nWant more games?\nVisit `}<a href="https://skedwards88.github.io/portfolio/">CnS Games</a></div>
 </>
 
 export const rules = [infoJSX, ...rulesJSX]

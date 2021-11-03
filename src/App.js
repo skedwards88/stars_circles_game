@@ -39,7 +39,7 @@ function Board({ squares, playerColor, showHints, hintShape, dropToken }) {
     ) {
       classes.push("black");
     } else if (showHints && hintShape && square.valid[playerColor][hintShape]) {
-      classes.push(`${playerColor}Hint`);
+      classes.push(`${playerColor}-hint`);
     }
 
     const className = classes.join(" ");
@@ -209,14 +209,14 @@ function NewGameSettings({
   const ref = React.useRef();
   React.useEffect(() => {
     ref.current.parentElement.parentElement.style.setProperty(
-      "--num_columns",
+      "--num-columns",
       `${selectedGridSize}`
     );
 
     // todo I'm not sure if useRef is better than document.getElementById when you want a parent
     //    Creating the ref in the parent fails, but forwardRef might be a solution
-    // const node = document.getElementById("App");
-    // node.style.setProperty("--num_columns", `${selectedGridSize}`);
+    // const node = document.getElementById("app");
+    // node.style.setProperty("--num-columns", `${selectedGridSize}`);
   }, [selectedGridSize]);
 
   if (showNewGameSettings) {
@@ -224,7 +224,7 @@ function NewGameSettings({
       <form className="modal" onSubmit={handleNewGame}>
         <div id="settings">
           <div className="setting">
-            <div className="settingDescription">
+            <div className="setting-description">
               <label htmlFor="gridSize">Grid size</label>
             </div>
             <select id="gridSize" defaultValue={currentGridSize}>
@@ -235,9 +235,9 @@ function NewGameSettings({
           </div>
 
           <div className="setting">
-            <div className="settingDescription">
+            <div className="setting-description">
               <label htmlFor="hints">Hints </label>
-              <div className="settingInfo">Highlight valid moves</div>
+              <div className="setting-info">Highlight valid moves</div>
             </div>
 
             <input
@@ -249,9 +249,9 @@ function NewGameSettings({
           </div>
 
           <div className="setting">
-            <div className="settingDescription">
+            <div className="setting-description">
               <label htmlFor="islands">Islands</label>
-              <div className="settingInfo">
+              <div className="setting-info">
                 Start the game with blacked out spaces (coming soon)
               </div>
             </div>
@@ -259,9 +259,9 @@ function NewGameSettings({
           </div>
 
           <div className="setting">
-            <div className="settingDescription">
+            <div className="setting-description">
               <label htmlFor="bombs">Bombs</label>
-              <div className="settingInfo">
+              <div className="setting-info">
                 Give each player a single-use bomb to clear one spot on the
                 board (coming soon)
               </div>
@@ -269,7 +269,7 @@ function NewGameSettings({
             <input name="bombs" type="checkbox" disabled />
           </div>
         </div>
-        <div id="newGameButtons">
+        <div id="new-game-buttons">
           <button type="submit">New Game</button>
           <button type="button" onClick={() => setShowNewGameSettings(false)}>
             Cancel
@@ -281,7 +281,7 @@ function NewGameSettings({
     return (
       <button
         ref={ref}
-        id="newGame"
+        id="new-game"
         onClick={() => setShowNewGameSettings(true)}
       ></button>
     );
@@ -298,8 +298,8 @@ function Score({ playHistory }) {
 
   return (
     <div id="score">
-      <div id="redScore">{`Red: ${redScore}`}</div>
-      <div id="blueScore">{`Blue: ${blueScore}`}</div>
+      <div id="red-score">{`Red: ${redScore}`}</div>
+      <div id="blue-score">{`Blue: ${blueScore}`}</div>
     </div>
   );
 }
@@ -331,9 +331,9 @@ function Rules() {
   
   if (showRules) {
     return (
-      <div className="modal" id="rulesModal">
+      <div className="modal" id="rules-modal">
         {rules[currentRule]}
-        <div id="ruleNavigation">
+        <div id="rule-navigation">
           <button
             disabled={!currentRule}
             onClick={() => setCurrentRule(currentRule - 1)}
@@ -352,7 +352,7 @@ function Rules() {
     );
   } else {
     return (
-      <button id="rulesButton" onClick={() => setShowRules(true)}></button>
+      <button id="rules-button" onClick={() => setShowRules(true)}></button>
     );
   }
 }
@@ -378,7 +378,7 @@ function App() {
   const [showHints, setShowHints] = React.useState(true);
 
   return (
-    <div id="App">
+    <div id="app">
       <Game
         playHistory={playHistory}
         setPlayHistory={setPlayHistory}
