@@ -263,8 +263,14 @@ function NewGameSettings({
           </div>
         </div>
         <div id="setting-buttons">
-          <button type="submit" aria-label="new game">New Game</button>
-          <button type="button" aria-label="cancel" onClick={() => setShowNewGameSettings(false)}>
+          <button type="submit" aria-label="new game">
+            New Game
+          </button>
+          <button
+            type="button"
+            aria-label="cancel"
+            onClick={() => setShowNewGameSettings(false)}
+          >
             Cancel
           </button>
         </div>
@@ -330,13 +336,15 @@ function Rules() {
         {rules[currentRule]}
         <div id="rule-navigation">
           <button
-           aria-label="previous rule"
+            aria-label="previous rule"
             disabled={!currentRule}
             onClick={() => setCurrentRule(currentRule - 1)}
           >
             Previous
           </button>
-          <button onClick={closeRules} aria-label="close rules">Close</button>
+          <button onClick={closeRules} aria-label="close rules">
+            Close
+          </button>
           <button
             aria-label="next rule"
             disabled={currentRule === rules.length - 1}
@@ -349,7 +357,11 @@ function Rules() {
     );
   } else {
     return (
-      <button id="rules-button" aria-label="rules" onClick={() => setShowRules(true)}></button>
+      <button
+        id="rules-button"
+        aria-label="rules"
+        onClick={() => setShowRules(true)}
+      ></button>
     );
   }
 }
