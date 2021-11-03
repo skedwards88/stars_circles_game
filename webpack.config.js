@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const WorkboxPlugin = require("workbox-webpack-plugin");
-// const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -39,31 +39,30 @@ module.exports = {
       // Need to use template because need 'root' div for react injection. templateContent doesn't play nice with title, so just use a template file instead.
       template: "./src/index.html",
     }),
-    // new WorkboxPlugin.GenerateSW({
-    //   // these options encourage the ServiceWorkers to get in there fast
-    //   // and not allow any straggling "old" SWs to hang around
-    //   clientsClaim: true,
-    //   skipWaiting: true,
-    // }),
-  //   new FaviconsWebpackPlugin({
-  //     logo: "./src/images/favicon.png",
-  //     mode: "webapp", // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
-  //     devMode: "webapp", // optional can be 'webapp' or 'light' - 'light' by default
-  //     favicons: {
-  //       appName: "App name",
-  //       short_name: "Short app name",
-  //       start_url: "../.",
-  //       appDescription: "App description",
-  //       display: "standalone",
-  //       developerName: "skedwards88",
-  //       developerURL: null, // prevent retrieving from the nearest package.json
-  //       background: "#F1F0F0",
-  //       theme_color: "#6e799e",
-  //       icons: {
-  //         coast: false,
-  //         yandex: false,
-  //       },
-  //     },
-  //   }),
+    new WorkboxPlugin.GenerateSW({
+      // these options encourage the ServiceWorkers to get in there fast
+      // and not allow any straggling "old" SWs to hang around
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
+    new FaviconsWebpackPlugin({
+      logo: "./src/images/favicon.png",
+      mode: "webapp", // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
+      devMode: "webapp", // optional can be 'webapp' or 'light' - 'light' by default
+      favicons: {
+        appName: "Stars and Circles",
+        start_url: "../.",
+        appDescription: "A spatial strategy game",
+        display: "standalone",
+        developerName: "skedwards88",
+        developerURL: null, // prevent retrieving from the nearest package.json
+        background: "#5eacb5",
+        theme_color: "#5eacb5",
+        icons: {
+          coast: false,
+          yandex: false,
+        },
+      },
+    }),
   ],
 };
