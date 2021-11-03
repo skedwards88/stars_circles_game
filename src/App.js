@@ -14,13 +14,6 @@ polyfill({
   dragImageCenterOnTouch: true,
 });
 
-// todo
-// make sure works on various width/orientation
-// add tests for getSurroundingIndexes and other helpers
-// local storage
-// figure out "is missing in props validation" in eslint react plugin
-// make the alert when no choices left nicer
-
 function Board({ squares, playerColor, showHints, hintShape, dropToken }) {
   const board = squares.map((square, index) => {
     let classes = ["square"];
@@ -269,7 +262,7 @@ function NewGameSettings({
             <input name="bombs" type="checkbox" disabled />
           </div>
         </div>
-        <div id="new-game-buttons">
+        <div id="setting-buttons">
           <button type="submit">New Game</button>
           <button type="button" onClick={() => setShowNewGameSettings(false)}>
             Cancel

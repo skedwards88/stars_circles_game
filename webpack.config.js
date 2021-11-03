@@ -54,6 +54,7 @@ module.exports = {
         start_url: "../.",
         appDescription: "A spatial strategy game",
         display: "standalone",
+        orientation: "portrait",
         developerName: "skedwards88",
         developerURL: null, // prevent retrieving from the nearest package.json
         background: "#5eacb5",

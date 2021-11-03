@@ -17,6 +17,11 @@ body {
   background-image: url("./images/background.svg");
 }
 
+button {
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
 #app {
   --num-columns: 5;
   --square-diameter: calc(var(--width) / var(--num-columns));
@@ -71,6 +76,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   margin: 5vmin;
+  font-weight: bold;
 }
 
 #red-score {
@@ -89,30 +95,29 @@ body {
   background: var(--red-color-hint);
 }
 
-#new-game {
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#controls > button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 40px;
   height: 40px;
+}
+
+#new-game {
   background-image: url("./images/new_game.svg");
 }
 
 #rules-button {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 40px;
-  height: 40px;
   background-image: url("./images/rules.svg");
 }
 
 #undo {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 40px;
-  height: 40px;
   background-image: url("./images/undo.svg");
 }
 
@@ -127,10 +132,7 @@ body {
   flex-direction: column;
   text-align: center;
   overflow: scroll;
-}
-
-.hidden {
-  display: none;
+  justify-items: center;
 }
 
 #settings {
@@ -153,22 +155,17 @@ body {
   font-size: xx-small;
 }
 
-#new-game-buttons {
+#setting-buttons {
   display: flex;
   justify-content: space-around;
 }
 
-#controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+#setting-buttons > button {
+  margin: 10px;
 }
 
 #rules-modal {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  justify-items: center;
 }
 
 .rules-text {
@@ -177,11 +174,6 @@ body {
   border-radius: 5px;
   padding: 2vmin;
   margin: 4vmin;
-}
-
-button {
-  border-radius: 5px;
-  background-color: lightgray;
 }
 
 #rule-navigation > button {
@@ -203,4 +195,23 @@ button {
   background-size: contain;
   min-width: 10vmin;
   min-height: 10vmin;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Large screen */
+@media (min-width: 10cm) {
+  body {
+    --width: 10cm;
+  }
+
+  .modal {
+    align-items: center;
+  }
+
+  .modal > * {
+    width: 10cm;
+  }
 }
