@@ -1,0 +1,206 @@
+body {
+  --width: 90vmin;
+  --blue-color: rgb(94 172 181);
+  --blue-color-hint: rgb(94 172 181 / 30%);
+  --red-color: rgb(173 107 71);
+  --red-color-hint: rgb(173 107 71 / 30%);
+  --black-color: rgb(0 0 0);
+
+  width: var(--width);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  margin: 5vmin auto;
+  text-align: center;
+  justify-items: center;
+  flex-direction: column;
+  white-space: pre-wrap;
+  background-image: url("./images/background.svg");
+}
+
+#app {
+  --num-columns: 5;
+  --square-diameter: calc(var(--width) / var(--num-columns));
+}
+
+.board {
+  display: grid;
+  background-color: white;
+  grid-template-columns: repeat(var(--num-columns), var(--square-diameter));
+  border: 1px solid black;
+  width: fit-content;
+  align-self: center;
+}
+
+.square {
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: var(--square-diameter);
+  height: var(--square-diameter);
+}
+
+.red {
+  background-color: var(--red-color);
+}
+
+.blue {
+  background-color: var(--blue-color);
+}
+
+.black {
+  background-color: var(--black-color);
+}
+
+.star {
+  background-image: url("./images/star.svg");
+}
+
+.circle {
+  background-image: url("./images/circle.svg");
+}
+
+#tokens {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+#score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5vmin;
+}
+
+#red-score {
+  color: var(--red-color);
+}
+
+#blue-score {
+  color: var(--blue-color);
+}
+
+.blue-hint {
+  background: var(--blue-color-hint);
+}
+
+.red-hint {
+  background: var(--red-color-hint);
+}
+
+#new-game {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  background-image: url("./images/new_game.svg");
+}
+
+#rules-button {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  background-image: url("./images/rules.svg");
+}
+
+#undo {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  background-image: url("./images/undo.svg");
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-image: url("./images/background.svg");
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: white;
+  opacity: 80%;
+}
+
+.setting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+  margin: 10px;
+}
+
+.setting-info {
+  font-size: xx-small;
+}
+
+#new-game-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#rules-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+.rules-text {
+  background-color: white;
+  opacity: 80%;
+  border-radius: 5px;
+  padding: 2vmin;
+  margin: 4vmin;
+}
+
+button {
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+#rule-navigation > button {
+  margin: 10px;
+}
+
+#tutorial-board {
+  display: grid;
+  background-color: white;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid black;
+  width: fit-content;
+  align-self: center;
+}
+
+.tutorial-square {
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 10vmin;
+  min-height: 10vmin;
+}

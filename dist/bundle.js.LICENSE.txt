@@ -4,6 +4,8 @@ object-assign
 @license MIT
 */
 
+/*! mobile-drag-drop 2.3.0-rc.1 | Copyright (c) 2019 Tim Ruffles | MIT License */
+
 /** @license React v0.20.2
  * scheduler.production.min.js
  *

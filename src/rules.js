@@ -1,325 +1,122 @@
 import React from "react";
-import Modal from "./modal";
 
-const rules = [
-    <div className="tutorialStep">
-        <div className="tutorial-text">
-            <div>A spatial strategy game</div>
-            <br/>
-            <div>2 Players</div>
-            <div>5 Minutes</div>
-            <br/>
-            <div>Designed by Colin Thom</div>
-            <div>Built by Sarah Edwards</div>
-            <div>Want more games?\nVisit <a href="https://skedwards88.github.io/portfolio/">CnS Games</a></div>
-            <div>Version 2.0</div>
-        </div>
-    </div>,
+function squares(filled) {
+  console.log("SQUAREs");
+  const gridSize = 5;
+  const grid = Array.from({ length: gridSize * gridSize }, () => ({
+    color: "",
+    symbol: "",
+  }));
 
-    <div className="tutorialStep">
-        <div className={"tutorial-board"}>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square step1_square2"}>O</div>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square step1_square1"}>X</div>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square step1_square3"}>O</div>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square tray"}/>
-                <div className={"square tray step1_X"}>X</div>
-                <div className={"square tray"}/>
-                <div className={"square tray step1_O"}>O</div>
-                <div className={"square tray"}/>
-            </div>
-        </div>
-        <div className="tutorial-text">
-            Players take turns dragging a symbol (X or O) of their color onto the board.
-        </div>
-    </div>,
+  filled.forEach((obj) => {
+    const { index, color, symbol } = obj;
+    grid[index].color = color;
+    grid[index].symbol = symbol;
+  });
 
-    <div className="tutorialStep">
-        <div className={"tutorial-board"}>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square red"}>O</div>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square blue"}>X</div>
-                <div className={"square blue"}>X</div>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square tray"}/>
-                <div className={"square tray step2_X"}>X</div>
-                <div className={"square tray"}/>
-                <div className={"square tray red_token"}>O</div>
-                <div className={"square tray"}/>
-            </div>
-        </div>
-        <div className="tutorial-text">
-            <div>Matching symbols of opposite color cannot be placed adjacent or diagonal to each other.</div>
-            <div>(Turn hints on/off to show/hide legal moves.)</div>
-        </div>
-    </div>,
+  return grid;
+}
 
-    <div className="tutorialStep">
-        <div className={"tutorial-board"}>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square red"}>X</div>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square blue"}>O</div>
-                <div className={"square black"}/>
-                <div className={"square red"}>O</div>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square blue"}>X</div>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-        </div>
-        <div className="tutorial-text">
-            When no symbol can be placed in a square, the square is blacked out.
-        </div>
-    </div>,
-
-    <div className="tutorialStep">
-        <div className={"tutorial-board"}>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square red step4_score3"}>O</div>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square red step4_score3"}>X</div>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square red step4_score3"}>O</div>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square blue step4_score1"}>O</div>
-                <div className={"square blue step4_score12"}>X</div>
-                <div className={"square blue step4_score12"}>X</div>
-                <div className={"square blue step4_score2"}>X</div>
-                <div className={"square"}/>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-                <div className={"square"}/>
-            </div>
-        </div>
-        <div className="tutorial-text">
-            Score a point by getting a 3-in-a-row of your color (symbol doesn't matter).
-        </div>
-    </div>,
-
-    <div className="tutorialStep">
-        <div className={"tutorial-board"}>
-            <div className={"board-row"}>
-                <div className={"square red"}>X</div>
-                <div className={"square step_ends_auto"}/>
-                <div className={"square blue"}>X</div>
-                <div className={"square step_ends_auto"}/>
-                <div className={"square red"}>X</div>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square blue"}>O</div>
-                <div className={"square blue"}>O</div>
-                <div className={"square blue"}>X</div>
-                <div className={"square step_ends_auto"}/>
-                <div className={"square blue"}>O</div>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square red"}>X</div>
-                <div className={"square black"}/>
-                <div className={"square blue"}>X</div>
-                <div className={"square black"}/>
-                <div className={"square red"}>X</div>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square red"}>O</div>
-                <div className={"square red"}>O</div>
-                <div className={"square blue"}>X</div>
-                <div className={"square red"}>O</div>
-                <div className={"square red"}>O</div>
-            </div>
-            <div className={"board-row"}>
-                <div className={"square blue"}>X</div>
-                <div className={"square blue"}>X</div>
-                <div className={"square red"}>O</div>
-                <div className={"square red"}>O</div>
-                <div className={"square blue"}>X</div>
-            </div>
-        </div>
-        <div className="tutorial-text">
-            <div>The game ends when one player cannot make any more moves.</div>
-            <div>Any remaining moves for the other player will complete automatically.</div>
-        </div>
-
-    </div>,
-
-    <div className="tutorialStep">
-        <div className="tutorial-text">
-            <div>The player with the most points wins!</div>
-        </div>
-    </div>,
-
+const ruleData = [
+  {
+    text: "Players take turns dragging a symbol of their color onto the board.",
+    squares: squares([
+      { index: 7, color: "red", symbol: "star" },
+      { index: 11, color: "blue", symbol: "circle" },
+      { index: 24, color: "red", symbol: "circle" },
+    ]),
+  },
+  {
+    text: "Matching symbols of opposite color cannot be placed adjacent or diagonal to each other. (Turn hints on/off to show/hide legal moves.)\n\nIn this example, a blue circle can only be placed in the highlighted squares, but a blue star could be placed anywhere.",
+    squares: squares([
+      { index: 0, color: "blue-hint", symbol: "" },
+      { index: 1, color: "blue-hint", symbol: "" },
+      { index: 2, color: "blue-hint", symbol: "" },
+      { index: 3, color: "blue-hint", symbol: "" },
+      { index: 4, color: "blue-hint", symbol: "" },
+      { index: 5, color: "blue-hint", symbol: "" },
+      { index: 6, color: "blue-hint", symbol: "" },
+      { index: 7, color: "blue-hint", symbol: "" },
+      { index: 8, color: "blue-hint", symbol: "" },
+      { index: 9, color: "blue-hint", symbol: "" },
+      { index: 10, color: "blue-hint", symbol: "" },
+      { index: 11, color: "blue-hint", symbol: "" },
+      { index: 12, color: "blue-hint", symbol: "" },
+      { index: 13, color: "blue-hint", symbol: "" },
+      { index: 14, color: "blue-hint", symbol: "" },
+      { index: 15, color: "blue-hint", symbol: "" },
+      { index: 19, color: "blue-hint", symbol: "" },
+      { index: 20, color: "blue-hint", symbol: "" },
+      { index: 24, color: "blue-hint", symbol: "" },
+      { index: 22, color: "red", symbol: "circle" },
+    ]),
+  },
+  {
+    text: "When no symbol can be placed in a square, the square is blacked out.",
+    squares: squares([
+      { index: 7, color: "red", symbol: "circle" },
+      { index: 11, color: "red", symbol: "star" },
+      { index: 12, color: "black", symbol: "" },
+      { index: 17, color: "blue", symbol: "circle" },
+      { index: 18, color: "blue", symbol: "star" },
+    ]),
+  },
+  {
+    text: "Score a point by getting a 3-in-a-row of your color (symbol doesn't matter). A square can be part of multiple 3-in-a-rows.\n\nIn this example, red has 2 points and blue has 1 point.",
+    squares: squares([
+      { index: 4, color: "blue", symbol: "circle" },
+      { index: 8, color: "blue", symbol: "star" },
+      { index: 12, color: "blue", symbol: "circle" },
+      { index: 15, color: "red", symbol: "circle" },
+      { index: 16, color: "red", symbol: "star" },
+      { index: 17, color: "red", symbol: "star" },
+      { index: 18, color: "red", symbol: "star" },
+    ]),
+  },
+  {
+    text: `The game ends when one player cannot make any more moves. Any remaining moves for the other player will complete automatically.\n\nThe player with the most points wins!`,
+  },
 ];
 
-class Rule extends React.Component {
-    render () {
-        let ruleNumber = this.props.ruleNumber;
-        if (this.props.currentRule !== ruleNumber) {
-            return null
-        }
-        return(
-            rules[ruleNumber-1]
-        )
-    }
+function renderBoard(squares) {
+  if (squares) {
+    const squareDivs = squares.map((square, index) => {
+      let classes = ["tutorial-square"];
+
+      if (square.symbol) {
+        classes.push(square.symbol);
+      }
+
+      if (square.color) {
+        classes.push(square.color);
+      }
+      const className = classes.join(" ");
+
+      return <div key={index} className={className}></div>;
+    });
+
+    return <div id="tutorial-board">{squareDivs}</div>;
+  } else {
+    return null;
+  }
 }
 
-function PreviousButton(props) {
-    if(props.currentRule !== 1) {
-        return (
-            <button onClick={props.handlePrevious}>Previous</button>
-        )
-    }
-    return <button disabled>Previous</button>;
-}
+const rulesJSX = ruleData.map((rule) => {
+  return (
+    <>
+      <div className="rules-text">{rule.text}</div>
+      {renderBoard(rule.squares)}
+    </>
+  );
+});
 
-function NextButton(props) {
-    if(props.currentRule < rules.length) {
-        return (
-            <button onClick={props.handleNext}>Next</button>
-        )
-    }
-    return <button disabled>Next</button>;
-}
+const infoJSX = (
+  <>
+    <div className="rules-text">
+      {`Stars and Circles\nVersion 2.0\n\nA spatial strategy game\n\n2 Players\n5 Minutes\n\nDesigned by Colin\nBuilt by Sarah\n\nWant more games?\nVisit `}
+      <a href="https://skedwards88.github.io/portfolio/">CnS Games</a>
+    </div>
+  </>
+);
 
-function Tutorial(props) {
-    const totalSteps = rules.length;
-    let ruleDisplay = Array.from(Array(totalSteps)).map((_, step) => <Rule
-        ruleNumber = {step+1}
-        currentRule = {props.currentRule}
-        key = {step+1}
-    />);
-    if (props.showRules) {
-        return (
-            <Modal>
-                <div className="modal">
-                    <div className="tutorial">
-                        <div className="tutorial-navigation">
-                            <PreviousButton
-                                currentRule={props.currentRule}
-                                handlePrevious={props.handlePrevious}
-                            />
-                            <div>{props.currentRule}/{totalSteps}</div>
-                            <NextButton
-                                currentRule={props.currentRule}
-                                totalSteps={totalSteps}
-                                handleNext={props.handleNext}
-                            />
-                            <button onClick={props.handleHide}>Exit</button>
-                        </div>
-                        {ruleDisplay}
-                    </div>
-                </div>
-            </Modal>
-        );
-    } else {
-        return null;
-    }
-
-}
-
-export default Tutorial;
+export const rules = [infoJSX, ...rulesJSX];
