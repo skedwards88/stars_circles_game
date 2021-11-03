@@ -105,8 +105,8 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: calc(var(--square-diameter) * 0.8);
-  height: calc(var(--square-diameter) * 0.8);
+  width: calc(var(--width) / 6);
+  height: calc(var(--width) / 6);
 }
 
 #new-game {
@@ -162,7 +162,7 @@ button {
 
 #setting-buttons > button {
   margin: 10px;
-  min-height: calc(var(--square-diameter) * 0.8);
+  min-height: calc(var(--width) / 6);
   font-weight: bold;
 }
 
@@ -185,7 +185,7 @@ button {
 
 #rule-navigation > button {
   margin: 10px;
-  min-height: calc(var(--square-diameter) * 0.8);
+  min-height: calc(var(--width) / 6);
   font-weight: bold;
 }
 
