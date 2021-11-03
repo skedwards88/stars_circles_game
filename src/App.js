@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { polyfill } from "mobile-drag-drop";
 
@@ -87,7 +87,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
 
     let squaresCopy = JSON.parse(
       JSON.stringify(playHistory[playHistory.length - 1])
-    ); // todo how to make deep copy?
+    ); // todo is there a better way to make deep copy?
     squaresCopy[index].symbol = symbol;
     squaresCopy[index].color = playerColor;
 
@@ -190,7 +190,7 @@ function NewGameSettings({
     setShowNewGameSettings(false);
   }
 
-  // This component function can return either the form or the "new game" button
+  // This component function can return either the new game settings input form or the "new game" button
   // Since the useEffect callback will only run when selectedGridSize changes,
   // and since the form closes (and we instead render the "new game" button) after changing selectedGridSize
   // `ref={ref}` is on the the "new game" button instead of on the form
@@ -201,10 +201,10 @@ function NewGameSettings({
       `${selectedGridSize}`
     );
 
-    // todo I'm not sure if useRef is better than document.getElementById when you want a parent
-    //    Creating the ref in the parent fails, but forwardRef might be a solution
+    // todo I'm not sure if useRef is better than document.getElementById when you want a parent:
     // const node = document.getElementById("app");
     // node.style.setProperty("--num-columns", `${selectedGridSize}`);
+    // Creating the ref in the parent and passing to the child fails, but forwardRef might be a solution
   }, [selectedGridSize]);
 
   if (showNewGameSettings) {
@@ -219,6 +219,7 @@ function NewGameSettings({
               <option value="5">5</option>
               <option value="6">6</option>
               <option value="7">7</option>
+              <option value="8">8</option>
             </select>
           </div>
 
@@ -363,23 +364,38 @@ function Rules() {
 
 function App() {
   const defaultGridSize = 5;
-  const [playHistory, setPlayHistory] = React.useState([
-    Array.from({ length: defaultGridSize * defaultGridSize }, () => ({
-      color: "",
-      symbol: "",
-      valid: {
-        red: {
-          star: true,
-          circle: true,
-        },
-        blue: {
-          star: true,
-          circle: true,
-        },
-      },
-    })),
-  ]);
-  const [showHints, setShowHints] = React.useState(true);
+  const [playHistory, setPlayHistory] = React.useState(
+    () =>
+      JSON.parse(window.localStorage.getItem("playHistory")) || [
+        Array.from({ length: defaultGridSize * defaultGridSize }, () => ({
+          color: "",
+          symbol: "",
+          valid: {
+            red: {
+              star: true,
+              circle: true,
+            },
+            blue: {
+              star: true,
+              circle: true,
+            },
+          },
+        })),
+      ]
+  );
+
+  const [showHints, setShowHints] = React.useState(() => {
+    const savedValue = window.localStorage.getItem("showHints");
+    return savedValue === "false" ? JSON.parse(savedValue) : true;
+  });
+
+  React.useEffect(() => {
+    window.localStorage.setItem("playHistory", JSON.stringify(playHistory));
+  }, [playHistory]);
+
+  React.useEffect(() => {
+    window.localStorage.setItem("showHints", JSON.stringify(showHints));
+  }, [showHints]);
 
   return (
     <div id="app">
