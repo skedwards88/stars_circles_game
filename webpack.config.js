@@ -57,7 +57,7 @@ module.exports = {
         orientation: "portrait",
         developerName: "skedwards88",
         developerURL: null, // prevent retrieving from the nearest package.json
-        background: "#5eacb5",
+        background: "#000000",
         theme_color: "#5eacb5",
         icons: {
           coast: false,
