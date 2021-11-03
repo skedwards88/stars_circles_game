@@ -263,8 +263,8 @@ function NewGameSettings({
           </div>
         </div>
         <div id="setting-buttons">
-          <button type="submit">New Game</button>
-          <button type="button" onClick={() => setShowNewGameSettings(false)}>
+          <button type="submit" aria-label="new game">New Game</button>
+          <button type="button" aria-label="cancel" onClick={() => setShowNewGameSettings(false)}>
             Cancel
           </button>
         </div>
@@ -275,6 +275,7 @@ function NewGameSettings({
       <button
         ref={ref}
         id="new-game"
+        aria-label="new game settings"
         onClick={() => setShowNewGameSettings(true)}
       ></button>
     );
@@ -307,6 +308,7 @@ function Undo({ playHistory, setPlayHistory }) {
   return (
     <button
       id="undo"
+      aria-label="undo"
       onClick={handleUndo}
       disabled={playHistory.length === 1}
     />
@@ -328,13 +330,15 @@ function Rules() {
         {rules[currentRule]}
         <div id="rule-navigation">
           <button
+           aria-label="previous rule"
             disabled={!currentRule}
             onClick={() => setCurrentRule(currentRule - 1)}
           >
             Previous
           </button>
-          <button onClick={closeRules}>Close</button>
+          <button onClick={closeRules} aria-label="close rules">Close</button>
           <button
+            aria-label="next rule"
             disabled={currentRule === rules.length - 1}
             onClick={() => setCurrentRule(currentRule + 1)}
           >
@@ -345,7 +349,7 @@ function Rules() {
     );
   } else {
     return (
-      <button id="rules-button" onClick={() => setShowRules(true)}></button>
+      <button id="rules-button" aria-label="rules" onClick={() => setShowRules(true)}></button>
     );
   }
 }
