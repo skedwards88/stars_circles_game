@@ -17,7 +17,6 @@ polyfill({
 // todo
 // make sure works on various width/orientation
 // add tests for getSurroundingIndexes and other helpers
-// new favicon
 // local storage
 // figure out "is missing in props validation" in eslint react plugin
 
@@ -321,8 +320,8 @@ function Undo({ playHistory, setPlayHistory }) {
 }
 
 function Rules() {
-  const [showRules, setShowRules] = React.useState(true);
-  const [currentRule, setCurrentRule] = React.useState(2);
+  const [showRules, setShowRules] = React.useState(false);
+  const [currentRule, setCurrentRule] = React.useState(0);
 
   function closeRules() {
     setShowRules(false);
