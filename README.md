@@ -10,7 +10,7 @@ A spatial strategy game
 
 [Play Now!](https://skedwards88.github.io/stars_circles_game/)
 
-![Game icon](public/logo192.png)
+![Game icon](src/images/favicon.png)
 
 ---
 
