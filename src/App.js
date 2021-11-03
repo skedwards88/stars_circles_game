@@ -19,7 +19,7 @@ polyfill({
 // add tests for getSurroundingIndexes and other helpers
 // new favicon
 // local storage
-// linters
+// figure out "is missing in props validation" in eslint react plugin
 
 function Board({ squares, playerColor, showHints, hintShape, dropToken }) {
   const board = squares.map((square, index) => {
@@ -76,7 +76,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
     // If not on a device on which the mobile-drag-drop pollyfill applies
     // Center the drag image on the cursor
     if (!/iPad|iPhone|iPod|Android/.test(navigator.userAgent)) {
-      ev.dataTransfer.setDragImage(ev.target, 50, 50);
+      event.dataTransfer.setDragImage(event.target, 50, 50);
     }
   }
 
