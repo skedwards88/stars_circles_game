@@ -1,7 +1,6 @@
 import React from "react";
 
 function squares(filled) {
-  console.log("SQUAREs");
   const gridSize = 5;
   const grid = Array.from({ length: gridSize * gridSize }, () => ({
     color: "",

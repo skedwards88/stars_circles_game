@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { polyfill } from "mobile-drag-drop";
 
-import calculateScore from "./scoring";
+import { calculateScore } from "./scoring";
 import {
   getSurroundingIndexes,
   noChoicesRemaining,
@@ -19,6 +19,7 @@ polyfill({
 // add tests for getSurroundingIndexes and other helpers
 // local storage
 // figure out "is missing in props validation" in eslint react plugin
+// make the alert when no choices left nicer
 
 function Board({ squares, playerColor, showHints, hintShape, dropToken }) {
   const board = squares.map((square, index) => {

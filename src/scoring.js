@@ -1,12 +1,9 @@
-function calculateScore({ squares, gridSize }) {
+export function calculateScore({ squares, gridSize }) {
   console.log("CALCULATE SCORE");
-  // Convert the 1D array into a 2D array so we can calculate the score geometrically
-  let grid = [];
-  while (squares.length) {
-    const row = squares.splice(0, gridSize);
-    grid.push(row);
-  }
 
+  // Convert the 1D array into a 2D array so we can calculate the score geometrically
+  const grid = squaresToGrid(squares, gridSize)
+  
   const horizontalScores = calculateHorizontalScore(grid);
   const verticalScores = calculateVerticalScore(grid);
   const diagonalFromLeftScores = calculateDiagonalFromLeftScore(grid);
@@ -22,14 +19,24 @@ function calculateScore({ squares, gridSize }) {
     verticalScores.blue +
     diagonalFromLeftScores.blue +
     diagonalFromRightScores.blue;
-
   return {
     red: redScore,
     blue: blueScore,
   };
 }
 
-function transposeGrid(grid) {
+export function squaresToGrid(squares, gridSize) {
+  // Convert a 1D array into a 2D array
+  const squaresCopy = [...squares]
+  let grid = [];
+  while (squaresCopy.length) {
+    const row = squaresCopy.splice(0, gridSize);
+    grid.push(row);
+  }
+  return grid
+}
+
+export function transposeGrid(grid) {
   // Transpose the grid so that the rows become the columns:
   //   for each column index,
   //   map over each row in the grid
@@ -41,7 +48,7 @@ function transposeGrid(grid) {
   });
 }
 
-function transposeDiagonalFromLeft(grid) {
+export function transposeDiagonalFromLeft(grid) {
   // debugger
   // Shift the grid so that the diagonals from upper left to lower right are aligned vertically
   // Pad the grid with nulls to maintain equal length of each row
@@ -73,7 +80,7 @@ function transposeDiagonalFromLeft(grid) {
   return transposeGrid(leftShift);
 }
 
-function transposeDiagonalFromRight(grid) {
+export function transposeDiagonalFromRight(grid) {
   // Shift the grid so that the diagonals from upper right to lower left are aligned vertically
   // Pad the grid with nulls to maintain equal length of each row
   // [
@@ -104,7 +111,7 @@ function transposeDiagonalFromRight(grid) {
   return transposeGrid(rightShift);
 }
 
-function calculateHorizontalScore(grid) {
+export function calculateHorizontalScore(grid) {
   let scores = {
     red: 0,
     blue: 0,
@@ -130,7 +137,7 @@ function calculateHorizontalScore(grid) {
   return scores;
 }
 
-function calculateVerticalScore(grid) {
+export function calculateVerticalScore(grid) {
   // transpose the grid so that the rows become the columns
   const vertical = transposeGrid(grid);
 
@@ -138,14 +145,12 @@ function calculateVerticalScore(grid) {
   return calculateHorizontalScore(vertical);
 }
 
-function calculateDiagonalFromLeftScore(grid) {
+export function calculateDiagonalFromLeftScore(grid) {
   const diagonalFromLeft = transposeDiagonalFromLeft(grid);
   return calculateHorizontalScore(diagonalFromLeft);
 }
 
-function calculateDiagonalFromRightScore(grid) {
+export function calculateDiagonalFromRightScore(grid) {
   let diagonalFromRight = transposeDiagonalFromRight(grid);
   return calculateHorizontalScore(diagonalFromRight);
 }
-
-export default calculateScore;

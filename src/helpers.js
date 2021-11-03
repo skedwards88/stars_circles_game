@@ -48,9 +48,6 @@ function autoFillRemaining(squares) {
   }
 
   console.log("AUTO FILL");
-  alert(
-    "No choices left for remaining squares! Empty squares will be filled automatically."
-  ); // todo make alert nicer looking, popup instead?
   squares.map((square) => {
     if (!square.color) {
       if (square.valid.red.circle || square.valid.red.star) {
