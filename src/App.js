@@ -328,7 +328,7 @@ function Rules() {
     setShowRules(false);
     setCurrentRule(0);
   }
-  
+
   if (showRules) {
     return (
       <div className="modal" id="rules-modal">

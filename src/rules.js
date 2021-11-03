@@ -101,16 +101,22 @@ function renderBoard(squares) {
   }
 }
 
-const rulesJSX = ruleData.map(rule => {
-  return <>
-  <div className="rules-text">{rule.text}</div>
-   {renderBoard(rule.squares)}
-</>
-})
+const rulesJSX = ruleData.map((rule) => {
+  return (
+    <>
+      <div className="rules-text">{rule.text}</div>
+      {renderBoard(rule.squares)}
+    </>
+  );
+});
 
+const infoJSX = (
+  <>
+    <div className="rules-text">
+      {`Stars and Circles\nVersion 2.0\n\nA spatial strategy game\n\n2 Players\n5 Minutes\n\nDesigned by Colin\nBuilt by Sarah\n\nWant more games?\nVisit `}
+      <a href="https://skedwards88.github.io/portfolio/">CnS Games</a>
+    </div>
+  </>
+);
 
-const infoJSX = <>
-<div className="rules-text">{`Stars and Circles\nVersion 2.0\n\nA spatial strategy game\n\n2 Players\n5 Minutes\n\nDesigned by Colin\nBuilt by Sarah\n\nWant more games?\nVisit `}<a href="https://skedwards88.github.io/portfolio/">CnS Games</a></div>
-</>
-
-export const rules = [infoJSX, ...rulesJSX]
+export const rules = [infoJSX, ...rulesJSX];

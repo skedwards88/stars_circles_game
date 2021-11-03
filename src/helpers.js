@@ -43,8 +43,8 @@ function autoFillRemaining(squares) {
   // Should only call when either red or blue have no more valid moves; otherwise, squares will be filled with a bias
 
   // If all squares are already filled, return
-  if (!squares.filter(i=>!i.color).length) {
-    return squares
+  if (!squares.filter((i) => !i.color).length) {
+    return squares;
   }
 
   console.log("AUTO FILL");
@@ -65,4 +65,4 @@ function autoFillRemaining(squares) {
   return squares;
 }
 
-export {getSurroundingIndexes, noChoicesRemaining, autoFillRemaining}
+export { getSurroundingIndexes, noChoicesRemaining, autoFillRemaining };

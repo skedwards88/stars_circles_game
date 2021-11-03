@@ -1,4 +1,3 @@
-
 function calculateScore({ squares, gridSize }) {
   console.log("CALCULATE SCORE");
   // Convert the 1D array into a 2D array so we can calculate the score geometrically
@@ -149,4 +148,4 @@ function calculateDiagonalFromRightScore(grid) {
   return calculateHorizontalScore(diagonalFromRight);
 }
 
-export default calculateScore
+export default calculateScore;
