@@ -1,0 +1,208 @@
+body {
+  --width: 90vmin;
+  --blue_color: rgb(94, 172, 181);
+  --blue_color_hint: rgba(94, 172, 181, 0.3);
+  --red_color: rgb(173, 107, 71);
+  --red_color_hint: rgba(173, 107, 71, 0.3);
+  --black_color: rgb(0, 0, 0);
+  width: var(--width);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  margin: 5vmin auto;
+  text-align: center;
+  justify-items: center;
+  flex-direction: column;
+  white-space: pre-wrap;
+  background-image: url(./images/background.svg);
+}
+
+#App {
+  --num_columns: 5;
+  --square_diameter: calc(var(--width) / var(--num_columns));
+}
+
+.board {
+  display: grid;
+  background-color: white;
+  grid-template-columns: repeat(var(--num_columns), var(--square_diameter));
+  border: 1px solid black;
+  width: fit-content;
+  align-self: center;
+  /* width: var(--board_diameter); */
+  /* height: var(--board_diameter); */
+}
+
+.square {
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: var(--square_diameter);
+  height: var(--square_diameter);
+}
+
+.red {
+  background-color: var(--red_color);
+}
+
+.blue {
+  background-color: var(--blue_color);
+}
+
+.black {
+  background-color: var(--black_color);
+}
+
+.star {
+  background-image: url(./images/star.svg);
+}
+
+.circle {
+  background-image: url(./images/circle.svg);
+}
+
+#tokens {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+#score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5vmin;
+}
+
+#redScore {
+  color: var(--red_color);
+}
+
+#blueScore {
+  color: var(--blue_color);
+}
+
+.blueHint {
+  background: var(--blue_color_hint);
+}
+
+.redHint {
+  background: var(--red_color_hint);
+}
+
+#newGame {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  background-image: url("./images/new_game.svg");
+}
+
+#rulesButton {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  background-image: url("./images/rules.svg");
+}
+
+#undo {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  background-image: url("./images/undo.svg");
+}
+
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-image: url(./images/background.svg);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow: scroll;
+}
+
+.hidden {
+  display: none;
+}
+
+#settings{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.setting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+  margin: 10px;
+}
+
+.settingInfo {
+  font-size: xx-small;
+}
+
+#newGameButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#rulesModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+#rulesText{
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 5px;
+  padding: 2vmin;
+  margin: 4vmin;
+}
+
+button {
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+#ruleNavigation>button {
+  margin: 10px;
+}
+
+#tutorialBoard {
+  display: grid;
+  background-color: white;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid black;
+  width: fit-content;
+  align-self: center;
+}
+
+.tutorialSquare {
+  border: 1px solid black;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 10vmin;
+  min-height: 10vmin;
+}
