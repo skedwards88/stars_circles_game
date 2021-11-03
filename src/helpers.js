@@ -31,10 +31,8 @@ function noChoicesRemaining(squares) {
     (square) => square.valid.blue.circle || square.valid.blue.star
   );
   if (validRedMoves.length && validBlueMoves.length) {
-    console.log("NOT END GAME");
     return false;
   } else {
-    console.log("IS END GAME");
     return true;
   }
 }
@@ -47,7 +45,6 @@ function autoFillRemaining(squares) {
     return squares;
   }
 
-  console.log("AUTO FILL");
   squares.map((square) => {
     if (!square.color) {
       if (square.valid.red.circle || square.valid.red.star) {

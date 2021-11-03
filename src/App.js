@@ -10,6 +10,7 @@ import {
 } from "./helpers.js";
 import { rules } from "./rules.js";
 
+// This polyfill lets draggable elements work on mobile
 polyfill({
   dragImageCenterOnTouch: true,
 });
@@ -55,7 +56,6 @@ function Board({ squares, playerColor, showHints, hintShape, dropToken }) {
 }
 
 function Game({ playHistory, setPlayHistory, showHints }) {
-  console.log("GAME");
   const [hintShape, setHintShape] = React.useState(null);
 
   const gridSize = Math.sqrt(playHistory[0].length);
@@ -66,25 +66,22 @@ function Game({ playHistory, setPlayHistory, showHints }) {
 
   function dragToken({ event, symbol }) {
     event.dataTransfer.setData("symbol", symbol);
-    // If not on a device on which the mobile-drag-drop pollyfill applies
-    // Center the drag image on the cursor
+    // If not on a device on which the mobile-drag-drop pollyfill applies,
+    // center the drag image on the cursor
     if (!/iPad|iPhone|iPod|Android/.test(navigator.userAgent)) {
       event.dataTransfer.setDragImage(event.target, 50, 50);
     }
   }
 
   function dropToken({ event, index }) {
-    // todo does calling this from a different component break a hook rule?
     const symbol = event.dataTransfer.getData("symbol");
 
     if (showHints) {
-      // todo does this break hook rule
       setHintShape(null);
     }
 
-    // If the turn is illegal, return early //todo does that break a hook rule? yes? should put conditional within hook
+    // If the turn is illegal, return early
     if (!squares[index].valid[playerColor][symbol]) {
-      console.log("invalid");
       return;
     }
 
@@ -117,7 +114,6 @@ function Game({ playHistory, setPlayHistory, showHints }) {
   }
 
   function handleMouseDown(symbol) {
-    console.log("MOUSE DOWN");
     if (showHints) {
       setHintShape(symbol);
     }
@@ -129,7 +125,6 @@ function Game({ playHistory, setPlayHistory, showHints }) {
     }
   }
 
-  console.log("RENDER");
   return (
     <div className="game">
       <Board
