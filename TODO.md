@@ -8,3 +8,4 @@
 - let players choose colors
 - support multi device games?
 - add the ability to play against computer
+- add license
