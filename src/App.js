@@ -237,26 +237,6 @@ function NewGameSettings({
             />
           </div>
 
-          <div className="setting">
-            <div className="setting-description">
-              <label htmlFor="islands">Islands</label>
-              <div className="setting-info">
-                Start the game with blacked out spaces (coming soon)
-              </div>
-            </div>
-            <select name="islands"></select>
-          </div>
-
-          <div className="setting">
-            <div className="setting-description">
-              <label htmlFor="bombs">Bombs</label>
-              <div className="setting-info">
-                Give each player a single-use bomb to clear one spot on the
-                board (coming soon)
-              </div>
-            </div>
-            <input name="bombs" type="checkbox" disabled />
-          </div>
         </div>
         <div id="setting-buttons">
           <button type="submit" aria-label="new game">

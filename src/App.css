@@ -170,10 +170,10 @@ input[type="checkbox" i]:checked {
 }
 
 .modal {
+  background-image: url("./images/background.svg");
   position: fixed;
   left: 0;
   top: 0;
-  background-image: url("./images/background.svg");
   height: 100%;
   width: 100%;
   display: flex;
@@ -181,6 +181,8 @@ input[type="checkbox" i]:checked {
   text-align: center;
   overflow: scroll;
   justify-items: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #settings {
