@@ -1,14 +1,14 @@
 {
-  "name": "Stars and Circles",
-  "short_name": "Stars and Circles",
-  "description": "A spatial strategy game",
+  "name": "Dragon Hero",
+  "short_name": "Dragon Hero",
+  "description": "A text adventure puzzle game",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "portrait",
   "start_url": "../.",
-  "background_color": "#000000",
-  "theme_color": "#5eacb5",
+  "background_color": "#F1F0F0",
+  "theme_color": "#6e799e",
   "icons": [
     {
       "src": "android-chrome-36x36.png",
