@@ -336,7 +336,7 @@ function Rules() {
             disabled={!currentRule}
             onClick={() => setCurrentRule(currentRule - 1)}
           >
-            Previous
+            {"<<"}
           </button>
           <button onClick={closeRules} aria-label="close rules">
             Close
@@ -346,7 +346,7 @@ function Rules() {
             disabled={currentRule === rules.length - 1}
             onClick={() => setCurrentRule(currentRule + 1)}
           >
-            Next
+            {">>"}
           </button>
         </div>
       </div>

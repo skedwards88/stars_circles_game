@@ -2,9 +2,10 @@ body {
   --width: 90vmin;
   --blue-color: rgb(94 172 181);
   --blue-color-hint: rgb(94 172 181 / 30%);
-  --red-color: rgb(173 107 71);
+  --red-color: rgb(219, 148, 111);
   --red-color-hint: rgb(173 107 71 / 30%);
   --black-color: rgb(0 0 0);
+  --default-font-size: min(0.9cm, 7vmin);
 
   width: var(--width);
   font-family: Arial, Helvetica, sans-serif;
@@ -15,11 +16,57 @@ body {
   flex-direction: column;
   white-space: pre-wrap;
   background-image: url("./images/background.svg");
+  font-size: var(--default-font-size);
 }
 
 button {
-  border-radius: 5px;
+  all: unset;
+  text-decoration: none;
+  text-align: center;
+  appearance: none;
+  font-size: var(--default-font-size);
+  font-family: sans-serif;
   background-color: lightgray;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  color: black;
+  margin: 0;
+  padding: 1px 6px;
+}
+
+select {
+  font-size: var(--default-font-size);
+  font-family: sans-serif;
+  background-color: darkgray;
+  border: 1px solid darkgray;
+  border-radius: 2px;
+  text-align: center;
+  color: black;
+  margin: 0;
+  padding: 1px 6px;
+  height: fit-content;
+}
+
+input[type="checkbox" i] {
+  all: unset;
+  text-decoration: none;
+  text-align: center;
+  appearance: none;
+  min-width: var(--default-font-size);
+  min-height: var(--default-font-size);
+  border-radius: 2px;
+  background-color: darkgray;
+  border: 3px solid darkgray;
+  margin: 0;
+  padding: 1px 6px;
+  height: fit-content;
+}
+
+input[type="checkbox" i]:checked {
+  background-image: url("./images/checkmark-black.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 #app {
@@ -105,8 +152,9 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: calc(var(--width) / 6);
-  height: calc(var(--width) / 6);
+  width: calc(var(--width) / 8);
+  height: calc(var(--width) / 8);
+  border: 3px solid lightgray;
 }
 
 #new-game {
@@ -152,7 +200,7 @@ button {
 }
 
 .setting-info {
-  font-size: xx-small;
+  font-size: calc(var(--default-font-size) * 0.5);
 }
 
 #setting-buttons {
@@ -161,9 +209,7 @@ button {
 }
 
 #setting-buttons > button {
-  margin: 10px;
-  min-height: calc(var(--width) / 6);
-  font-weight: bold;
+  margin: 1vmin;
 }
 
 #rules-modal {
@@ -181,12 +227,12 @@ button {
 #rule-navigation {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  margin: 0 0 3vh;
 }
 
 #rule-navigation > button {
   margin: 10px;
-  min-height: calc(var(--width) / 6);
-  font-weight: bold;
+  min-height: var(--default-font-size);
 }
 
 #tutorial-board {
