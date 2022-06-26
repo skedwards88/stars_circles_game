@@ -24,7 +24,7 @@ html {
   justify-items: center;
   font-size: var(--default-font-size);
   display: grid;
-  grid-template-areas:
+  grid-template-areas: 
   "score"
   "board"
   "tokens"
@@ -33,7 +33,7 @@ html {
   height: 95vh;
   width: var(--width);
   justify-self: center;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 .board {
@@ -314,7 +314,6 @@ input[type="checkbox" i]:checked {
     "board tokens controls";
     grid-template-columns: auto auto 1fr;
     grid-template-rows: auto 1fr;
-
   }
   
   #tokens {
