@@ -33,6 +33,7 @@ html {
   height: 95vh;
   width: var(--width);
   justify-self: center;
+  white-space: pre;
 }
 
 .board {
@@ -322,7 +323,6 @@ input[type="checkbox" i]:checked {
   }
   
   #score {
-    /* flex-direction: column; */
     margin: 0;
     align-self: center;
   }
