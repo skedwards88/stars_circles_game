@@ -31,10 +31,8 @@ module.exports = (env, argv) => {
       appName: "Dragon Hero",
       short_name: "Dragon Hero",
       start_url: "../.",
-      // scope: ".",
       appDescription: "A text adventure puzzle game",
       display: "standalone",
-      orientation: "portrait",
       developerName: "skedwards88",
       developerURL: null, // prevent retrieving from the nearest package.json
       background: "#000000",

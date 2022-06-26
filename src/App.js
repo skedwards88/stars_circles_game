@@ -126,7 +126,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
   }
 
   return (
-    <div className="game">
+    <>
       <Board
         squares={squares}
         playerColor={playerColor}
@@ -152,7 +152,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
           onMouseUp={handleMouseUp}
         />
       </div>
-    </div>
+    </>
   );
 }
 
