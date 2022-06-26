@@ -16,7 +16,7 @@ html {
   --red-color: rgb(219, 148, 111);
   --red-color-hint: rgb(173 107 71 / 30%);
   --black-color: rgb(0 0 0);
-  --default-font-size: min(0.9cm, 7vmin);
+  --default-font-size: min(0.9cm, 6vmin);
   --num-columns: 5;
   --square-diameter: calc(var(--width) / var(--num-columns));
 
@@ -146,13 +146,13 @@ html {
   top: 0;
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
   text-align: center;
   overflow: scroll;
   justify-items: center;
   justify-content: space-evenly;
   align-items: center;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 #settings {
@@ -161,6 +161,8 @@ html {
   margin: 10px;
   background-color: white;
   opacity: 80%;
+  width: 100%;
+  align-items: stretch;
 }
 
 .setting {
@@ -168,7 +170,7 @@ html {
   flex-direction: row;
   justify-content: space-between;
   text-align: left;
-  margin: 10px;
+  margin: 5vmin;
 }
 
 .setting-info {
@@ -178,14 +180,19 @@ html {
 #setting-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
+  justify-self: end;
 }
 
 #setting-buttons > button {
-  margin: 1vmin;
+  margin: 3vmin;
 }
 
 #rules-modal {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+
 }
 
 .rules-text {
@@ -199,11 +206,12 @@ html {
 #rule-navigation {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 0 0 3vh;
+  width: 100%;
+  margin: 0 0 5vmin;
 }
 
 #rule-navigation > button {
-  margin: 10px;
+  margin: 3vmin;
   min-height: var(--default-font-size);
 }
 
@@ -279,15 +287,15 @@ input[type="checkbox" i]:checked {
 }
 
 /* Large screen */
-@media (min-width: 15cm)  and (min-height: 15cm) {
+@media (min-width: 15cm) and (min-height: 15cm) {
   #app {
-    --width: 10cm;
+    --width: min(10cm, 80vmin);
     width: fit-content;
   }
 }
 
 /* Landscape */
-@media (orientation: landscape) and (max-height: 15cm){
+@media (orientation: landscape) {
   #root {
     flex-direction: row;
   }
