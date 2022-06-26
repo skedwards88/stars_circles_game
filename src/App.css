@@ -279,21 +279,14 @@ input[type="checkbox" i]:checked {
 }
 
 /* Large screen */
-@media (min-width: 10cm) {
+@media (min-width: 15cm)  and (min-height: 15cm) {
   #app {
     --width: 10cm;
     width: fit-content;
   }
-
-  .modal {
-    align-items: center;
-  }
-
-  .modal > * {
-    width: 10cm;
-  }
 }
 
+/* Landscape */
 @media (orientation: landscape) and (max-height: 15cm){
   #root {
     flex-direction: row;

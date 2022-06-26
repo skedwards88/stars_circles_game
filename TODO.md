@@ -10,3 +10,5 @@
 - add the ability to play against computer
 - add support for horizontal mode
 - update deployment to autobump version
+- make rule display similar to other games instead of the weird modal trick
+- make rules better in horizontal mode
