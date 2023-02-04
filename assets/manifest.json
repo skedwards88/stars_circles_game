@@ -1,7 +1,7 @@
 {
-  "name": "Dragon Hero",
-  "short_name": "Dragon Hero",
-  "description": "A text adventure puzzle game",
+  "name": "Stars and Circles",
+  "short_name": "Stars and Circles",
+  "description": "A spatial strategy game",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
