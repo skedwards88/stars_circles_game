@@ -28,10 +28,10 @@ module.exports = (env, argv) => {
     mode: "webapp", // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
     devMode: "webapp", // optional can be 'webapp' or 'light' - 'light' by default
     favicons: {
-      appName: "Dragon Hero",
-      short_name: "Dragon Hero",
+      appName: "Stars and Circles",
+      short_name: "Stars and Circles",
       start_url: "../.",
-      appDescription: "A text adventure puzzle game",
+      appDescription: "A spatial strategy game",
       display: "standalone",
       developerName: "skedwards88",
       developerURL: null, // prevent retrieving from the nearest package.json
