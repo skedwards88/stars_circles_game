@@ -236,7 +236,6 @@ function NewGameSettings({
               onChange={() => setShowHints(!showHints)}
             />
           </div>
-
         </div>
         <div id="setting-buttons">
           <button type="submit" aria-label="new game">

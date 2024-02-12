@@ -1,8 +1,7 @@
 export function calculateScore({ squares, gridSize }) {
-
   // Convert the 1D array into a 2D array so we can calculate the score geometrically
-  const grid = squaresToGrid(squares, gridSize)
-  
+  const grid = squaresToGrid(squares, gridSize);
+
   const horizontalScores = calculateHorizontalScore(grid);
   const verticalScores = calculateVerticalScore(grid);
   const diagonalFromLeftScores = calculateDiagonalFromLeftScore(grid);
@@ -26,13 +25,13 @@ export function calculateScore({ squares, gridSize }) {
 
 export function squaresToGrid(squares, gridSize) {
   // Convert a 1D array into a 2D array
-  const squaresCopy = [...squares]
+  const squaresCopy = [...squares];
   let grid = [];
   while (squaresCopy.length) {
     const row = squaresCopy.splice(0, gridSize);
     grid.push(row);
   }
-  return grid
+  return grid;
 }
 
 export function transposeGrid(grid) {
