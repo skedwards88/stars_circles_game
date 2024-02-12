@@ -24,11 +24,11 @@ html {
   justify-items: center;
   font-size: var(--default-font-size);
   display: grid;
-  grid-template-areas: 
-  "score"
-  "board"
-  "tokens"
-  "controls";
+  grid-template-areas:
+    "score"
+    "board"
+    "tokens"
+    "controls";
   grid-template-rows: auto auto 1fr auto;
   height: 95vh;
   width: var(--width);
@@ -192,7 +192,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .rules-text {
@@ -299,10 +298,9 @@ input[type="checkbox" i]:checked {
   #root {
     flex-direction: row;
   }
-  
+
   #app {
-    grid-template-areas:
-    "board tokens score controls";
+    grid-template-areas: "board tokens score controls";
     grid-template-columns: auto 1fr auto auto;
     grid-template-rows: none;
     height: 95vh;
@@ -311,17 +309,17 @@ input[type="checkbox" i]:checked {
     justify-self: center;
 
     grid-template-areas:
-    "score tokens controls"
-    "board tokens controls";
+      "score tokens controls"
+      "board tokens controls";
     grid-template-columns: auto auto 1fr;
     grid-template-rows: auto 1fr;
   }
-  
+
   #tokens {
     flex-direction: column;
     align-items: center;
   }
-  
+
   #score {
     margin: 0;
     align-self: center;
