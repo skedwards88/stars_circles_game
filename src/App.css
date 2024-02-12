@@ -13,7 +13,7 @@ html {
   --width: 80vmin;
   --blue-color: rgb(94 172 181);
   --blue-color-hint: rgb(94 172 181 / 30%);
-  --red-color: rgb(219, 148, 111);
+  --red-color: rgb(219 148 111);
   --red-color-hint: rgb(173 107 71 / 30%);
   --black-color: rgb(0 0 0);
   --default-font-size: min(0.9cm, 6vmin);
@@ -34,6 +34,21 @@ html {
   width: var(--width);
   justify-self: center;
   white-space: pre-wrap;
+}
+
+button {
+  all: unset;
+  text-decoration: none;
+  text-align: center;
+  appearance: none;
+  font-size: var(--default-font-size);
+  font-family: sans-serif;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  color: black;
+  margin: 0;
+  padding: 1px 6px;
 }
 
 .board {
@@ -235,21 +250,6 @@ html {
   display: none;
 }
 
-button {
-  all: unset;
-  text-decoration: none;
-  text-align: center;
-  appearance: none;
-  font-size: var(--default-font-size);
-  font-family: sans-serif;
-  background-color: lightgray;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  color: black;
-  margin: 0;
-  padding: 1px 6px;
-}
-
 select {
   font-size: var(--default-font-size);
   font-family: sans-serif;
@@ -289,6 +289,7 @@ input[type="checkbox" i]:checked {
 @media (min-width: 15cm) and (min-height: 15cm) {
   #app {
     --width: min(10cm, 80vmin);
+
     width: fit-content;
   }
 }
@@ -300,14 +301,11 @@ input[type="checkbox" i]:checked {
   }
 
   #app {
-    grid-template-areas: "board tokens score controls";
-    grid-template-columns: auto 1fr auto auto;
-    grid-template-rows: none;
-    height: 95vh;
     --width: 70vmin;
+
+    height: 95vh;
     width: 95vw;
     justify-self: center;
-
     grid-template-areas:
       "score tokens controls"
       "board tokens controls";
