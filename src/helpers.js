@@ -1,4 +1,4 @@
-function getSurroundingIndexes({ index, gridSize }) {
+function getSurroundingIndexes({index, gridSize}) {
   const column = index % gridSize;
   const row = Math.floor(index / gridSize);
   let surroundingIndexes = [];
@@ -25,10 +25,10 @@ function getSurroundingIndexes({ index, gridSize }) {
 function noChoicesRemaining(squares) {
   // Return true if BOTH red and blue have valid moves
   const validRedMoves = squares.filter(
-    (square) => square.valid.red.circle || square.valid.red.star
+    (square) => square.valid.red.circle || square.valid.red.star,
   );
   const validBlueMoves = squares.filter(
-    (square) => square.valid.blue.circle || square.valid.blue.star
+    (square) => square.valid.blue.circle || square.valid.blue.star,
   );
   if (validRedMoves.length && validBlueMoves.length) {
     return false;
@@ -59,4 +59,4 @@ function autoFillRemaining(squares) {
   return squares;
 }
 
-export { getSurroundingIndexes, noChoicesRemaining, autoFillRemaining };
+export {getSurroundingIndexes, noChoicesRemaining, autoFillRemaining};
