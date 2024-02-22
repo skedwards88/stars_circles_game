@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import {polyfill} from "mobile-drag-drop";
 
 import {calculateScore} from "./scoring";
