@@ -112,8 +112,9 @@ const rulesJSX = ruleData.map((rule) => {
 const infoJSX = (
   <>
     <div className="rules-text">
-      {`Stars and Circles\nVersion 2.1.1\n\nA spatial strategy game\n\n2 Players\n5 Minutes\n\nDesigned by Colin Thom\nBuilt by Sarah Edwards\n\nWant more games?\nVisit `}
-      <a href="https://skedwards88.github.io/">SECT Games</a>
+      {`Stars and Circles\nVersion 2.1.1\n\nA spatial strategy game\n\n2 Players\n5 Minutes\n\nDesigned by Colin Thom\nBuilt by Sarah Edwards\n\nWant more games?\nCheck `}
+      <a href="https://skedwards88.github.io/">these</a>
+      {` out.`}
     </div>
   </>
 );
