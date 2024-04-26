@@ -321,7 +321,8 @@ input[type="checkbox" i]:checked {
 }
 
 /* Large screen */
-@media (orientation: landscape) and (min-height: 600px) and (min-width: 936px), (orientation: portrait) and (min-height: 600px) and (min-width: 600px) {
+@media (orientation: landscape) and (min-height: 600px) and (min-width: 936px),
+  (orientation: portrait) and (min-height: 600px) and (min-width: 600px) {
   #app {
     --width: min(8cm, 80vmin);
 
