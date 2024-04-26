@@ -6,7 +6,8 @@
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "../.",
+  "scope": "/stars_circles_game/",
+  "start_url": "https://skedwards88.github.io/stars_circles_game/",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
