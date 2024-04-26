@@ -1,21 +1,20 @@
 import React from "react";
-import "./App.css";
-import { polyfill } from "mobile-drag-drop";
+import {polyfill} from "mobile-drag-drop";
 
-import { calculateScore } from "./scoring";
+import {calculateScore} from "./scoring";
 import {
   getSurroundingIndexes,
   noChoicesRemaining,
   autoFillRemaining,
 } from "./helpers.js";
-import { rules } from "./rules.js";
+import {rules} from "./rules.js";
 
 // This polyfill lets draggable elements work on mobile
 polyfill({
   dragImageCenterOnTouch: true,
 });
 
-function Board({ squares, playerColor, showHints, hintShape, dropToken }) {
+function Board({squares, playerColor, showHints, hintShape, dropToken}) {
   const board = squares.map((square, index) => {
     let classes = ["square"];
 
@@ -45,7 +44,7 @@ function Board({ squares, playerColor, showHints, hintShape, dropToken }) {
         onDragOver={(event) => {
           event.preventDefault();
         }}
-        onDrop={(event) => dropToken({ event: event, index: index })}
+        onDrop={(event) => dropToken({event: event, index: index})}
         onDragEnter={(event) => {
           event.preventDefault();
         }}
@@ -55,7 +54,7 @@ function Board({ squares, playerColor, showHints, hintShape, dropToken }) {
   return <div className="board">{board}</div>;
 }
 
-function Game({ playHistory, setPlayHistory, showHints }) {
+function Game({playHistory, setPlayHistory, showHints}) {
   const [hintShape, setHintShape] = React.useState(null);
 
   const gridSize = Math.sqrt(playHistory[0].length);
@@ -64,7 +63,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
   const playerColor = turnNumber % 2 ? "red" : "blue";
   const opponentColor = turnNumber % 2 ? "blue" : "red";
 
-  function dragToken({ event, symbol }) {
+  function dragToken({event, symbol}) {
     event.dataTransfer.setData("symbol", symbol);
     // If not on a device on which the mobile-drag-drop pollyfill applies,
     // center the drag image on the cursor
@@ -73,7 +72,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
     }
   }
 
-  function dropToken({ event, index }) {
+  function dropToken({event, index}) {
     const symbol = event.dataTransfer.getData("symbol");
 
     if (showHints) {
@@ -86,7 +85,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
     }
 
     let squaresCopy = JSON.parse(
-      JSON.stringify(playHistory[playHistory.length - 1])
+      JSON.stringify(playHistory[playHistory.length - 1]),
     ); // todo is there a better way to make deep copy?
     squaresCopy[index].symbol = symbol;
     squaresCopy[index].color = playerColor;
@@ -137,7 +136,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
       <div id="tokens">
         <div
           draggable="true"
-          onDragStart={(event) => dragToken({ event: event, symbol: "star" })}
+          onDragStart={(event) => dragToken({event: event, symbol: "star"})}
           className={`square star ${playerColor}`}
           onMouseDown={() => handleMouseDown("star")}
           onTouchStart={() => handleMouseDown("star")}
@@ -145,7 +144,7 @@ function Game({ playHistory, setPlayHistory, showHints }) {
         />
         <div
           draggable="true"
-          onDragStart={(event) => dragToken({ event: event, symbol: "circle" })}
+          onDragStart={(event) => dragToken({event: event, symbol: "circle"})}
           className={`square circle ${playerColor}`}
           onMouseDown={() => handleMouseDown("circle")}
           onTouchStart={() => handleMouseDown("circle")}
@@ -172,7 +171,7 @@ function NewGameSettings({
     const newGridSize = event.target.elements.gridSize.value;
     setSelectedGridSize(newGridSize);
     setPlayHistory([
-      Array.from({ length: newGridSize * newGridSize }, () => ({
+      Array.from({length: newGridSize * newGridSize}, () => ({
         color: "",
         symbol: "",
         valid: {
@@ -198,7 +197,7 @@ function NewGameSettings({
   React.useEffect(() => {
     ref.current.parentElement.parentElement.style.setProperty(
       "--num-columns",
-      `${selectedGridSize}`
+      `${selectedGridSize}`,
     );
 
     // todo I'm not sure if useRef is better than document.getElementById when you want a parent:
@@ -263,11 +262,11 @@ function NewGameSettings({
   }
 }
 
-function Score({ playHistory }) {
+function Score({playHistory}) {
   const squares = [...playHistory[playHistory.length - 1]];
   const gridSize = Math.sqrt(squares.length);
 
-  const score = calculateScore({ squares: [...squares], gridSize: gridSize });
+  const score = calculateScore({squares: [...squares], gridSize: gridSize});
   const redScore = score.red;
   const blueScore = score.blue;
 
@@ -279,7 +278,7 @@ function Score({ playHistory }) {
   );
 }
 
-function Undo({ playHistory, setPlayHistory }) {
+function Undo({playHistory, setPlayHistory}) {
   function handleUndo() {
     if (playHistory.length > 0) {
       setPlayHistory(playHistory.slice(0, playHistory.length - 1));
@@ -346,7 +345,7 @@ function App() {
   const [playHistory, setPlayHistory] = React.useState(
     () =>
       JSON.parse(window.localStorage.getItem("playHistory")) || [
-        Array.from({ length: defaultGridSize * defaultGridSize }, () => ({
+        Array.from({length: defaultGridSize * defaultGridSize}, () => ({
           color: "",
           symbol: "",
           valid: {
@@ -360,7 +359,7 @@ function App() {
             },
           },
         })),
-      ]
+      ],
   );
 
   const [showHints, setShowHints] = React.useState(() => {

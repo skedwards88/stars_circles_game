@@ -11,7 +11,7 @@ import {
 } from "./scoring";
 
 function getEmptySquares(gridSize) {
-  return Array.from({ length: gridSize * gridSize }, () => ({
+  return Array.from({length: gridSize * gridSize}, () => ({
     color: "",
     symbol: "",
     valid: {
@@ -48,11 +48,11 @@ test("Horizontal Scoring: Matching colors are scored, shape is not considered.",
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[0][0] = { ...grid[0][0], ...{ color: "red", shape: "star" } };
-  grid[0][1] = { ...grid[0][1], ...{ color: "red", shape: "circle" } };
-  grid[0][2] = { ...grid[0][2], ...{ color: "red", shape: "star" } };
-  grid[0][3] = { ...grid[0][3], ...{ color: "blue", shape: "star" } };
-  grid[0][4] = { ...grid[0][4], ...{ color: "blue", shape: "star" } };
+  grid[0][0] = {...grid[0][0], ...{color: "red", shape: "star"}};
+  grid[0][1] = {...grid[0][1], ...{color: "red", shape: "circle"}};
+  grid[0][2] = {...grid[0][2], ...{color: "red", shape: "star"}};
+  grid[0][3] = {...grid[0][3], ...{color: "blue", shape: "star"}};
+  grid[0][4] = {...grid[0][4], ...{color: "blue", shape: "star"}};
 
   expect(calculateHorizontalScore(grid)).toEqual(expected);
 });
@@ -66,11 +66,11 @@ test("Horizontal Scoring: Overlapping sets are counted.", () => {
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[3][0] = { ...grid[3][0], ...{ color: "red", shape: "star" } };
-  grid[3][1] = { ...grid[3][1], ...{ color: "red", shape: "circle" } };
-  grid[3][2] = { ...grid[3][2], ...{ color: "red", shape: "star" } };
-  grid[3][3] = { ...grid[3][3], ...{ color: "red", shape: "star" } };
-  grid[3][4] = { ...grid[3][4], ...{ color: "red", shape: "star" } };
+  grid[3][0] = {...grid[3][0], ...{color: "red", shape: "star"}};
+  grid[3][1] = {...grid[3][1], ...{color: "red", shape: "circle"}};
+  grid[3][2] = {...grid[3][2], ...{color: "red", shape: "star"}};
+  grid[3][3] = {...grid[3][3], ...{color: "red", shape: "star"}};
+  grid[3][4] = {...grid[3][4], ...{color: "red", shape: "star"}};
 
   expect(calculateHorizontalScore(grid)).toEqual(expected);
 });
@@ -84,11 +84,11 @@ test("Horizontal Scoring: Vertical sets are not counted.", () => {
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[0][0] = { ...grid[0][0], ...{ color: "red", shape: "star" } };
-  grid[1][0] = { ...grid[1][0], ...{ color: "red", shape: "circle" } };
-  grid[2][0] = { ...grid[2][0], ...{ color: "red", shape: "star" } };
-  grid[3][0] = { ...grid[3][0], ...{ color: "blue", shape: "star" } };
-  grid[4][0] = { ...grid[4][0], ...{ color: "blue", shape: "star" } };
+  grid[0][0] = {...grid[0][0], ...{color: "red", shape: "star"}};
+  grid[1][0] = {...grid[1][0], ...{color: "red", shape: "circle"}};
+  grid[2][0] = {...grid[2][0], ...{color: "red", shape: "star"}};
+  grid[3][0] = {...grid[3][0], ...{color: "blue", shape: "star"}};
+  grid[4][0] = {...grid[4][0], ...{color: "blue", shape: "star"}};
 
   expect(calculateHorizontalScore(grid)).toEqual(expected);
 });
@@ -115,11 +115,11 @@ test("Vertical Scoring: Matching colors are scored, shape is not considered.", (
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[0][0] = { ...grid[0][0], ...{ color: "red", shape: "star" } };
-  grid[1][0] = { ...grid[1][0], ...{ color: "red", shape: "circle" } };
-  grid[2][0] = { ...grid[2][0], ...{ color: "red", shape: "star" } };
-  grid[3][0] = { ...grid[3][0], ...{ color: "blue", shape: "star" } };
-  grid[4][0] = { ...grid[4][0], ...{ color: "blue", shape: "star" } };
+  grid[0][0] = {...grid[0][0], ...{color: "red", shape: "star"}};
+  grid[1][0] = {...grid[1][0], ...{color: "red", shape: "circle"}};
+  grid[2][0] = {...grid[2][0], ...{color: "red", shape: "star"}};
+  grid[3][0] = {...grid[3][0], ...{color: "blue", shape: "star"}};
+  grid[4][0] = {...grid[4][0], ...{color: "blue", shape: "star"}};
 
   expect(calculateVerticalScore(grid)).toEqual(expected);
 });
@@ -133,11 +133,11 @@ test("Vertical Scoring: Overlapping sets are counted.", () => {
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[0][0] = { ...grid[0][0], ...{ color: "red", shape: "star" } };
-  grid[1][0] = { ...grid[1][0], ...{ color: "red", shape: "circle" } };
-  grid[2][0] = { ...grid[2][0], ...{ color: "red", shape: "star" } };
-  grid[3][0] = { ...grid[3][0], ...{ color: "red", shape: "star" } };
-  grid[4][0] = { ...grid[4][0], ...{ color: "red", shape: "star" } };
+  grid[0][0] = {...grid[0][0], ...{color: "red", shape: "star"}};
+  grid[1][0] = {...grid[1][0], ...{color: "red", shape: "circle"}};
+  grid[2][0] = {...grid[2][0], ...{color: "red", shape: "star"}};
+  grid[3][0] = {...grid[3][0], ...{color: "red", shape: "star"}};
+  grid[4][0] = {...grid[4][0], ...{color: "red", shape: "star"}};
 
   expect(calculateVerticalScore(grid)).toEqual(expected);
 });
@@ -241,11 +241,11 @@ test("Diagonal from upper left scoring: Matching colors are scored, shape is not
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[0][0] = { ...grid[0][0], ...{ color: "red", shape: "star" } };
-  grid[1][1] = { ...grid[1][1], ...{ color: "red", shape: "circle" } };
-  grid[2][2] = { ...grid[2][2], ...{ color: "red", shape: "star" } };
-  grid[3][3] = { ...grid[3][3], ...{ color: "blue", shape: "star" } };
-  grid[4][4] = { ...grid[4][4], ...{ color: "blue", shape: "star" } };
+  grid[0][0] = {...grid[0][0], ...{color: "red", shape: "star"}};
+  grid[1][1] = {...grid[1][1], ...{color: "red", shape: "circle"}};
+  grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+  grid[3][3] = {...grid[3][3], ...{color: "blue", shape: "star"}};
+  grid[4][4] = {...grid[4][4], ...{color: "blue", shape: "star"}};
 
   expect(calculateDiagonalFromLeftScore(grid)).toEqual(expected);
 });
@@ -259,11 +259,11 @@ test("Diagonal from upper left scoring: Overlapping sets are counted.", () => {
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[0][0] = { ...grid[0][0], ...{ color: "red", shape: "star" } };
-  grid[1][1] = { ...grid[1][1], ...{ color: "red", shape: "circle" } };
-  grid[2][2] = { ...grid[2][2], ...{ color: "red", shape: "star" } };
-  grid[3][3] = { ...grid[3][3], ...{ color: "red", shape: "star" } };
-  grid[4][4] = { ...grid[4][4], ...{ color: "red", shape: "star" } };
+  grid[0][0] = {...grid[0][0], ...{color: "red", shape: "star"}};
+  grid[1][1] = {...grid[1][1], ...{color: "red", shape: "circle"}};
+  grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+  grid[3][3] = {...grid[3][3], ...{color: "red", shape: "star"}};
+  grid[4][4] = {...grid[4][4], ...{color: "red", shape: "star"}};
 
   expect(calculateDiagonalFromLeftScore(grid)).toEqual(expected);
 });
@@ -277,15 +277,15 @@ test("Diagonal from upper left scoring: Only diagonals from upper left to lower 
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[1][0] = { ...grid[1][0], ...{ color: "red", shape: "star" } };
-  grid[1][1] = { ...grid[1][1], ...{ color: "red", shape: "circle" } };
-  grid[1][2] = { ...grid[1][2], ...{ color: "red", shape: "star" } };
-  grid[2][0] = { ...grid[2][0], ...{ color: "red", shape: "star" } };
-  grid[2][1] = { ...grid[2][1], ...{ color: "red", shape: "star" } };
-  grid[2][2] = { ...grid[2][2], ...{ color: "red", shape: "star" } };
-  grid[3][0] = { ...grid[3][0], ...{ color: "red", shape: "star" } };
-  grid[3][1] = { ...grid[3][1], ...{ color: "red", shape: "star" } };
-  grid[3][2] = { ...grid[3][2], ...{ color: "red", shape: "star" } };
+  grid[1][0] = {...grid[1][0], ...{color: "red", shape: "star"}};
+  grid[1][1] = {...grid[1][1], ...{color: "red", shape: "circle"}};
+  grid[1][2] = {...grid[1][2], ...{color: "red", shape: "star"}};
+  grid[2][0] = {...grid[2][0], ...{color: "red", shape: "star"}};
+  grid[2][1] = {...grid[2][1], ...{color: "red", shape: "star"}};
+  grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+  grid[3][0] = {...grid[3][0], ...{color: "red", shape: "star"}};
+  grid[3][1] = {...grid[3][1], ...{color: "red", shape: "star"}};
+  grid[3][2] = {...grid[3][2], ...{color: "red", shape: "star"}};
 
   expect(calculateDiagonalFromLeftScore(grid)).toEqual(expected);
 });
@@ -312,11 +312,11 @@ test("Diagonal from upper right scoring: Scoring diagonal from upper right: Matc
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[0][4] = { ...grid[0][4], ...{ color: "red", shape: "star" } };
-  grid[1][3] = { ...grid[1][3], ...{ color: "red", shape: "circle" } };
-  grid[2][2] = { ...grid[2][2], ...{ color: "red", shape: "star" } };
-  grid[3][1] = { ...grid[3][1], ...{ color: "blue", shape: "star" } };
-  grid[4][0] = { ...grid[4][0], ...{ color: "blue", shape: "star" } };
+  grid[0][4] = {...grid[0][4], ...{color: "red", shape: "star"}};
+  grid[1][3] = {...grid[1][3], ...{color: "red", shape: "circle"}};
+  grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+  grid[3][1] = {...grid[3][1], ...{color: "blue", shape: "star"}};
+  grid[4][0] = {...grid[4][0], ...{color: "blue", shape: "star"}};
 
   expect(calculateDiagonalFromRightScore(grid)).toEqual(expected);
 });
@@ -330,11 +330,11 @@ test("Diagonal from upper right scoring: Scoring diagonal from upper right: Over
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[0][4] = { ...grid[0][4], ...{ color: "red", shape: "star" } };
-  grid[1][3] = { ...grid[1][3], ...{ color: "red", shape: "circle" } };
-  grid[2][2] = { ...grid[2][2], ...{ color: "red", shape: "star" } };
-  grid[3][1] = { ...grid[3][1], ...{ color: "red", shape: "star" } };
-  grid[4][0] = { ...grid[4][0], ...{ color: "red", shape: "star" } };
+  grid[0][4] = {...grid[0][4], ...{color: "red", shape: "star"}};
+  grid[1][3] = {...grid[1][3], ...{color: "red", shape: "circle"}};
+  grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+  grid[3][1] = {...grid[3][1], ...{color: "red", shape: "star"}};
+  grid[4][0] = {...grid[4][0], ...{color: "red", shape: "star"}};
 
   expect(calculateDiagonalFromRightScore(grid)).toEqual(expected);
 });
@@ -348,15 +348,15 @@ test("Diagonal from upper right scoring: Scoring diagonal from upper right: Only
   const squares = getEmptySquares(gridSize);
   const grid = squaresToGrid(squares, gridSize);
 
-  grid[1][0] = { ...grid[1][0], ...{ color: "red", shape: "star" } };
-  grid[1][1] = { ...grid[1][1], ...{ color: "red", shape: "circle" } };
-  grid[1][2] = { ...grid[1][2], ...{ color: "red", shape: "star" } };
-  grid[2][0] = { ...grid[2][0], ...{ color: "red", shape: "star" } };
-  grid[2][1] = { ...grid[2][1], ...{ color: "red", shape: "star" } };
-  grid[2][2] = { ...grid[2][2], ...{ color: "red", shape: "star" } };
-  grid[3][0] = { ...grid[3][0], ...{ color: "red", shape: "star" } };
-  grid[3][1] = { ...grid[3][1], ...{ color: "red", shape: "star" } };
-  grid[3][2] = { ...grid[3][2], ...{ color: "red", shape: "star" } };
+  grid[1][0] = {...grid[1][0], ...{color: "red", shape: "star"}};
+  grid[1][1] = {...grid[1][1], ...{color: "red", shape: "circle"}};
+  grid[1][2] = {...grid[1][2], ...{color: "red", shape: "star"}};
+  grid[2][0] = {...grid[2][0], ...{color: "red", shape: "star"}};
+  grid[2][1] = {...grid[2][1], ...{color: "red", shape: "star"}};
+  grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+  grid[3][0] = {...grid[3][0], ...{color: "red", shape: "star"}};
+  grid[3][1] = {...grid[3][1], ...{color: "red", shape: "star"}};
+  grid[3][2] = {...grid[3][2], ...{color: "red", shape: "star"}};
 
   expect(calculateDiagonalFromRightScore(grid)).toEqual(expected);
 });
@@ -370,8 +370,8 @@ test("Scoring: Empty grid has score of 0 for both colors", () => {
   const gridSize = 5;
   const squares = getEmptySquares(gridSize);
 
-  expect(calculateScore({ squares: squares, gridSize: gridSize })).toEqual(
-    expected
+  expect(calculateScore({squares: squares, gridSize: gridSize})).toEqual(
+    expected,
   );
 });
 
@@ -383,14 +383,14 @@ test("Matching colors are scored, shape is not considered.", () => {
   const gridSize = 5;
   const squares = getEmptySquares(gridSize);
 
-  squares[0] = { color: "red", shape: "star" };
-  squares[1] = { color: "red", shape: "circle" };
-  squares[2] = { color: "red", shape: "star" };
-  squares[3] = { color: "blue", shape: "star" };
-  squares[4] = { color: "blue", shape: "star" };
+  squares[0] = {color: "red", shape: "star"};
+  squares[1] = {color: "red", shape: "circle"};
+  squares[2] = {color: "red", shape: "star"};
+  squares[3] = {color: "blue", shape: "star"};
+  squares[4] = {color: "blue", shape: "star"};
 
-  expect(calculateScore({ squares: squares, gridSize: gridSize })).toEqual(
-    expected
+  expect(calculateScore({squares: squares, gridSize: gridSize})).toEqual(
+    expected,
   );
 });
 
@@ -402,13 +402,13 @@ test("Overlapping sets are counted.", () => {
   const gridSize = 5;
   const squares = getEmptySquares(gridSize);
 
-  squares[10] = { color: "red", shape: "star" };
-  squares[11] = { color: "red", shape: "circle" };
-  squares[12] = { color: "red", shape: "star" };
-  squares[13] = { color: "red", shape: "star" };
-  squares[14] = { color: "red", shape: "star" };
+  squares[10] = {color: "red", shape: "star"};
+  squares[11] = {color: "red", shape: "circle"};
+  squares[12] = {color: "red", shape: "star"};
+  squares[13] = {color: "red", shape: "star"};
+  squares[14] = {color: "red", shape: "star"};
 
-  expect(calculateScore({ squares: squares, gridSize: gridSize })).toEqual(
-    expected
+  expect(calculateScore({squares: squares, gridSize: gridSize})).toEqual(
+    expected,
   );
 });

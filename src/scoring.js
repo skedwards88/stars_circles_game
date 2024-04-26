@@ -1,4 +1,4 @@
-export function calculateScore({ squares, gridSize }) {
+export function calculateScore({squares, gridSize}) {
   // Convert the 1D array into a 2D array so we can calculate the score geometrically
   const grid = squaresToGrid(squares, gridSize);
 

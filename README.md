@@ -16,4 +16,4 @@ A spatial strategy game
 
 Do you have feedback or ideas for improvement? [Open an issue](https://github.com/skedwards88/stars_circles_game/issues/new).
 
-Want more games? Visit [SECT Games](https://skedwards88.github.io/).
+Want more games? [Check these out](https://skedwards88.github.io/).
