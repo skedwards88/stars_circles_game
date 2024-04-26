@@ -29,7 +29,8 @@ module.exports = (env, argv) => {
     favicons: {
       appName: "Stars and Circles",
       short_name: "Stars and Circles",
-      start_url: "../.",
+      start_url: "https://skedwards88.github.io/stars_circles_game/",
+      scope: "/stars_circles_game/",
       appDescription: "A spatial strategy game",
       display: "standalone",
       developerName: "skedwards88",
