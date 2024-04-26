@@ -12,3 +12,8 @@
 - update deployment to autobump version
 - make rule display similar to other games instead of the weird modal trick
 - make rules better in horizontal mode
+
+- don't use favicon plugin
+- add sharing button
+- add gtag
+- don't use modals
