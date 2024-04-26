@@ -16,7 +16,7 @@ html {
   --red-color: rgb(219 148 111);
   --red-color-hint: rgb(173 107 71 / 30%);
   --black-color: rgb(0 0 0);
-  --default-font-size: min(0.9cm, 6vmin);
+  --default-font-size: min(0.6cm, 5vmin);
   --num-columns: 5;
   --square-diameter: calc(var(--width) / var(--num-columns));
 
@@ -285,17 +285,8 @@ input[type="checkbox" i]:checked {
   background-size: contain;
 }
 
-/* Large screen */
-@media (min-width: 15cm) and (min-height: 15cm) {
-  #app {
-    --width: min(10cm, 80vmin);
-
-    width: fit-content;
-  }
-}
-
-/* Landscape */
-@media (orientation: landscape) {
+/* Landscape, small screen */
+@media (orientation: landscape) and (max-width: 935px) {
   #root {
     flex-direction: row;
   }
@@ -326,5 +317,14 @@ input[type="checkbox" i]:checked {
   #controls {
     flex-direction: column;
     align-items: flex-end;
+  }
+}
+
+/* Large screen */
+@media (orientation: landscape) and (min-height: 600px) and (min-width: 936px), (orientation: portrait) and (min-height: 600px) and (min-width: 600px) {
+  #app {
+    --width: min(8cm, 80vmin);
+
+    width: fit-content;
   }
 }
