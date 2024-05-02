@@ -31,6 +31,7 @@ module.exports = (env, argv) => {
       short_name: "Stars and Circles",
       start_url: "https://skedwards88.github.io/stars_circles_game/",
       scope: "/stars_circles_game/",
+      id: "?stars_circles_game=20240502",
       appDescription: "A spatial strategy game",
       display: "standalone",
       developerName: "skedwards88",
