@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/skedwards88/stars-circles#readme",
   "dependencies": {
+    "copy-webpack-plugin": "^12.0.2",
     "mobile-drag-drop": "^2.3.0-rc.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
@@ -40,8 +41,6 @@
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "favicons": "^6.2.2",
-    "favicons-webpack-plugin": "^5.0.2",
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.4",
