@@ -1,0 +1,36 @@
+{
+  "name": "Stars and Circles",
+  "short_name": "Stars and Circles",
+  "description": "A two player spatial strategy game",
+  "id": "?stars_circles_game=20240502",
+  "dir": "auto",
+  "lang": "en-US",
+  "display": "standalone",
+  "start_url": "https://skedwards88.github.io/stars_circles_game/",
+  "scope": "/stars_circles_game/",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "shortcuts": [],
+  "categories": ["games", "puzzle", "words", "entertainment", "education"],
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "maskable"
+    },
+    {
+      "src": "favicon.ico",
+      "type": "image/ico",
+      "sizes": "16x16 48x48",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": []
+}
