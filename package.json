@@ -12,8 +12,7 @@
     "prettier": "npx prettier --write .",
     "style": "npx stylelint '**/*.css' --fix",
     "lint": "npm run eslint && npm run prettier && npm run style",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -41,7 +40,6 @@
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.4",
     "prettier": "^2.4.1",

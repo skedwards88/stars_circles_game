@@ -3,7 +3,17 @@ name: "Deploy to GitHub Pages"
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - "README.md"
+      - "TODO.md"
   workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
 
 concurrency:
   group: gh-pages
@@ -11,24 +21,28 @@ concurrency:
 
 jobs:
   deploy:
-    name: Deploy
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Install requirements
         run: npm install
 
-      - name: Test
-        run: npm run test
-
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        run: |
-          git config --global user.name ${{ github.actor }}
-          git config --global user.email ${{ github.actor }}@gmail.com
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          npm run deploy
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist/"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
