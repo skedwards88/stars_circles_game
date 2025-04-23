@@ -1,5 +1,6 @@
+- More tests
 - rename repo and references to repo name to stars_circles
-- rename default branch and references to default branch
+- rename default branch to main and update references to default branch
 - Collect data on first player advantage. Could block off the center square or make the grid 6x6 to reduce first player advantage.
 - figure out "is missing in props validation" in eslint react plugin
 - add message when no choices left
@@ -10,10 +11,7 @@
 - add the ability to play against computer
 - add support for horizontal mode
 - update deployment to autobump version
-- make rule display similar to other games instead of the weird modal trick
 - make rules better in horizontal mode
-
-- don't use favicon plugin
 - add sharing button
 - add gtag
-- don't use modals
+- getSurroundingIndexes function: compare to function of the same name in my other games
