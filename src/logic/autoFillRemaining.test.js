@@ -36,4 +36,4 @@ describe("autoFillRemaining", () => {
 
     expect(autofilled[0].color).toBe("red");
   });
-})
+});

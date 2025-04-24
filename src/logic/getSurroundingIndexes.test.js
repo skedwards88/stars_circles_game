@@ -30,5 +30,4 @@ describe("getSurroundingIndexes", () => {
       1, 2, 3, 6, 7, 8, 11, 12, 13,
     ]);
   });
-
-})
+});

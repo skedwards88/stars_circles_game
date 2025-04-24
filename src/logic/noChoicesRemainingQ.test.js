@@ -57,5 +57,4 @@ describe("noChoicesRemainingQ", () => {
 
     expect(noChoicesRemainingQ(squares)).toBe(true);
   });
-
-})
+});
