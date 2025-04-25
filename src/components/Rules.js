@@ -1,21 +1,7 @@
 import React from "react";
 import {ruleData} from "../logic/ruleData";
 import packageJson from "../../package.json";
-
-function getClassName(square) {
-  let classes = ["tutorial-square"];
-
-  if (square.symbol) {
-    classes.push(square.symbol);
-  }
-
-  if (square.color) {
-    classes.push(square.color);
-  }
-  const className = classes.join(" ");
-
-  return className;
-}
+import {getSquareClassName} from "../logic/getSquareClassName";
 
 function RulesBoard({ruleSquares}) {
   if (!ruleSquares) {
@@ -25,7 +11,13 @@ function RulesBoard({ruleSquares}) {
   return (
     <div id="tutorial-board">
       {ruleSquares.map((square, index) => (
-        <div key={index} className={getClassName(square)}></div>
+        <div
+          key={index}
+          className={getSquareClassName({
+            square,
+            baseName: "tutorial-square",
+          })}
+        ></div>
       ))}
     </div>
   );

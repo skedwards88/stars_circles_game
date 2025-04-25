@@ -1,4 +1,5 @@
 import React from "react";
+import {getSquareClassName} from "../logic/getSquareClassName";
 
 export default function Board({
   squares,
@@ -8,26 +9,13 @@ export default function Board({
   dropToken,
 }) {
   const board = squares.map((square, index) => {
-    let classes = ["square"];
-
-    if (square.symbol) {
-      classes.push(square.symbol);
-    }
-
-    if (square.color) {
-      classes.push(square.color);
-    } else if (
-      !square.valid.red.star &&
-      !square.valid.red.circle &&
-      !square.valid.blue.star &&
-      !square.valid.blue.circle
-    ) {
-      classes.push("black");
-    } else if (showHints && hintShape && square.valid[playerColor][hintShape]) {
-      classes.push(`${playerColor}-hint`);
-    }
-
-    const className = classes.join(" ");
+    const className = getSquareClassName({
+      square,
+      baseName: "square",
+      showHints,
+      hintShape,
+      playerColor,
+    });
 
     return (
       <div

@@ -3,6 +3,16 @@ function expandSquareToFullArray(filled) {
   const grid = Array.from({length: gridSize * gridSize}, () => ({
     color: "",
     symbol: "",
+    valid: {
+      red: {
+        star: true,
+        circle: true,
+      },
+      blue: {
+        star: true,
+        circle: true,
+      },
+    },
   }));
 
   filled.forEach((obj) => {
