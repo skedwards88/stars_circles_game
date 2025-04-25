@@ -213,6 +213,14 @@ button:disabled {
   margin: 4vmin;
 }
 
+.rules-text h1 {
+  font-size: calc(var(--default-font-size) * 1.5);
+}
+
+.rules-text h2 {
+  font-size: calc(var(--default-font-size) * 1.2);
+}
+
 #rule-navigation {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

@@ -1,5 +1,61 @@
 import React from "react";
-import {rules} from "../rules";
+import {ruleData} from "../logic/ruleData";
+import packageJson from "../../package.json";
+
+function getClassName(square) {
+  let classes = ["tutorial-square"];
+
+  if (square.symbol) {
+    classes.push(square.symbol);
+  }
+
+  if (square.color) {
+    classes.push(square.color);
+  }
+  const className = classes.join(" ");
+
+  return className;
+}
+
+function RulesBoard({ruleSquares}) {
+  if (!ruleSquares) {
+    return <></>;
+  }
+
+  return (
+    <div id="tutorial-board">
+      {ruleSquares.map((square, index) => (
+        <div key={index} className={getClassName(square)}></div>
+      ))}
+    </div>
+  );
+}
+
+function Rule({ruleText, ruleSquares}) {
+  return (
+    <>
+      <div className="rules-text">
+        {ruleText.map((text, index) => (
+          <p key={index}>{text}</p>
+        ))}
+      </div>
+      <RulesBoard ruleSquares={ruleSquares}></RulesBoard>
+    </>
+  );
+}
+
+function Intro() {
+  return (
+    <div className="rules-text">
+      <h1>Stars and Circles</h1>
+      <h2>A spatial strategy game</h2>
+      <p>2 players | 5 minutes</p>
+      <p>Designed by Colin Thom</p>
+      <p>Built by Sarah Edwards</p>
+      <small>{`Version ${packageJson.version}`}</small>
+    </div>
+  );
+}
 
 export default function Rules({setDisplay}) {
   const [currentRule, setCurrentRule] = React.useState(0);
@@ -11,7 +67,16 @@ export default function Rules({setDisplay}) {
 
   return (
     <div id="app" className="rules">
-      {rules[currentRule]}
+      {/* Intro is rule 0, then other rules follow, so subtract 1 */}
+      {currentRule ? (
+        <Rule
+          ruleText={ruleData[currentRule - 1].text}
+          ruleSquares={ruleData[currentRule - 1].squares}
+        ></Rule>
+      ) : (
+        <Intro></Intro>
+      )}
+
       <div id="rule-navigation">
         <button
           aria-label="previous rule"
@@ -25,7 +90,8 @@ export default function Rules({setDisplay}) {
         </button>
         <button
           aria-label="next rule"
-          disabled={currentRule === rules.length - 1}
+          // Don't need to adjust by -1 here since prepended the Intro to the rules
+          disabled={currentRule === ruleData.length}
           onClick={() => setCurrentRule(currentRule + 1)}
         >
           {">>"}

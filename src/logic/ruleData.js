@@ -1,6 +1,4 @@
-import React from "react";
-
-function squares(filled) {
+function expandSquareToFullArray(filled) {
   const gridSize = 5;
   const grid = Array.from({length: gridSize * gridSize}, () => ({
     color: "",
@@ -16,18 +14,23 @@ function squares(filled) {
   return grid;
 }
 
-const ruleData = [
+export const ruleData = [
   {
-    text: "Players take turns dragging a symbol of their color onto the board.",
-    squares: squares([
+    text: [
+      "Players take turns dragging a symbol of their color onto the board.",
+    ],
+    squares: expandSquareToFullArray([
       {index: 7, color: "red", symbol: "star"},
       {index: 11, color: "blue", symbol: "circle"},
       {index: 24, color: "red", symbol: "circle"},
     ]),
   },
   {
-    text: "Matching symbols of opposite color cannot be placed adjacent or diagonal to each other. (Turn hints on/off to show/hide legal moves.)\n\nIn this example, a blue circle can only be placed in the highlighted squares, but a blue star could be placed anywhere.",
-    squares: squares([
+    text: [
+      "Matching symbols of opposite color cannot be placed adjacent or diagonal to each other. (Turn hints on/off to show/hide legal moves.)",
+      "In this example, a blue circle can only be placed in the highlighted squares, but a blue star could be placed anywhere.",
+    ],
+    squares: expandSquareToFullArray([
       {index: 0, color: "blue-hint", symbol: ""},
       {index: 1, color: "blue-hint", symbol: ""},
       {index: 2, color: "blue-hint", symbol: ""},
@@ -51,8 +54,10 @@ const ruleData = [
     ]),
   },
   {
-    text: "When no symbol can be placed in a square, the square is blacked out.",
-    squares: squares([
+    text: [
+      "When no symbol can be placed in a square, the square is blacked out.",
+    ],
+    squares: expandSquareToFullArray([
       {index: 7, color: "red", symbol: "circle"},
       {index: 11, color: "red", symbol: "star"},
       {index: 12, color: "black", symbol: ""},
@@ -61,8 +66,11 @@ const ruleData = [
     ]),
   },
   {
-    text: "Score a point by getting a 3-in-a-row of your color (symbol doesn't matter). A square can be part of multiple 3-in-a-rows.\n\nIn this example, red has 2 points and blue has 1 point.",
-    squares: squares([
+    text: [
+      "Score a point by getting a 3-in-a-row of your color (symbol doesn't matter). A square can be part of multiple 3-in-a-rows.",
+      "In this example, red has 2 points and blue has 1 point.",
+    ],
+    squares: expandSquareToFullArray([
       {index: 4, color: "blue", symbol: "circle"},
       {index: 8, color: "blue", symbol: "star"},
       {index: 12, color: "blue", symbol: "circle"},
@@ -73,50 +81,9 @@ const ruleData = [
     ]),
   },
   {
-    text: `The game ends when one player cannot make any more moves. Any remaining moves for the other player will complete automatically.\n\nThe player with the most points wins!`,
+    text: [
+      "The game ends when one player cannot make any more moves. Any remaining moves for the other player will complete automatically.",
+      "The player with the most points wins!",
+    ],
   },
 ];
-
-function renderBoard(squares) {
-  if (squares) {
-    const squareDivs = squares.map((square, index) => {
-      let classes = ["tutorial-square"];
-
-      if (square.symbol) {
-        classes.push(square.symbol);
-      }
-
-      if (square.color) {
-        classes.push(square.color);
-      }
-      const className = classes.join(" ");
-
-      return <div key={index} className={className}></div>;
-    });
-
-    return <div id="tutorial-board">{squareDivs}</div>;
-  } else {
-    return null;
-  }
-}
-
-const rulesJSX = ruleData.map((rule) => {
-  return (
-    <>
-      <div className="rules-text">{rule.text}</div>
-      {renderBoard(rule.squares)}
-    </>
-  );
-});
-
-const infoJSX = (
-  <>
-    <div className="rules-text">
-      {`Stars and Circles\nVersion 2.2.0\n\nA spatial strategy game\n\n2 Players\n5 Minutes\n\nDesigned by Colin Thom\nBuilt by Sarah Edwards\n\nWant more games?\nCheck `}
-      <a href="https://skedwards88.github.io/">these</a>
-      {` out.`}
-    </div>
-  </>
-);
-
-export const rules = [infoJSX, ...rulesJSX];
