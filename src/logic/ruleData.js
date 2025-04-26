@@ -1,19 +1,8 @@
+import {getEmptySquares} from "./getEmptySquares";
+
 function expandSquareToFullArray(filled) {
   const gridSize = 5;
-  const grid = Array.from({length: gridSize * gridSize}, () => ({
-    color: "",
-    symbol: "",
-    valid: {
-      red: {
-        star: true,
-        circle: true,
-      },
-      blue: {
-        star: true,
-        circle: true,
-      },
-    },
-  }));
+  const grid = getEmptySquares(gridSize);
 
   filled.forEach((obj) => {
     const {index, color, symbol} = obj;

@@ -1,4 +1,5 @@
 import React from "react";
+import {getEmptySquares} from "../logic/getEmptySquares";
 
 export default function Settings({
   setDisplay,
@@ -10,22 +11,7 @@ export default function Settings({
   function handleNewGame(event) {
     event.preventDefault();
     const newGridSize = event.target.elements.gridSize.value;
-    setPlayHistory([
-      Array.from({length: newGridSize * newGridSize}, () => ({
-        color: "",
-        symbol: "",
-        valid: {
-          red: {
-            star: true,
-            circle: true,
-          },
-          blue: {
-            star: true,
-            circle: true,
-          },
-        },
-      })),
-    ]);
+    setPlayHistory([getEmptySquares(newGridSize)]);
     setDisplay("game");
   }
 

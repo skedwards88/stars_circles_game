@@ -3,6 +3,7 @@ import {polyfill} from "mobile-drag-drop";
 import Settings from "./components/Settings.js";
 import Rules from "./components/Rules.js";
 import Game from "./components/Game.js";
+import {getEmptySquares} from "./logic/getEmptySquares.js";
 
 // This polyfill lets draggable elements work on mobile
 polyfill({
@@ -14,20 +15,7 @@ export default function App() {
   const [playHistory, setPlayHistory] = React.useState(
     () =>
       JSON.parse(window.localStorage.getItem("playHistory")) || [
-        Array.from({length: defaultGridSize * defaultGridSize}, () => ({
-          color: "",
-          symbol: "",
-          valid: {
-            red: {
-              star: true,
-              circle: true,
-            },
-            blue: {
-              star: true,
-              circle: true,
-            },
-          },
-        })),
+        getEmptySquares(defaultGridSize),
       ],
   );
 

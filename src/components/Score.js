@@ -1,11 +1,10 @@
 import React from "react";
-import {calculateScore} from "../scoring";
+import {calculateScore} from "../logic/calculateScore";
 
 export default function Score({playHistory}) {
   const squares = [...playHistory[playHistory.length - 1]];
-  const gridSize = Math.sqrt(squares.length);
 
-  const score = calculateScore({squares: [...squares], gridSize: gridSize});
+  const score = calculateScore({squares: [...squares]});
   const redScore = score.red;
   const blueScore = score.blue;
 
