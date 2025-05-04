@@ -1,7 +1,7 @@
 import {transposeDiagonalFromLeft} from "./transposeDiagonalFromLeft";
 
 describe("transposeDiagonalFromLeft", () => {
-  test("Transpose rows and columns: Transpose a 3x3 grid so that the diagonals from upper left to lower right are aligned horizontally with nulls padding the rows to keep them the same length.", () => {
+  test("Transpose a 3x3 grid so that the diagonals from upper left to lower right are aligned horizontally with nulls padding the rows to keep them the same length.", () => {
     let grid = [
       [0, 1, 2],
       [3, 4, 5],
@@ -17,7 +17,7 @@ describe("transposeDiagonalFromLeft", () => {
     expect(transposeDiagonalFromLeft(grid)).toEqual(expected);
   });
 
-  test("Transpose rows and columns: Transpose a 5x5 grid so that the diagonals from upper left to lower right are aligned horizontally with nulls padding the rows to keep them the same length.", () => {
+  test("Transpose a 5x5 grid so that the diagonals from upper left to lower right are aligned horizontally with nulls padding the rows to keep them the same length.", () => {
     let grid = [
       [0, 1, 2, 3, 4],
       [5, 6, 7, 8, 9],
@@ -37,5 +37,68 @@ describe("transposeDiagonalFromLeft", () => {
       [4, null, null, null, null],
     ];
     expect(transposeDiagonalFromLeft(grid)).toEqual(expected);
+  });
+
+  test("Handles grid that already has null values inside", () => {
+    let grid = [
+      [0, null, 2],
+      [3, 4, null],
+      [null, 7, 8],
+    ];
+    let expected = [
+      [null, null, null],
+      [null, 3, 7],
+      [0, 4, 8],
+      [null, null, null],
+      [2, null, null],
+    ];
+    expect(transposeDiagonalFromLeft(grid)).toEqual(expected);
+  });
+
+  test("Errors on an empty grid", () => {
+    let grid = [];
+
+    expect(() => transposeDiagonalFromLeft(grid)).toThrow(
+      "The number of columns and number of rows in the grid must be equal and non-zero.",
+    );
+  });
+
+  test("Errors on a non-square grid", () => {
+    let grid = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [9, 1, 2],
+    ];
+
+    expect(() => transposeDiagonalFromLeft(grid)).toThrow(
+      "The number of columns and number of rows in the grid must be equal and non-zero.",
+    );
+  });
+
+  test("Errors on an irregular grid", () => {
+    let grid = [
+      [0, 1, 2],
+      [3, 4, 5, 6],
+      [6, 7, 8],
+    ];
+
+    expect(() => transposeDiagonalFromLeft(grid)).toThrow(
+      "All of the rows in the grid must have the same length.",
+    );
+  });
+
+  test("Errors on a grid with a single row", () => {
+    let grid = [[0, 1, 2]];
+    expect(() => transposeDiagonalFromLeft(grid)).toThrow(
+      "The number of columns and number of rows in the grid must be equal and non-zero.",
+    );
+  });
+
+  test("Handles a grid with a single column", () => {
+    let grid = [[0], [1], [2]];
+    expect(() => transposeDiagonalFromLeft(grid)).toThrow(
+      "The number of columns and number of rows in the grid must be equal and non-zero.",
+    );
   });
 });

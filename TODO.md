@@ -1,3 +1,6 @@
+- replace transposeGrid with the shared version
+
+
 - More tests
 - rename repo and references to repo name to stars_circles
 - rename default branch to main and update references to default branch
