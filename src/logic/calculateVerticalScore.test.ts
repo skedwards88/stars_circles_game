@@ -15,7 +15,7 @@ describe("calculateVerticalScore", () => {
     expect(calculateVerticalScore(grid)).toEqual(expected);
   });
 
-  test("Vertical Scoring: Matching colors are scored, symbol is not considered.", () => {
+  test("Vertical Scoring: Matching colors are scored, shape is not considered.", () => {
     const expected = {
       red: 1,
       blue: 0,
@@ -24,11 +24,11 @@ describe("calculateVerticalScore", () => {
     const squares = getEmptySquares(gridSize);
     const grid = convert1Dto2D(squares);
 
-    grid[0][0] = {...grid[0][0], ...{color: "red", symbol: "star"}};
-    grid[1][0] = {...grid[1][0], ...{color: "red", symbol: "circle"}};
-    grid[2][0] = {...grid[2][0], ...{color: "red", symbol: "star"}};
-    grid[3][0] = {...grid[3][0], ...{color: "blue", symbol: "star"}};
-    grid[4][0] = {...grid[4][0], ...{color: "blue", symbol: "star"}};
+    grid[0][0] = {...grid[0][0], ...{color: "red", shape: "star"}};
+    grid[1][0] = {...grid[1][0], ...{color: "red", shape: "circle"}};
+    grid[2][0] = {...grid[2][0], ...{color: "red", shape: "star"}};
+    grid[3][0] = {...grid[3][0], ...{color: "blue", shape: "star"}};
+    grid[4][0] = {...grid[4][0], ...{color: "blue", shape: "star"}};
 
     expect(calculateVerticalScore(grid)).toEqual(expected);
   });
@@ -42,11 +42,11 @@ describe("calculateVerticalScore", () => {
     const squares = getEmptySquares(gridSize);
     const grid = convert1Dto2D(squares);
 
-    grid[0][0] = {...grid[0][0], ...{color: "red", symbol: "star"}};
-    grid[1][0] = {...grid[1][0], ...{color: "red", symbol: "circle"}};
-    grid[2][0] = {...grid[2][0], ...{color: "red", symbol: "star"}};
-    grid[3][0] = {...grid[3][0], ...{color: "red", symbol: "star"}};
-    grid[4][0] = {...grid[4][0], ...{color: "red", symbol: "star"}};
+    grid[0][0] = {...grid[0][0], ...{color: "red", shape: "star"}};
+    grid[1][0] = {...grid[1][0], ...{color: "red", shape: "circle"}};
+    grid[2][0] = {...grid[2][0], ...{color: "red", shape: "star"}};
+    grid[3][0] = {...grid[3][0], ...{color: "red", shape: "star"}};
+    grid[4][0] = {...grid[4][0], ...{color: "red", shape: "star"}};
 
     expect(calculateVerticalScore(grid)).toEqual(expected);
   });

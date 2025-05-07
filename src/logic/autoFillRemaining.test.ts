@@ -5,7 +5,7 @@ describe("autoFillRemaining", () => {
   test("autoFillRemaining ", () => {
     const squares: Square[] = Array.from({length: 5 * 5}, () => ({
       color: "blue",
-      symbol: "star",
+      shape: "star",
       valid: {
         red: {
           star: false,
@@ -20,7 +20,7 @@ describe("autoFillRemaining", () => {
 
     squares[0] = {
       color: "",
-      symbol: "",
+      shape: "",
       valid: {
         red: {
           star: true,

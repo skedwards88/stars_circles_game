@@ -1,5 +1,5 @@
 import {getSquareClassName} from "../logic/getSquareClassName";
-import type {Color, Square, Symbol} from "../Types";
+import type {Color, Square, Shape} from "../Types";
 
 export default function Board({
   squares,
@@ -11,7 +11,7 @@ export default function Board({
   squares: Square[];
   playerColor: Color;
   showHints: boolean;
-  hintShape: Symbol | null;
+  hintShape: Shape | null;
   dropToken: (args: {event: React.DragEvent; index: number}) => void;
 }): React.JSX.Element {
   const board = squares.map((square, index) => {

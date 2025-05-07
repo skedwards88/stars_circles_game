@@ -15,7 +15,7 @@ describe("calculateDiagonalFromRightScore", () => {
     expect(calculateDiagonalFromRightScore(grid)).toEqual(expected);
   });
 
-  test("Diagonal from upper right scoring: Scoring diagonal from upper right: Matching colors are scored, symbol is not considered.", () => {
+  test("Diagonal from upper right scoring: Scoring diagonal from upper right: Matching colors are scored, shape is not considered.", () => {
     const expected = {
       red: 1,
       blue: 0,
@@ -24,11 +24,11 @@ describe("calculateDiagonalFromRightScore", () => {
     const squares = getEmptySquares(gridSize);
     const grid = convert1Dto2D(squares);
 
-    grid[0][4] = {...grid[0][4], ...{color: "red", symbol: "star"}};
-    grid[1][3] = {...grid[1][3], ...{color: "red", symbol: "circle"}};
-    grid[2][2] = {...grid[2][2], ...{color: "red", symbol: "star"}};
-    grid[3][1] = {...grid[3][1], ...{color: "blue", symbol: "star"}};
-    grid[4][0] = {...grid[4][0], ...{color: "blue", symbol: "star"}};
+    grid[0][4] = {...grid[0][4], ...{color: "red", shape: "star"}};
+    grid[1][3] = {...grid[1][3], ...{color: "red", shape: "circle"}};
+    grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+    grid[3][1] = {...grid[3][1], ...{color: "blue", shape: "star"}};
+    grid[4][0] = {...grid[4][0], ...{color: "blue", shape: "star"}};
 
     expect(calculateDiagonalFromRightScore(grid)).toEqual(expected);
   });
@@ -42,11 +42,11 @@ describe("calculateDiagonalFromRightScore", () => {
     const squares = getEmptySquares(gridSize);
     const grid = convert1Dto2D(squares);
 
-    grid[0][4] = {...grid[0][4], ...{color: "red", symbol: "star"}};
-    grid[1][3] = {...grid[1][3], ...{color: "red", symbol: "circle"}};
-    grid[2][2] = {...grid[2][2], ...{color: "red", symbol: "star"}};
-    grid[3][1] = {...grid[3][1], ...{color: "red", symbol: "star"}};
-    grid[4][0] = {...grid[4][0], ...{color: "red", symbol: "star"}};
+    grid[0][4] = {...grid[0][4], ...{color: "red", shape: "star"}};
+    grid[1][3] = {...grid[1][3], ...{color: "red", shape: "circle"}};
+    grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+    grid[3][1] = {...grid[3][1], ...{color: "red", shape: "star"}};
+    grid[4][0] = {...grid[4][0], ...{color: "red", shape: "star"}};
 
     expect(calculateDiagonalFromRightScore(grid)).toEqual(expected);
   });
@@ -60,15 +60,15 @@ describe("calculateDiagonalFromRightScore", () => {
     const squares = getEmptySquares(gridSize);
     const grid = convert1Dto2D(squares);
 
-    grid[1][0] = {...grid[1][0], ...{color: "red", symbol: "star"}};
-    grid[1][1] = {...grid[1][1], ...{color: "red", symbol: "circle"}};
-    grid[1][2] = {...grid[1][2], ...{color: "red", symbol: "star"}};
-    grid[2][0] = {...grid[2][0], ...{color: "red", symbol: "star"}};
-    grid[2][1] = {...grid[2][1], ...{color: "red", symbol: "star"}};
-    grid[2][2] = {...grid[2][2], ...{color: "red", symbol: "star"}};
-    grid[3][0] = {...grid[3][0], ...{color: "red", symbol: "star"}};
-    grid[3][1] = {...grid[3][1], ...{color: "red", symbol: "star"}};
-    grid[3][2] = {...grid[3][2], ...{color: "red", symbol: "star"}};
+    grid[1][0] = {...grid[1][0], ...{color: "red", shape: "star"}};
+    grid[1][1] = {...grid[1][1], ...{color: "red", shape: "circle"}};
+    grid[1][2] = {...grid[1][2], ...{color: "red", shape: "star"}};
+    grid[2][0] = {...grid[2][0], ...{color: "red", shape: "star"}};
+    grid[2][1] = {...grid[2][1], ...{color: "red", shape: "star"}};
+    grid[2][2] = {...grid[2][2], ...{color: "red", shape: "star"}};
+    grid[3][0] = {...grid[3][0], ...{color: "red", shape: "star"}};
+    grid[3][1] = {...grid[3][1], ...{color: "red", shape: "star"}};
+    grid[3][2] = {...grid[3][2], ...{color: "red", shape: "star"}};
 
     expect(calculateDiagonalFromRightScore(grid)).toEqual(expected);
   });

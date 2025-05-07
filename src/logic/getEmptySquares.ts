@@ -6,7 +6,7 @@ export function getEmptySquares(gridSize: number): Square[] {
     () =>
       ({
         color: "",
-        symbol: "",
+        shape: "",
         valid: {
           red: {
             star: true,

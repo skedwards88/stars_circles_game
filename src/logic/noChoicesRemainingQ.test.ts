@@ -5,7 +5,7 @@ describe("noChoicesRemainingQ", () => {
   test("If both players have legal spaces to play, return false.", () => {
     const squares: Square[] = Array.from({length: 5 * 5}, () => ({
       color: "red",
-      symbol: "circle",
+      shape: "circle",
       valid: {
         red: {
           star: true,
@@ -24,7 +24,7 @@ describe("noChoicesRemainingQ", () => {
   test("If only one color has legal spaces to play, return true.", () => {
     const squares: Square[] = Array.from({length: 5 * 5}, () => ({
       color: "",
-      symbol: "",
+      shape: "",
       valid: {
         red: {
           star: false,
@@ -43,7 +43,7 @@ describe("noChoicesRemainingQ", () => {
   test("If neither color has legal spaces to play, return true", () => {
     const squares: Square[] = Array.from({length: 5 * 5}, () => ({
       color: "",
-      symbol: "",
+      shape: "",
       valid: {
         red: {
           star: false,

@@ -1,18 +1,18 @@
 import {getSurroundingIndexes} from "./getSurroundingIndexes";
 import {noChoicesRemainingQ} from "./noChoicesRemainingQ";
 import {autoFillRemaining} from "./autofillRemaining";
-import type {Square, Symbol, Color} from "../Types";
+import type {Square, Shape, Color} from "../Types";
 
 export function updateValidMoves({
   squares,
   playedIndex,
-  playedSymbol,
+  playedShape,
   playedColor,
   unplayedColor,
 }: {
   squares: Square[];
   playedIndex: number;
-  playedSymbol: Symbol;
+  playedShape: Shape;
   playedColor: Color;
   unplayedColor: Color;
 }): Square[] {
@@ -22,7 +22,7 @@ export function updateValidMoves({
     );
   }
 
-  squares[playedIndex].symbol = playedSymbol;
+  squares[playedIndex].shape = playedShape;
   squares[playedIndex].color = playedColor;
 
   // Placement in the current index is no longer valid
@@ -31,13 +31,13 @@ export function updateValidMoves({
   squares[playedIndex].valid.red.circle = false;
   squares[playedIndex].valid.blue.circle = false;
 
-  // Placement in the surrounding tiles is now invalid for the same symbol of the opposite color
+  // Placement in the surrounding tiles is now invalid for the same shape of the opposite color
   const surroundingIndexes = getSurroundingIndexes({
     index: playedIndex,
     gridSize: Math.sqrt(squares.length),
   });
   surroundingIndexes.map((surroundingIndex) => {
-    squares[surroundingIndex]!.valid[unplayedColor][playedSymbol] = false;
+    squares[surroundingIndex]!.valid[unplayedColor][playedShape] = false;
   });
 
   if (noChoicesRemainingQ(squares)) {

@@ -2,7 +2,7 @@ import React from "react";
 import Token from "./Token";
 import Board from "./Board";
 import {updateValidMoves} from "../logic/updateValidMoves";
-import type {Square, Symbol} from "../Types";
+import type {Square, Shape} from "../Types";
 
 export default function PlayArea({
   playHistory,
@@ -13,7 +13,7 @@ export default function PlayArea({
   setPlayHistory: React.Dispatch<React.SetStateAction<Square[][]>>;
   showHints: boolean;
 }): React.JSX.Element {
-  const [hintShape, setHintShape] = React.useState<Symbol | null>(null);
+  const [hintShape, setHintShape] = React.useState<Shape | null>(null);
 
   const turnNumber = playHistory.length;
   const playerColor = turnNumber % 2 ? "red" : "blue";
@@ -26,16 +26,14 @@ export default function PlayArea({
     event: React.DragEvent;
     index: number;
   }): void {
-    const symbol = event.dataTransfer.getData("symbol") as Symbol;
+    const shape = event.dataTransfer.getData("shape") as Shape;
 
     if (showHints) {
       setHintShape(null);
     }
 
     // If the turn is illegal, return early
-    if (
-      !playHistory[playHistory.length - 1][index].valid[playerColor][symbol]
-    ) {
+    if (!playHistory[playHistory.length - 1][index].valid[playerColor][shape]) {
       return;
     }
 
@@ -46,7 +44,7 @@ export default function PlayArea({
     const updatedSquares = updateValidMoves({
       squares: squaresCopy,
       playedIndex: index,
-      playedSymbol: symbol,
+      playedShape: shape,
       playedColor: playerColor,
       unplayedColor: opponentColor,
     });
@@ -65,13 +63,13 @@ export default function PlayArea({
       />
       <div id="tokens">
         <Token
-          symbol={"star"}
+          shape={"star"}
           color={playerColor}
           showHints={showHints}
           setHintShape={setHintShape}
         ></Token>
         <Token
-          symbol={"circle"}
+          shape={"circle"}
           color={playerColor}
           showHints={showHints}
           setHintShape={setHintShape}

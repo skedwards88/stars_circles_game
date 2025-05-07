@@ -3,7 +3,6 @@
 - add gtag
 - getSurroundingIndexes function: compare to function of the same name in my other games
 - replace transposeGrid with the shared version
-- rename symbol to shape
 - remove horizontal mode support
 
 - Convert to TS. Should change eslint.js to reflect (e.g. use the ts plugin, don't disable the props validation tool)

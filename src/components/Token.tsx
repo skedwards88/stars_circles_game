@@ -1,19 +1,19 @@
-import type {Color, Symbol} from "../Types";
+import type {Color, Shape} from "../Types";
 
 export default function Token({
-  symbol,
+  shape,
   color,
   showHints,
   setHintShape,
 }: {
-  symbol: Symbol;
+  shape: Shape;
   color: Color;
   showHints: boolean;
-  setHintShape: React.Dispatch<React.SetStateAction<Symbol | null>>;
+  setHintShape: React.Dispatch<React.SetStateAction<Shape | null>>;
 }): React.JSX.Element {
-  function handleMouseDown(symbol: Symbol): void {
+  function handleMouseDown(shape: Shape): void {
     if (showHints) {
-      setHintShape(symbol);
+      setHintShape(shape);
     }
   }
 
@@ -25,12 +25,12 @@ export default function Token({
 
   function dragToken({
     event,
-    symbol,
+    shape,
   }: {
     event: React.DragEvent;
-    symbol: Symbol;
+    shape: Shape;
   }): void {
-    event.dataTransfer.setData("symbol", symbol);
+    event.dataTransfer.setData("shape", shape);
     // If not on a device on which the mobile-drag-drop pollyfill applies,
     // center the drag image on the cursor
     if (!/iPad|iPhone|iPod|Android/.test(navigator.userAgent)) {
@@ -41,10 +41,10 @@ export default function Token({
   return (
     <div
       draggable="true"
-      onDragStart={(event) => dragToken({event: event, symbol})}
-      className={`square ${symbol} ${color}`}
-      onMouseDown={() => handleMouseDown(symbol)}
-      onTouchStart={() => handleMouseDown(symbol)}
+      onDragStart={(event) => dragToken({event: event, shape})}
+      className={`square ${shape} ${color}`}
+      onMouseDown={() => handleMouseDown(shape)}
+      onTouchStart={() => handleMouseDown(shape)}
       onMouseUp={handleMouseUp}
     />
   );

@@ -1,6 +1,6 @@
 export type Color = "red" | "blue";
 
-export type Symbol = "star" | "circle";
+export type Shape = "star" | "circle";
 
 // e.g. structure like:
 //       "valid": {
@@ -15,13 +15,13 @@ export type Symbol = "star" | "circle";
 //       }
 export type ValidInfo = {
   [C in Color]: {
-    [S in Symbol]: boolean;
+    [S in Shape]: boolean;
   };
 };
 
 export type Square = {
   color: Color | "";
-  symbol: Symbol | "";
+  shape: Shape | "";
   valid: ValidInfo;
 };
 

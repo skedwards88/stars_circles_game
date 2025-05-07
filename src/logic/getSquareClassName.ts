@@ -1,4 +1,4 @@
-import type {Color, RuleSquare, Square, Symbol} from "../Types";
+import type {Color, RuleSquare, Square, Shape} from "../Types";
 
 export function getSquareClassName({
   square,
@@ -10,13 +10,13 @@ export function getSquareClassName({
   square: Square | RuleSquare;
   baseName?: string;
   showHints?: boolean;
-  hintShape?: Symbol | null;
+  hintShape?: Shape | null;
   playerColor?: Color;
 }): string {
   const classes = [baseName];
 
-  if (square.symbol) {
-    classes.push(square.symbol);
+  if (square.shape) {
+    classes.push(square.shape);
   }
 
   if (square.color) {

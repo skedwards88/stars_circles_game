@@ -13,7 +13,7 @@ describe("calculateScore", () => {
     expect(calculateScore({squares: squares})).toEqual(expected);
   });
 
-  test("Matching colors are scored, symbol is not considered.", () => {
+  test("Matching colors are scored, shape is not considered.", () => {
     const expected = {
       red: 1,
       blue: 0,
@@ -22,15 +22,15 @@ describe("calculateScore", () => {
     const squares = getEmptySquares(gridSize);
 
     squares[0].color = "red";
-    squares[0].symbol = "star";
+    squares[0].shape = "star";
     squares[1].color = "red";
-    squares[1].symbol = "circle";
+    squares[1].shape = "circle";
     squares[2].color = "red";
-    squares[2].symbol = "star";
+    squares[2].shape = "star";
     squares[3].color = "blue";
-    squares[3].symbol = "star";
+    squares[3].shape = "star";
     squares[4].color = "blue";
-    squares[4].symbol = "star";
+    squares[4].shape = "star";
 
     expect(calculateScore({squares: squares})).toEqual(expected);
   });
@@ -44,15 +44,15 @@ describe("calculateScore", () => {
     const squares = getEmptySquares(gridSize);
 
     squares[10].color = "red";
-    squares[10].symbol = "star";
+    squares[10].shape = "star";
     squares[11].color = "red";
-    squares[11].symbol = "circle";
+    squares[11].shape = "circle";
     squares[12].color = "red";
-    squares[12].symbol = "star";
+    squares[12].shape = "star";
     squares[13].color = "red";
-    squares[13].symbol = "star";
+    squares[13].shape = "star";
     squares[14].color = "red";
-    squares[14].symbol = "star";
+    squares[14].shape = "star";
 
     expect(calculateScore({squares: squares})).toEqual(expected);
   });
