@@ -1,20 +1,23 @@
+- update deployment to autobump version
+- add sharing button
+- add gtag
+- getSurroundingIndexes function: compare to function of the same name in my other games
 - replace transposeGrid with the shared version
+- rename symbol to shape
+- remove horizontal mode support
 
+- Convert to TS. Should change eslint.js to reflect (e.g. use the ts plugin, don't disable the props validation tool)
 
-- More tests
-- rename repo and references to repo name to stars_circles
-- rename default branch to main and update references to default branch
-- Collect data on first player advantage. Could block off the center square or make the grid 6x6 to reduce first player advantage.
-- figure out "is missing in props validation" in eslint react plugin
-- add message when no choices left
+## Future features
+
 - Add bombs: Give each player a single-use bomb to clear one spot
 - add islands: Start the game with blacked out spaces
 - let players choose colors
 - support multi device games?
 - add the ability to play against computer
-- add support for horizontal mode
-- update deployment to autobump version
-- make rules better in horizontal mode
-- add sharing button
-- add gtag
-- getSurroundingIndexes function: compare to function of the same name in my other games
+
+- add message when no choices left
+- More tests
+- rename repo and references to repo name to stars_circles
+- rename default branch to main and update references to default branch
+- Collect data on first player advantage. Could block off the center square or make the grid 6x6 to reduce first player advantage.
