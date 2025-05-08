@@ -14,14 +14,14 @@ export default function App(): React.JSX.Element {
   const defaultGridSize = 5;
   const [playHistory, setPlayHistory] = React.useState(
     () =>
-      JSON.parse(window.localStorage.getItem("playHistory") ?? "") || [
+      JSON.parse(window.localStorage.getItem("playHistory") ?? "null") || [
         getEmptySquares(defaultGridSize),
       ],
   );
 
   const [showHints, setShowHints] = React.useState(() => {
     const savedValue = window.localStorage.getItem("showHints");
-    return savedValue === "false" ? JSON.parse(savedValue) : true;
+    return savedValue === "false" ? false : true;
   });
 
   React.useEffect(() => {
