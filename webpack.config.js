@@ -53,7 +53,7 @@ module.exports = (env, argv) => {
             options: {
               presets: [
                 "@babel/env",
-                ["@babel/preset-react", { runtime: "automatic" }],
+                ["@babel/preset-react", {runtime: "automatic"}],
                 "@babel/preset-typescript",
               ],
             },
