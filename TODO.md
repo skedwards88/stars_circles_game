@@ -1,6 +1,6 @@
 - update deployment to autobump version
 - add sharing button
-- add gtag
+- add analytics
 - getSurroundingIndexes function: compare to function of the same name in my other games
 - replace transposeGrid with the shared version
 - remove horizontal mode support
